@@ -1,20 +1,17 @@
-1. clean project
-2. design favicon and logo
-3. define primary, secondary, success, error, info, and warning pallete colors
-4. layout landing page
-5. implement landing page
-6. layout offers page
-7. implement offers page
-8. layout offer-view page
-9. implement offer-view page
-10. layout login page
-11. implement login page
-12. layout signup page
-13. implement signup page
-14. layout dashboard page
-15. implement dashboard page
-16. layout offer-form page
-17. implement offer-form page
-18. build api for currently needed functionality
-19. deploy MVP
-20. create features/fixes roadmap
+1. layout landing page
+2. implement landing page
+3. layout offers page
+4. implement offers page
+5. layout offer-view page
+6. implement offer-view page
+7. layout login page
+8. implement login page
+9. layout signup page
+10. implement signup page
+11. layout dashboard page
+12. implement dashboard page
+13. layout offer-form page
+14. implement offer-form page
+15. build api for currently needed functionality
+16. deploy MVP
+17. create features/fixes roadmap
