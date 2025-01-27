@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/global/one-off/Navbar";
+import Footer from "@/components/global/one-off/Footer";
 
 export const metadata: Metadata = {
   title: "Zim Auto Trade",
@@ -14,7 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        <main className="mx-auto max-w-screen-xl">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
