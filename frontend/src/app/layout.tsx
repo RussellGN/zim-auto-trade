@@ -16,10 +16,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        <main className="mx-auto max-w-screen-xl">{children}</main>
-        <Footer />
+      <body className="flex min-h-[100.1vh] flex-col">
+        <div className="w-full">
+          <Navbar />
+        </div>
+
+        <main className="mx-auto w-full max-w-screen-xl flex-grow">
+          {children}
+        </main>
+
+        <div className="w-full">
+          <Footer />
+        </div>
       </body>
     </html>
   );
