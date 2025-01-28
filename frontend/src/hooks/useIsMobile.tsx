@@ -11,7 +11,5 @@ export default function useIsMobile() {
     return () => window.removeEventListener("resize", resizeFunc);
   }, [MOBILE_WIDTH]);
 
-  const viewPortWidth = window.innerWidth;
-  console.log({ MOBILE_WIDTH, viewPortWidth, isMobile });
   return isMobile;
 }
