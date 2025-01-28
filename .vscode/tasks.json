@@ -1,0 +1,14 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "type": "npm",
+         "script": "dev",
+         "path": "frontend",
+         "problemMatcher": [],
+         "label": "pnpm: dev - frontend",
+         "detail": "next dev --turbopack",
+         "runOptions": { "runOn": "folderOpen" }
+      }
+   ]
+}
