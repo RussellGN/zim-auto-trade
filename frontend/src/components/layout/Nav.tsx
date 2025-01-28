@@ -4,11 +4,9 @@ import { navLinks } from "@/lib/constants";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileNavigation from "./MobileNavigation";
-import useIsMobile from "@/hooks/useIsMobile";
 
 export default function Nav() {
   const pathname = usePathname();
-  const isMobile = useIsMobile();
 
   return (
     <>
