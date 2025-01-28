@@ -11,14 +11,16 @@ export default function Nav() {
   const isMobile = useIsMobile();
 
   return (
-    <nav className="order-1 flex items-center gap-3 sm:order-2">
-      {isMobile ? (
+    <>
+      <nav className="order-1 flex items-center gap-3 sm:order-2 md:hidden">
         <MobileNavigation pathname={pathname} />
-      ) : (
-        navLinks.map((navLink) => (
+      </nav>
+
+      <nav className="order-1 hidden items-center gap-3 sm:order-2 md:flex">
+        {navLinks.map((navLink) => (
           <Link
             key={navLink.href}
-            className={`text-primary-default hover:text-primary-light border-b font-semibold capitalize transition-all ${
+            className={`border-b font-semibold capitalize text-primary-default transition-all hover:text-primary-light ${
               pathname === navLink.href
                 ? "border-primary-default hover:border-primary-light"
                 : "border-transparent"
@@ -27,8 +29,8 @@ export default function Nav() {
           >
             {navLink.label}
           </Link>
-        ))
-      )}
-    </nav>
+        ))}
+      </nav>
+    </>
   );
 }

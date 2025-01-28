@@ -19,10 +19,10 @@ export default function Home() {
 
           <p className="mx-auto mb-5 max-w-prose">
             Zim Auto Trade provides a way for people looking to sell their
-            vehicles reach more people nation-wide, and at the smae time
+            vehicles reach more people nation-wide, and at the same time
             provides a convenient means of finding a vehicle for those in
-            search. All listings are advertised charge-free on the platform, and
-            everyone is elligible. Become a part of the community!
+            search. All listings are advertised free of charge on the platform.
+            Everyone is elligible, become a part of the community!
           </p>
 
           <div className="flex items-center justify-center gap-3">
