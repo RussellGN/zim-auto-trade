@@ -8,7 +8,7 @@ export default function Navbar() {
   const isAuthenticated = false;
 
   return (
-    <header className="fixed left-0 top-0 w-full border-b border-primary-default bg-white px-3 py-2 shadow-lg">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-primary-default bg-white px-3 py-2 shadow-lg">
       <div className="mx-auto flex max-w-screen-xl justify-between">
         <Logo />
 
