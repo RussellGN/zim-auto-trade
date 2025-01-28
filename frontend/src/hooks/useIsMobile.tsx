@@ -1,4 +1,4 @@
-import { twConfig } from "@/lib/utils";
+import { twConfig } from "@/lib/constants";
 import { useEffect, useState } from "react";
 
 export default function useIsMobile() {

@@ -1,3 +1,6 @@
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config";
+
 export const navLinks = [
   {
     label: "home",
@@ -12,3 +15,5 @@ export const navLinks = [
     href: "/about",
   },
 ];
+
+export const twConfig = resolveConfig(tailwindConfig);
