@@ -8,7 +8,7 @@ export default function Navbar() {
   const isAuthenticated = false;
 
   return (
-    <header className="m-2 rounded-md border bg-white px-3 py-2 shadow-md sm:m-3">
+    <header className="fixed left-0 top-0 w-full border-b border-primary-default bg-white px-3 py-2 shadow-lg">
       <div className="mx-auto flex max-w-screen-xl justify-between">
         <Logo />
 
@@ -23,7 +23,7 @@ export default function Navbar() {
                 <Link href="/login">Login</Link>
               </Button>
               <Button
-                className="bg-primary-light hidden text-white sm:inline-block"
+                className="hidden bg-primary-light text-white sm:inline"
                 asChild
               >
                 <Link href="/signup">Signup</Link>

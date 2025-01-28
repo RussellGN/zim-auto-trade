@@ -21,7 +21,7 @@ export default function RootLayout({
           <Navbar />
         </div>
 
-        <main className="mx-auto w-full max-w-screen-xl flex-grow">
+        <main className="mx-auto mt-[3.8rem] w-full max-w-screen-xl flex-grow">
           {children}
         </main>
 
