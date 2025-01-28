@@ -20,9 +20,11 @@ export default function MobileNavigation({ pathname }: { pathname: string }) {
         </Button>
       </DrawerTrigger>
 
-      <DrawerContent className="border-primary-default h-full w-3/4 rounded-none rounded-ee-lg rounded-se-lg bg-white">
-        <DrawerHeader className="flex flex-col-reverse">
-          <Logo />
+      <DrawerContent className="h-full w-3/4 rounded-none rounded-ee-lg rounded-se-lg border-primary-default bg-white">
+        <DrawerHeader className="flex flex-col">
+          <div className="px-4">
+            <Logo />
+          </div>
           <DrawerTitle className="p-5">Navigation Menu</DrawerTitle>
         </DrawerHeader>
 
@@ -30,7 +32,7 @@ export default function MobileNavigation({ pathname }: { pathname: string }) {
           {navLinks.map((navLink) => (
             <Link
               key={navLink.href}
-              className={`text-primary-default hover:text-primary-light w-fit border-b font-semibold capitalize transition-all ${
+              className={`w-fit border-b font-semibold capitalize text-primary-default transition-all hover:text-primary-light ${
                 pathname === navLink.href
                   ? "border-primary-default hover:border-primary-light"
                   : "border-transparent"
