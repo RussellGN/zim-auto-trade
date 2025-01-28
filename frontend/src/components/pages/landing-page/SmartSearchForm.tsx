@@ -5,7 +5,7 @@ export default function SmartSearchForm() {
   return (
     <form>
       <h2 className="mb-5 text-center text-2xl text-white">Smart Search</h2>
-      <div className="mb-5 flex flex-1 items-center gap-5">
+      <div className="mb-2 flex flex-1 items-center gap-2 md:mb-5 md:gap-5">
         <Input
           placeholder="make"
           className="border-none bg-black text-white focus-visible:ring-0"
@@ -15,7 +15,8 @@ export default function SmartSearchForm() {
           className="border-none bg-black text-white focus-visible:ring-0"
         />
       </div>
-      <div className="mb-5 flex flex-1 items-center gap-5">
+
+      <div className="mb-2 flex flex-1 items-center gap-2 md:mb-5 md:gap-5">
         <Input
           placeholder="min price"
           type="number"
@@ -33,7 +34,8 @@ export default function SmartSearchForm() {
           className="border-none bg-black text-white focus-visible:ring-0"
         />
       </div>
-      <div className="mb-5 flex flex-1 items-center gap-5">
+
+      <div className="mb-2 flex flex-1 items-center gap-2 md:mb-5 md:gap-5">
         <Input
           placeholder="min year"
           type="number"
@@ -51,7 +53,8 @@ export default function SmartSearchForm() {
           className="border-none bg-black text-white focus-visible:ring-0"
         />
       </div>
-      <div className="flex flex-1 items-center gap-5">
+
+      <div className="flex flex-1 items-center gap-2 md:gap-5">
         <Input
           placeholder="min mileage"
           type="number"
