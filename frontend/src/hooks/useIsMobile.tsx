@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function useIsMobile() {
   const MOBILE_WIDTH = Number(twConfig.theme.screens.sm.replace("px", ""));
-  const [isMobile, setIsMobile] = useState(window.innerWidth < MOBILE_WIDTH);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const resizeFunc = () => setIsMobile(window.innerWidth < MOBILE_WIDTH);
