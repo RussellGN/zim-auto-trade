@@ -8,8 +8,12 @@ export default function ScrollToTop() {
     <Button
       size="icon"
       title="back to top"
-      className="bg-primary-default hover:bg-primary-dark rounded-full text-white shadow"
-      onClick={() => window.scrollTo({ left: 0, top: 0 })}
+      className="rounded-full bg-primary-default text-white shadow hover:bg-primary-dark"
+      onClick={() => {
+        if (typeof window !== "undefined") {
+          window.scrollTo({ left: 0, top: 0 });
+        }
+      }}
     >
       <ArrowUp />
     </Button>
