@@ -16,7 +16,7 @@ export default function SmartSearch() {
       </div>
 
       <div className="w-full px-3 md:w-1/2 md:px-0">
-        <div className="w-full rounded-2xl border border-primary-dark bg-primary-default px-2 py-10 shadow-2xl md:px-10">
+        <div className="w-full rounded-2xl border border-primary-dark bg-primary-default px-2 py-10 text-white shadow-2xl md:px-10">
           <SmartSearchForm />
         </div>
       </div>
