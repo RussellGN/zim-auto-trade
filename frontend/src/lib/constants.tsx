@@ -1,7 +1,7 @@
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import { Potta_One } from "next/font/google";
-import { ListingCategory, ListingFilter } from "./types";
+import { VehicleListingCategory, ListingFilter } from "./types";
 import {
   Bike,
   CalendarArrowUp,
@@ -84,7 +84,7 @@ export const sortOptions = [
   "mileage desc",
 ];
 
-export const categories: ListingCategory[] = [
+export const categories: VehicleListingCategory[] = [
   {
     name: "car",
     icon: <Car />,
