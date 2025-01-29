@@ -7,7 +7,7 @@ export type ListingFilter = {
   icon: ReactNode;
 };
 
-export type ListingCategory = {
+export type VehicleListingCategory = {
   name: string;
   icon: ReactNode;
 };
