@@ -12,7 +12,7 @@ export default function page() {
           <Sidebar />
         </div>
 
-        <div className="col-span-12 border p-5 md:col-span-9">
+        <div className="col-span-12 p-5 md:col-span-9">
           <SearchControls />
           <CategoryControls />
           <Listings />

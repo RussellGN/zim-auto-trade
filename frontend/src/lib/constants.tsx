@@ -65,3 +65,13 @@ export const filters: ListingFilter[] = [
     icon: <CalendarArrowUp />,
   },
 ];
+
+export const sortOptions = [
+  "relevance",
+  "date asc",
+  "date desc",
+  "price asc",
+  "price desc",
+  "mileage asc",
+  "mileage desc",
+];
