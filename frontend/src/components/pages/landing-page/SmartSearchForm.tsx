@@ -6,14 +6,8 @@ export default function SmartSearchForm() {
     <form>
       <h2 className="mb-5 text-center text-2xl text-white">Smart Search</h2>
       <div className="mb-2 flex flex-1 items-center gap-2 md:mb-5 md:gap-5">
-        <Input
-          placeholder="make"
-          className="border-none bg-black text-white focus-visible:ring-0"
-        />
-        <Input
-          placeholder="model"
-          className="border-none bg-black text-white focus-visible:ring-0"
-        />
+        <Input placeholder="make" className="focus-visible:ring-0" />
+        <Input placeholder="model" className="focus-visible:ring-0" />
       </div>
 
       <div className="mb-2 flex flex-1 items-center gap-2 md:mb-5 md:gap-5">
@@ -23,7 +17,7 @@ export default function SmartSearchForm() {
           min={0}
           max={10000000}
           step={1}
-          className="border-none bg-black text-white focus-visible:ring-0"
+          className="focus-visible:ring-0"
         />
         <Input
           placeholder="max price"
@@ -31,7 +25,7 @@ export default function SmartSearchForm() {
           min={0}
           max={10000000}
           step={1}
-          className="border-none bg-black text-white focus-visible:ring-0"
+          className="focus-visible:ring-0"
         />
       </div>
 
@@ -42,7 +36,7 @@ export default function SmartSearchForm() {
           min={1900}
           max={new Date().getFullYear()}
           step={1}
-          className="border-none bg-black text-white focus-visible:ring-0"
+          className="focus-visible:ring-0"
         />
         <Input
           placeholder="max year"
@@ -50,7 +44,7 @@ export default function SmartSearchForm() {
           min={1900}
           max={new Date().getFullYear()}
           step={1}
-          className="border-none bg-black text-white focus-visible:ring-0"
+          className="focus-visible:ring-0"
         />
       </div>
 
@@ -61,7 +55,7 @@ export default function SmartSearchForm() {
           min={0}
           max={1000000}
           step={10}
-          className="border-none bg-black text-white focus-visible:ring-0"
+          className="focus-visible:ring-0"
         />
         <Input
           placeholder="max mileage"
@@ -69,7 +63,7 @@ export default function SmartSearchForm() {
           min={0}
           max={1000000}
           step={10}
-          className="border-none bg-black text-white focus-visible:ring-0"
+          className="focus-visible:ring-0"
         />
       </div>
     </form>
