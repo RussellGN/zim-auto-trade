@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { filters } from "@/lib/constants";
 import Filter from "./Filter";
-import SmartSearchForm from "../landing-page/SmartSearchForm";
-import { Search } from "lucide-react";
 import { SmartSearchDialog } from "./SmartSearchDialog";
 
 export default function Sidebar() {
