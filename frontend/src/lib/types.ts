@@ -6,3 +6,8 @@ export type ListingFilter = {
   values: string[];
   icon: ReactNode;
 };
+
+export type ListingCategory = {
+  name: string;
+  icon: ReactNode;
+};
