@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { heroHeaderFont } from "@/lib/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -15,9 +16,11 @@ export default function Hero() {
         </h1>
 
         <div className="flex justify-center gap-3 md:justify-end">
-          <Button className="bg-primary-light">Browse</Button>
-          <Button className="bg-primary-default text-white">
-            Get offers for your Vehicle!
+          <Button asChild className="bg-primary-light">
+            <Link href="/offers">Browse</Link>
+          </Button>
+          <Button asChild className="bg-primary-default text-white">
+            <Link href="/dashboard/new">Get offers for your Vehicle!</Link>
           </Button>
         </div>
       </div>
