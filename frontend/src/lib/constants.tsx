@@ -1,8 +1,16 @@
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import { Potta_One } from "next/font/google";
-import { ListingFilter } from "./types";
-import { CalendarArrowUp, MapPin } from "lucide-react";
+import { ListingCategory, ListingFilter } from "./types";
+import {
+  Bike,
+  CalendarArrowUp,
+  Car,
+  Caravan,
+  MapPin,
+  Tractor,
+  Truck,
+} from "lucide-react";
 
 export const navLinks = [
   {
@@ -74,4 +82,27 @@ export const sortOptions = [
   "price desc",
   "mileage asc",
   "mileage desc",
+];
+
+export const categories: ListingCategory[] = [
+  {
+    name: "car",
+    icon: <Car />,
+  },
+  {
+    name: "truck",
+    icon: <Truck />,
+  },
+  {
+    name: "motorbike",
+    icon: <Bike />,
+  },
+  {
+    name: "earth-mover",
+    icon: <Tractor />,
+  },
+  {
+    name: "other",
+    icon: <Caravan />,
+  },
 ];
