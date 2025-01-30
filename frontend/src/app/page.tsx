@@ -45,7 +45,7 @@ export default function Home() {
 
           <div>
             <Button className="border-primary-dark bg-white" asChild>
-              <Link href="/signup">Browse vehicles</Link>
+              <Link href="/offers">Browse vehicles</Link>
             </Button>
           </div>
         </div>
