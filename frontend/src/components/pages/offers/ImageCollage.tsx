@@ -24,7 +24,7 @@ export default function ImageCollage({
           alt={coverImage.alt || alt}
           width={800}
           height={450}
-          className="h-auto w-full rounded-s-2xl bg-black object-cover"
+          className={`h-auto w-full ${compact ? "rounded-s-2xl" : "rounded-2xl"} bg-gray-700 object-cover`}
         />
         <div className="absolute left-0 top-0 m-0.5 flex items-center gap-2 rounded rounded-ee-xl rounded-ss-2xl bg-black/50 px-2 py-1 text-sm text-white backdrop-blur">
           <Images size={18} />
@@ -36,10 +36,12 @@ export default function ImageCollage({
         <div className="flex items-center gap-2 overflow-x-auto p-2">
           {images.map((img, index) => (
             <Image
+              key={index}
               src={img.src}
               alt={img.alt || alt}
-              key={index}
-              className="aspect-video w-[5rem] bg-black object-cover"
+              width={800}
+              height={450}
+              className="aspect-video w-[15rem] rounded-lg bg-gray-700 object-cover"
             />
           ))}
         </div>
