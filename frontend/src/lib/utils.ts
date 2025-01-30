@@ -65,3 +65,7 @@ export function getTimeElapsedSince(date: Date | string): string {
     return `${elapsedMinutes} min`;
   }
 }
+
+export function wait(seconds: number) {
+  return new Promise((resolve) => setTimeout(resolve, seconds));
+}
