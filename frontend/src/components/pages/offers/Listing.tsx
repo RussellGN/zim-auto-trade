@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { formatLongNumber } from "@/lib/utils";
 
 export default function Listing({ listing }: { listing: ListingInterface }) {
   return (
@@ -35,12 +36,12 @@ export default function Listing({ listing }: { listing: ListingInterface }) {
 
         <div className="flex items-center gap-2">
           <Tag size={18} />
-          <span>$ {listing.price}</span>
+          <span>$ {formatLongNumber(listing.price)}</span>
         </div>
 
         <div className="flex items-center gap-2">
           <Gauge size={18} />
-          {listing.mileage} km
+          {formatLongNumber(listing.mileage)} km
         </div>
 
         <div className="flex items-center gap-2">
