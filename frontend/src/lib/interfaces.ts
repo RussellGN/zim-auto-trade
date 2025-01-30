@@ -1,4 +1,4 @@
-import { ImageSrc, VehicleListingCategory } from "./types";
+import { ImageSrc } from "./types";
 
 export interface ListerInterface {
   name: string;
@@ -12,10 +12,11 @@ export interface ListingInterface {
   coverImage: ImageSrc;
   name: string;
   slug: string;
-  category: VehicleListingCategory;
+  category: string;
   description: string;
   date: string;
   price: number;
+  features: string[];
   mileage: number;
   location: string;
   viewCount: number;
