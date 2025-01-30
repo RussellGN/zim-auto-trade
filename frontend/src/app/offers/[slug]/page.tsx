@@ -1,35 +1,26 @@
 import { getListing } from "@/actions/listings";
 import ImageCollage from "@/components/pages/offers/ImageCollage";
 import {
-  ArrowRight,
   Bookmark,
-  CircleUser,
   Clock3,
-  Delete,
   Edit,
-  EyeClosed,
   EyeOff,
-  Gauge,
   GaugeCircle,
   Mail,
-  MailWarning,
   MapPin,
   MessageSquareWarning,
-  Send,
   Share,
   Tag,
   Trash2,
   UserCircle,
-  Wrench,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { formatLongNumber, friendlyDate } from "@/lib/utils";
 import Container from "@/components/layout/Container";
 import BackBtn from "@/components/layout/BackBtn";
-import { PropsWithChildren, ReactNode } from "react";
 import DetailSection from "@/components/pages/offers/DetailSection";
-import { categories, vehicleFeatures } from "@/lib/constants";
+import { categories } from "@/lib/constants";
 import { capitalize } from "lodash";
 
 type propTypes = {
