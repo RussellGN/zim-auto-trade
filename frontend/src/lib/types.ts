@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 
 export type ListingFilter = {
@@ -11,3 +12,5 @@ export type VehicleListingCategory = {
   name: string;
   icon: ReactNode;
 };
+
+export type ImageSrc = string | StaticImageData;

@@ -106,3 +106,5 @@ export const categories: VehicleListingCategory[] = [
     icon: <Caravan />,
   },
 ];
+
+export const placeholderImage = "/graphics/placeholderImage.jpeg";

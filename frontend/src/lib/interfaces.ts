@@ -1,5 +1,4 @@
-import { StaticImageData } from "next/image";
-import { VehicleListingCategory } from "./types";
+import { ImageSrc, VehicleListingCategory } from "./types";
 
 export interface ListerInterface {
   name: string;
@@ -9,7 +8,8 @@ export interface ListerInterface {
 }
 
 export interface ListingInterface {
-  images: (StaticImageData | string)[];
+  images: ImageSrc[];
+  coverImage: ImageSrc;
   name: string;
   slug: string;
   category: VehicleListingCategory;
