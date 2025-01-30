@@ -1,74 +1,102 @@
 [
-   {
-      "images": [],
-      "name": "Toyota Corolla 2020",
-      "slug": "toyota-corolla-2020",
-      "category": { "name": "car", "icon": "<Car />" },
-      "description": "A reliable sedan with great fuel efficiency.",
-      "date": "2025-01-29",
-      "price": 15000,
-      "mileage": 30000,
-      "location": "Harare",
-      "viewCount": 123,
-      "lister": {
-         "name": "John's Auto",
-         "slug": "johns-auto",
-         "description": "Reliable cars at great prices.",
-         "location": "Harare"
-      }
-   },
-   {
-      "images": [],
-      "name": "Ford Ranger 2019",
-      "slug": "ford-ranger-2019",
-      "category": { "name": "truck", "icon": "<Truck />" },
-      "description": "A powerful pickup truck for tough jobs.",
-      "date": "2025-01-29",
-      "price": 28000,
-      "mileage": 50000,
-      "location": "Bulawayo",
-      "viewCount": 89,
-      "lister": {
-         "name": "Speedy Motors",
-         "slug": "speedy-motors",
-         "description": "High-performance vehicles for enthusiasts.",
-         "location": "Bulawayo"
-      }
-   },
-   {
-      "images": [],
-      "name": "Honda Civic 2021",
-      "slug": "honda-civic-2021",
-      "category": { "name": "car", "icon": "<Car />" },
-      "description": "Compact and fuel-efficient sedan.",
-      "date": "2025-01-29",
-      "price": 18000,
-      "mileage": 20000,
-      "location": "Mutare",
-      "viewCount": 112,
-      "lister": {
-         "name": "City Wheels",
-         "slug": "city-wheels",
-         "description": "Affordable city cars for daily commuters.",
-         "location": "Harare"
-      }
-   },
-   {
-      "images": [],
-      "name": "Nissan Navara 2020",
-      "slug": "nissan-navara-2020",
-      "category": { "name": "truck", "icon": "<Truck />" },
-      "description": "Rugged pickup with great off-road capabilities.",
-      "date": "2025-01-29",
-      "price": 32000,
-      "mileage": 45000,
-      "location": "Gweru",
-      "viewCount": 98,
-      "lister": {
-         "name": "Heavy Duty Trucks",
-         "slug": "heavy-duty-trucks",
-         "description": "Trucks built for tough jobs.",
-         "location": "Gweru"
-      }
-   }
+  {
+    "images": [
+      "/vehicles/Toyota-Corolla-2020-2.jpg",
+      "/vehicles/Toyota-Corolla-2020-3.webp",
+      "/vehicles/Toyota-Corolla-2020-4.avif",
+      "/vehicles/Toyota-Corolla-2020-5.jpg",
+      "/vehicles/Toyota-Corolla-2020-5.webp"
+    ],
+    "coverImage": "/vehicles/Toyota-Corolla-2020-1.jpg",
+    "name": "Toyota Corolla 2020",
+    "slug": "toyota-corolla-2020",
+    "category": { "name": "car", "icon": "<Car />" },
+    "description": "A reliable sedan with great fuel efficiency.",
+    "date": "2025-01-29",
+    "price": 15000,
+    "mileage": 30000,
+    "location": "Harare",
+    "viewCount": 123,
+    "lister": {
+      "name": "John's Auto",
+      "slug": "johns-auto",
+      "description": "Reliable cars at great prices.",
+      "location": "Harare"
+    }
+  },
+  {
+    "images": [
+      "/vehicles/Ford-Ranger-2019-2.webp",
+      "/vehicles/Ford-Ranger-2019-3.jpg",
+      "/vehicles/Ford-Ranger-2019-4.jpg",
+      "/vehicles/Ford-Ranger-2019-5.webp"
+    ],
+    "coverImage": "/vehicles/Ford-Ranger-2019-1.webp",
+    "name": "Ford Ranger 2019",
+    "slug": "ford-ranger-2019",
+    "category": { "name": "truck", "icon": "<Truck />" },
+    "description": "A powerful pickup truck for tough jobs.",
+    "date": "2025-01-29",
+    "price": 28000,
+    "mileage": 50000,
+    "location": "Bulawayo",
+    "viewCount": 89,
+    "lister": {
+      "name": "Speedy Motors",
+      "slug": "speedy-motors",
+      "description": "High-performance vehicles for enthusiasts.",
+      "location": "Bulawayo"
+    }
+  },
+  {
+    "images": [
+      "/vehicles/Honda-Civic-2021-1.jpg",
+      "/vehicles/Honda-Civic-2021-2.jpg",
+      "/vehicles/Honda-Civic-2021-4.avif",
+      "/vehicles/Honda-Civic-2021-5.jpg",
+      "/vehicles/Honda-Civic-2021-6.jpg",
+      "/vehicles/Honda-Civic-2021-7.jpg",
+      "/vehicles/Honda-Civic-2021-8.jpg"
+    ],
+    "coverImage": "/vehicles/Honda-Civic-2021-3.jpg",
+    "name": "Honda Civic 2021",
+    "slug": "honda-civic-2021",
+    "category": { "name": "car", "icon": "<Car />" },
+    "description": "Compact and fuel-efficient sedan.",
+    "date": "2025-01-29",
+    "price": 18000,
+    "mileage": 20000,
+    "location": "Mutare",
+    "viewCount": 112,
+    "lister": {
+      "name": "City Wheels",
+      "slug": "city-wheels",
+      "description": "Affordable city cars for daily commuters.",
+      "location": "Harare"
+    }
+  },
+  {
+    "images": [
+      "/vehicles/Nissan-Navara-2020-1.webp",
+      "/vehicles/Nissan-Navara-2020-3.avif",
+      "/vehicles/Nissan-Navara-2020-4.jpg",
+      "/vehicles/Nissan-Navara-2020-5.jpg"
+    ],
+    "coverImage": "/vehicles/Nissan-Navara-2020-2.jpg",
+    "name": "Nissan Navara 2020",
+    "slug": "nissan-navara-2020",
+    "category": { "name": "truck", "icon": "<Truck />" },
+    "description": "Rugged pickup with great off-road capabilities.",
+    "date": "2025-01-29",
+    "price": 32000,
+    "mileage": 45000,
+    "location": "Gweru",
+    "viewCount": 98,
+    "lister": {
+      "name": "Heavy Duty Trucks",
+      "slug": "heavy-duty-trucks",
+      "description": "Trucks built for tough jobs.",
+      "location": "Gweru"
+    }
+  }
 ]
