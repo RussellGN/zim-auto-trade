@@ -1,3 +1,4 @@
+import allPossibleVehicleFeatures from "@/sample-data/vehicleFeatures.json";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import { Potta_One } from "next/font/google";
@@ -108,3 +109,5 @@ export const categories: VehicleListingCategory[] = [
 ];
 
 export const placeholderImage = "/graphics/placeholderImage.jpeg";
+
+export const vehicleFeatures = allPossibleVehicleFeatures;
