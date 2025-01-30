@@ -1,15 +1,12 @@
-1. layout offers page
-2. implement offers page
-3. layout offer-view page
-4. implement offer-view page
-5. layout login page
-6. implement login page
-7. layout signup page
-8. implement signup page
-9. layout dashboard page
-10. implement dashboard page
-11. layout offer-form page
-12. implement offer-form page
-13. build api for currently needed functionality
-14. deploy MVP
-15. create features/fixes roadmap
+1. make offers and offer-view page responsive
+2. layout login page
+3. implement login page
+4. layout signup page
+5. implement signup page
+6. layout dashboard page
+7. implement dashboard page
+8. layout offer-form page
+9. implement offer-form page
+10. build api for currently needed functionality
+11. deploy MVP
+12. create features/fixes roadmap
