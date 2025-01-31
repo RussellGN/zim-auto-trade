@@ -1,5 +1,4 @@
 import BackBtn from "@/components/layout/BackBtn";
-import { Button } from "@/components/ui/button";
 import { PropsWithChildren } from "react";
 
 export default function layout({ children }: PropsWithChildren) {
