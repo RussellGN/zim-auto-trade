@@ -34,7 +34,6 @@ export default function page() {
           maxLength={30}
           type="password"
           placeholder="your password"
-          // placeholder="8+ characters (numbers & letters), no spaces"
           required
         />
       </div>

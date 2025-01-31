@@ -12,7 +12,7 @@ export default function page() {
 
       <div className="mb-4">
         <Label className="mb-2 flex items-center gap-2 ps-3" htmlFor="email">
-          <UserCircle size={18} /> Email
+          <UserCircle size={18} /> Your Email
         </Label>
         <Input
           className="w-full border-0 border-b-2"
@@ -25,7 +25,8 @@ export default function page() {
 
       <div className="mb-4">
         <Label className="mb-2 flex items-center gap-2 ps-3" htmlFor="email">
-          <Lock size={18} /> Password
+          <Lock size={18} />
+          Enter a Strong Password
         </Label>
         <Input
           className="w-full border-0 border-b-2"
@@ -33,31 +34,23 @@ export default function page() {
           minLength={8}
           maxLength={30}
           type="password"
-          placeholder="your password"
-          // placeholder="8+ characters (numbers & letters), no spaces"
+          placeholder="8+ characters (numbers & letters), no spaces"
           required
         />
       </div>
 
-      <div className="mb-4 flex justify-between px-4">
+      <div className="mb-4 px-4">
         <Link
-          href="/signup"
+          href="/login"
           className="text-right text-sm text-primary-default underline"
         >
-          Signup
-        </Link>
-
-        <Link
-          href="/forgot-password"
-          className="text-right text-sm text-primary-default underline"
-        >
-          Forgot password?
+          Login
         </Link>
       </div>
 
       <div className="mb-8 flex justify-end">
         <Button type="submit" className="w-full bg-primary-default text-white">
-          Proceed``
+          Proceed
         </Button>
       </div>
 
