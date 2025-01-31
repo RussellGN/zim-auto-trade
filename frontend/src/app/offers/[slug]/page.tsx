@@ -24,16 +24,13 @@ import { categories } from "@/lib/constants";
 import { capitalize } from "lodash";
 
 type propTypes = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
-export default async function page({ params: { slug } }: propTypes) {
+export default async function page({ params }: propTypes) {
+  const slug = (await params).slug;
   const listing = await getListing(slug);
-
   const isOwner = true;
-
   const category = categories.find(
     (category) =>
       category.name.toLowerCase() === listing.category.toLowerCase(),
