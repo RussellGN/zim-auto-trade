@@ -111,3 +111,21 @@ export const categories: VehicleListingCategory[] = [
 export const placeholderImage = "/graphics/placeholderImage.jpeg";
 
 export const vehicleFeatures = allPossibleVehicleFeatures;
+
+export const authProviders = [
+  {
+    name: "google",
+    logo: "google.svg",
+    action: () => {},
+  },
+  {
+    name: "apple",
+    logo: "apple.svg",
+    action: () => {},
+  },
+  {
+    name: "facebook",
+    logo: "facebook.svg",
+    action: () => {},
+  },
+];
