@@ -1,7 +1,7 @@
-import { ImageSrc } from "./types";
+import { AccountType, ImageSrc } from "./types";
 
 export interface ListerInterface {
-  type: "agent" | "dealership" | "individual" | "other";
+  type: AccountType;
   name: string;
   slug: string;
   description: string;
