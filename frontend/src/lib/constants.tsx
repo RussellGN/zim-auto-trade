@@ -1,7 +1,7 @@
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import { Potta_One } from "next/font/google";
-import { VehicleListingCategory, ListingFilter } from "./types";
+import { VehicleListingCategory, ListingFilter, AccountType } from "./types";
 import {
   Bike,
   CalendarArrowUp,
@@ -204,5 +204,19 @@ export const sampleLister: ListerInterface = {
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut debitis deserunt maxime ipsam, architecto cupiditate at aperiam sit voluptates a.",
   location: "Harare",
   image:
-    "https://realtimeuk.com/wp-content/uploads/2019/05/BMW-dealership-photography-auto-dealership-360-tour-company-virtual-tours-for-automotive-dealerships-e1573736938239.jpg",
+    "https://www.autodeal.com.ph/custom/blog-post/header/how-to-tell-if-youre-dealing-with-a-good-sales-agent-60dd890b1664d.jpg",
 };
+
+export const modalDialogSizes = {
+  sm: "425px",
+  md: "700px",
+  lg: "1000px",
+};
+
+export const listerOptions: AccountType[] = [
+  "agent",
+  "dealership",
+  "individual",
+  "company",
+  "other",
+];
