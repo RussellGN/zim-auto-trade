@@ -1,4 +1,4 @@
-import { getLister } from "@/actions/listings";
+import { getLister } from "@/actions";
 import Container from "@/components/layout/Container";
 import DashNavigation from "@/components/pages/dashboard/DashNavigation";
 import DashSidebar from "@/components/pages/dashboard/DashSidebar";
