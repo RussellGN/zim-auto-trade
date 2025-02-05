@@ -1,11 +1,10 @@
-1. implement profile setup modal
-2. implement notifications modal
-3. implement new listing modal
-4. implement settings page
-5. implement pagination
-6. implement confirmation modals
-7. implement saved tab
-8. make site mobile responsive
-9. build api for currently needed functionality
-10. deploy MVP
-11. create features/fixes roadmap
+1. implement new listing modal
+2. implement settings page
+3. implement pagination
+4. implement confirmation modals
+5. implement saved tab
+6. make site mobile responsive
+7. put icon size into constants file
+8. build api for currently needed functionality
+9. deploy MVP
+10. create features/fixes roadmap
