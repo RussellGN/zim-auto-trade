@@ -1,13 +1,13 @@
-import useListings from "@/hooks/server-state/useListings";
 import Listing from "./Listing";
+import { getListersListings, getListings } from "@/actions";
 
-export default function Listings() {
-  const { listings } = useListings();
+export default async function Listings({ onDash }: { onDash?: boolean }) {
+  const listings = onDash ? await getListersListings() : await getListings();
 
   return (
     <div>
       {listings.map((listing) => (
-        <Listing key={listing.slug} listing={listing} />
+        <Listing key={listing.slug} listing={listing} onDash={onDash} />
       ))}
     </div>
   );

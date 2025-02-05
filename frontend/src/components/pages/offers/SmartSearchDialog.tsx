@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Search } from "lucide-react";
 import SmartSearchForm from "../landing-page/SmartSearchForm";
+import { modalDialogSizes } from "@/lib/constants";
 
 export function SmartSearchDialog() {
   return (
@@ -19,7 +20,7 @@ export function SmartSearchDialog() {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className="bg-white sm:max-w-[425px]">
+      <DialogContent className={`bg-white sm:max-w-[${modalDialogSizes.sm}]`}>
         <DialogHeader>
           <DialogTitle>Smart Search</DialogTitle>
           <DialogDescription>

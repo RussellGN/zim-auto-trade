@@ -5,7 +5,7 @@ import UserNavigation from "./UserNavigation";
 import Logo from "./Logo";
 
 export default function Navbar() {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-primary-default bg-white px-3 py-2 shadow-lg">

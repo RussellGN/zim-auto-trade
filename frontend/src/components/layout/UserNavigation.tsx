@@ -1,22 +1,17 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { sampleLister } from "@/lib/constants";
 import Link from "next/link";
 import React from "react";
 
 export default function UserNavigation() {
-  const user = {
-    name: "Russell Gundani",
-    slug: "russell-gundani-1",
-    image: "https://github.com/shadcn.png",
-  };
-
   return (
     <Link
-      href={`/dashboard/${user.slug}`}
-      className="text-primary-default hover:text-primary-light group flex items-center gap-3 font-semibold transition-all"
+      href={`/dashboard`}
+      className="group flex items-center gap-3 font-semibold text-primary-default transition-all hover:text-primary-light"
     >
-      <span className="hidden sm:inline">{user.name}</span>
-      <Avatar className="bg-primary-light border-primary-default group-hover:border-primary-light border-4 transition-all">
-        <AvatarImage src={user.image} />
+      <span className="hidden sm:inline">{sampleLister.name}</span>
+      <Avatar className="border-4 border-primary-default bg-primary-light transition-all group-hover:border-primary-light">
+        <AvatarImage src={sampleLister.image} />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
     </Link>

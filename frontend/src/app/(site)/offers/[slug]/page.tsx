@@ -1,4 +1,4 @@
-import { getListing } from "@/actions/listings";
+import { getListing } from "@/actions";
 import ImageCollage from "@/components/pages/offers/ImageCollage";
 import {
   Bookmark,

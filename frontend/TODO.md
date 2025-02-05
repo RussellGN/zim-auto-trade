@@ -1,8 +1,10 @@
-1. layout dashboard page
-2. implement dashboard page
-3. layout offer-form page
-4. implement offer-form page
-5. make site mobile responsive
-6. build api for currently needed functionality
-7. deploy MVP
-8. create features/fixes roadmap
+1. implement new listing modal
+2. implement settings page
+3. implement pagination
+4. implement confirmation modals
+5. implement saved tab
+6. make site mobile responsive
+7. put icon size into constants file
+8. build api for currently needed functionality
+9. deploy MVP
+10. create features/fixes roadmap

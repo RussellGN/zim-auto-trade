@@ -29,7 +29,7 @@ export default function ImageCollage({
           alt={imageOnView.alt || alt}
           width={800}
           height={450}
-          className={`h-auto w-full ${compact ? "rounded-s-2xl" : "rounded-2xl"} bg-gray-700 object-cover`}
+          className={`aspect-video w-full ${compact ? "rounded-s-2xl" : "rounded-2xl"} bg-gray-700 object-cover`}
         />
         <div className="absolute left-0 top-0 m-0.5 flex items-center gap-2 rounded rounded-ee-xl rounded-ss-2xl bg-black/50 px-2 py-1 text-sm text-white backdrop-blur">
           <Images size={18} />
@@ -47,7 +47,7 @@ export default function ImageCollage({
               alt={img.alt || alt}
               width={800}
               height={450}
-              className={`"w-[16rem] h-[9rem] cursor-pointer rounded-lg border-4 bg-gray-700 object-cover hover:border-primary-default ${imageOnView.src === img.src ? "border-primary-default" : "border-transparent"}"`}
+              className={`h-[9rem] w-[16rem] cursor-pointer rounded-lg border-4 bg-gray-700 object-cover hover:border-primary-default ${imageOnView.src === img.src ? "border-primary-default" : "border-transparent"}`}
             />
           ))}
         </div>

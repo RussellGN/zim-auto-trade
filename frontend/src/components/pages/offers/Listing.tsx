@@ -11,8 +11,14 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { formatLongNumber } from "@/lib/utils";
+import ListerListingActions from "./ListerListingActions";
 
-export default function Listing({ listing }: { listing: ListingInterface }) {
+type propTypes = {
+  listing: ListingInterface;
+  onDash?: boolean;
+};
+
+export default function Listing({ listing, onDash }: propTypes) {
   return (
     <div className="my-5 flex rounded-2xl border border-primary-light bg-white shadow-md">
       <div className="w-1/2">
@@ -64,15 +70,19 @@ export default function Listing({ listing }: { listing: ListingInterface }) {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2">
-            <Link
-              href={`/${listing.lister.slug}`}
-              className="flex items-center justify-center gap-2 text-primary-default"
-            >
-              <CircleUser size={18} />
-              {listing.lister.name}
-            </Link>
-          </div>
+          {onDash ? (
+            <ListerListingActions listing={listing} />
+          ) : (
+            <div className="flex items-center gap-2">
+              <Link
+                href={`/${listing.lister.slug}`}
+                className="flex items-center justify-center gap-2 text-primary-default"
+              >
+                <CircleUser size={18} />
+                {listing.lister.name}
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
