@@ -3,6 +3,7 @@
 import { sampleLister } from "@/lib/constants";
 import { wait } from "@/lib/utils";
 import { sampleListings } from "@/sample-data/listings";
+import { sampleNotifications } from "@/sample-data/notifications";
 
 export async function getListing(slug: string) {
   await wait(1);
@@ -23,6 +24,10 @@ export async function getListersListings() {
 
 export async function getLister() {
   await wait(1);
-
   return sampleLister;
+}
+
+export async function getNotifications() {
+  await wait(1);
+  return sampleNotifications;
 }
