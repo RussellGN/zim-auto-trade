@@ -1,10 +1,12 @@
 import { ImageSrc } from "./types";
 
 export interface ListerInterface {
+  type: "agent" | "dealership" | "individual" | "other";
   name: string;
   slug: string;
   description: string;
   location: string;
+  image?: string;
 }
 
 export interface ListingInterface {
