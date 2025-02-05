@@ -1,5 +1,5 @@
 import Listing from "./Listing";
-import { getListersListings, getListings } from "@/actions/listings";
+import { getListersListings, getListings } from "@/actions";
 
 export default async function Listings({ onDash }: { onDash?: boolean }) {
   const listings = onDash ? await getListersListings() : await getListings();
