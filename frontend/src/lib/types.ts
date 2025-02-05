@@ -21,3 +21,10 @@ export type AccountType =
   | "individual"
   | "company"
   | "other";
+
+export type NotificationType =
+  | "new_lead"
+  | "price_update"
+  | "trade_offer"
+  | "message"
+  | "system";
