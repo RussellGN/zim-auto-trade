@@ -8,12 +8,33 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Plus } from "lucide-react";
+import {
+  Boxes,
+  Calendar1,
+  CircleDollarSign,
+  GaugeCircle,
+  Info,
+  MapPin,
+  Plus,
+  Shield,
+  ShieldEllipsis,
+} from "lucide-react";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import useNewListing from "@/hooks/component-hooks/useNewListing";
 import ImageCollage from "../offers/ImageCollage";
 import FieldSet from "@/components/general/FieldSet";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { categories } from "@/lib/constants";
+import { Textarea } from "@/components/ui/textarea";
+import FeaturesSelector from "./FeaturesSelector";
 
 export default function NewListing() {
   const { images, onImageChange } = useNewListing();
@@ -37,7 +58,7 @@ export default function NewListing() {
         </DialogHeader>
 
         <form>
-          <div className="grid w-[80vw] grid-cols-12 items-start justify-between gap-3">
+          <div className="grid w-[80vw] grid-cols-12 justify-between gap-3 py-5">
             <FieldSet
               legend="Images"
               className="col-span-4"
@@ -63,9 +84,159 @@ export default function NewListing() {
               />
             </FieldSet>
 
-            <FieldSet legend="General Info" className="col-span-4"></FieldSet>
+            <FieldSet legend="General Info" className="col-span-4">
+              <div className="mb-1 flex items-center justify-between gap-4">
+                <Label className="flex items-center gap-1" htmlFor="make">
+                  <Shield size={16} /> Make
+                </Label>
 
-            <FieldSet legend="Extra Info" className="col-span-4"></FieldSet>
+                <Input
+                  className="max-w-[65%] bg-[whitesmoke]"
+                  id="make"
+                  name="make"
+                  maxLength={30}
+                  placeholder="e.g Nissan"
+                  required
+                />
+              </div>
+
+              <div className="mb-1 flex items-center justify-between gap-4">
+                <Label className="flex items-center gap-1" htmlFor="model">
+                  <ShieldEllipsis size={16} /> Model
+                </Label>
+
+                <Input
+                  className="max-w-[65%] bg-[whitesmoke]"
+                  id="model"
+                  name="model"
+                  maxLength={30}
+                  placeholder="e.g X-Trail"
+                  required
+                />
+              </div>
+
+              <div className="mb-1 flex items-center justify-between gap-4">
+                <Label className="flex items-center gap-1" htmlFor="year">
+                  <Calendar1 size={16} /> Year
+                </Label>
+
+                <Input
+                  className="max-w-[65%] bg-[whitesmoke]"
+                  id="year"
+                  type="number"
+                  step={1}
+                  max={new Date().getFullYear()}
+                  min={1900}
+                  name="year"
+                  placeholder="year released"
+                  required
+                />
+              </div>
+
+              <div className="mb-1 flex items-center justify-between gap-4">
+                <Label className="flex items-center gap-1" htmlFor="category">
+                  <Boxes size={16} /> Category
+                </Label>
+
+                <Select required name="category">
+                  <SelectTrigger className="max-w-[65%] bg-[whitesmoke] transition-all">
+                    <SelectValue placeholder="Category" />
+                  </SelectTrigger>
+
+                  <SelectContent className="mt-3 rounded-2xl bg-white">
+                    {categories.map((category) => (
+                      <SelectItem
+                        key={category.name}
+                        value={category.name}
+                        className="capitalize"
+                      >
+                        <div className="flex items-center gap-2">
+                          {category.icon}
+                          {category.name}
+                        </div>
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="mb-1 flex items-center justify-between gap-4">
+                <Label className="flex items-center gap-1" htmlFor="price">
+                  <CircleDollarSign size={16} /> Price
+                </Label>
+
+                <Input
+                  className="max-w-[65%] bg-[whitesmoke]"
+                  id="price"
+                  type="number"
+                  step={1}
+                  max={100000000}
+                  min={0}
+                  name="price"
+                  placeholder="price in USD"
+                  required
+                />
+              </div>
+
+              <div className="mb-1 flex items-center justify-between gap-4">
+                <Label className="flex items-center gap-1" htmlFor="mileage">
+                  <GaugeCircle size={16} /> Mileage
+                </Label>
+
+                <Input
+                  className="max-w-[65%] bg-[whitesmoke]"
+                  id="mileage"
+                  type="number"
+                  step={1}
+                  max={100000000}
+                  min={0}
+                  name="mileage"
+                  placeholder="mileage in Kilometers"
+                  required
+                />
+              </div>
+
+              <div className="mb-1 flex items-center justify-between gap-4">
+                <Label className="flex items-center gap-1" htmlFor="location">
+                  <MapPin size={16} /> Location
+                </Label>
+
+                <Input
+                  className="max-w-[65%] bg-[whitesmoke]"
+                  id="location"
+                  name="location"
+                  maxLength={30}
+                  placeholder="city/town, street"
+                  required
+                />
+              </div>
+            </FieldSet>
+
+            <FieldSet legend="Further Info" className="col-span-4">
+              <div className="mb-1">
+                <Label
+                  className="mb-3 flex items-center gap-1"
+                  htmlFor="description"
+                >
+                  <Info size={16} /> Description
+                </Label>
+
+                <Textarea
+                  className="w-full bg-[whitesmoke]"
+                  rows={10}
+                  id="description"
+                  name="description"
+                  placeholder="give more details about the car"
+                  minLength={10}
+                  maxLength={800}
+                  required
+                />
+              </div>
+
+              <div>
+                <FeaturesSelector />
+              </div>
+            </FieldSet>
           </div>
         </form>
       </DialogContent>
