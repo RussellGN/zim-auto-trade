@@ -25,8 +25,10 @@ export default function Listing({ listing, onDash }: propTypes) {
         <ImageCollage
           compact
           alt={listing.name}
-          coverImage={{ src: listing.coverImage }}
-          images={listing.images.map((img) => ({ src: img }))}
+          images={[
+            { src: listing.coverImage },
+            ...listing.images.map((img) => ({ src: img })),
+          ]}
         />
       </div>
 

@@ -28,3 +28,8 @@ export type NotificationType =
   | "trade_offer"
   | "message"
   | "system";
+
+export type CustomImageProps = {
+  src: ImageSrc;
+  alt?: string;
+};

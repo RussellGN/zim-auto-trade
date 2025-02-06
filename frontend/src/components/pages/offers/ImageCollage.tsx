@@ -1,34 +1,31 @@
 "use client";
 
-import { placeholderImage } from "@/lib/constants";
-import { ImageSrc } from "@/lib/types";
-import { cn } from "@/lib/utils";
-import { Images } from "lucide-react";
-import Image from "next/image";
+import { CustomImageProps } from "@/lib/types";
 import { useState } from "react";
+import { Images } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type propTypes = {
-  coverImage: { src: ImageSrc | undefined; alt?: string };
-  images: { src: ImageSrc; alt?: string }[];
+  images: CustomImageProps[];
   alt: string;
   compact?: boolean;
-  imgsClassname: string;
+  imgsClassname?: string;
 };
 
 export default function ImageCollage({
-  coverImage,
   images,
   alt,
   compact,
   imgsClassname,
 }: propTypes) {
-  const [imageOnView, setImageOnView] = useState(coverImage);
+  const [imageOnView, setImageOnView] = useState(images[0]);
 
   return (
     <div>
       <div className="relative">
         <Image
-          src={imageOnView.src || placeholderImage}
+          src={imageOnView.src}
           alt={imageOnView.alt || alt}
           width={800}
           height={450}
@@ -42,11 +39,11 @@ export default function ImageCollage({
 
       {!compact && (
         <div className="flex items-center gap-2 overflow-x-auto p-2">
-          {[coverImage, ...images].map((img, index) => (
+          {images.map((img, index) => (
             <Image
               onClick={() => setImageOnView(img)}
               key={index}
-              src={img.src || placeholderImage}
+              src={img.src}
               alt={img.alt || alt}
               width={800}
               height={450}

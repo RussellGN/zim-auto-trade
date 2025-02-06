@@ -49,8 +49,10 @@ export default async function page({ params }: propTypes) {
           <div className="w-1/2">
             <ImageCollage
               alt={listing.name}
-              coverImage={{ src: listing.coverImage }}
-              images={listing.images.map((img) => ({ src: img }))}
+              images={[
+                { src: listing.coverImage },
+                ...listing.images.map((img) => ({ src: img })),
+              ]}
             />
           </div>
 
