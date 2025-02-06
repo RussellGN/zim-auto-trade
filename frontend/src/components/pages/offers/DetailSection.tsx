@@ -7,17 +7,10 @@ type propTypes = {
   className?: string;
 };
 
-export default function DetailSection({
-  title,
-  children,
-  className,
-}: propTypes) {
+export default function DetailSection({ title, children, className }: propTypes) {
   return (
     <section
-      className={cn(
-        "rounded-xl border border-primary-light bg-white p-4 shadow-md",
-        className,
-      )}
+      className={cn("rounded-xl border border-primary-light bg-white p-4 shadow-md", className)}
     >
       <h2 className="mb-3 font-bold capitalize text-gray-800">{title}</h2>
 

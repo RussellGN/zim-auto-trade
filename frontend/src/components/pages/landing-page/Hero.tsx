@@ -10,8 +10,8 @@ export default function Hero() {
         <h1
           className={`mb-5 text-center text-3xl text-gray-700 md:mb-8 md:text-right md:text-4xl ${heroHeaderFont.className}`}
         >
-          <span className="text-primary-light"> Buy & Sell</span> <br /> New and
-          Used Vehicles <br />
+          <span className="text-primary-light"> Buy & Sell</span> <br /> New and Used Vehicles{" "}
+          <br />
           <span className="text-primary-light"> Nation-wide</span>
         </h1>
 

@@ -11,11 +11,7 @@ type propTypes = {
   className?: string;
 };
 
-export default function ExpandableText({
-  children,
-  showChars = 20,
-  className,
-}: propTypes) {
+export default function ExpandableText({ children, showChars = 20, className }: propTypes) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   function viewNotification() {
@@ -34,9 +30,7 @@ export default function ExpandableText({
         className="flex items-center gap-1 p-0 text-primary-default"
       >
         {isExpanded ? "close" : "view"}
-        <ChevronDown
-          className={`transition-all ${isExpanded ? "rotate-180" : ""}`}
-        />
+        <ChevronDown className={`transition-all ${isExpanded ? "rotate-180" : ""}`} />
       </Button>
     </p>
   );

@@ -22,10 +22,7 @@ export default function Navbar() {
               <Button className="bg-primary-default text-white" asChild>
                 <Link href="/login">Login</Link>
               </Button>
-              <Button
-                className="hidden bg-primary-light text-white sm:inline"
-                asChild
-              >
+              <Button className="hidden bg-primary-light text-white sm:inline" asChild>
                 <Link href="/signup">Signup</Link>
               </Button>
             </>

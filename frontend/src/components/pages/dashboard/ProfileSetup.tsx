@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -23,7 +24,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import DisplayPhoto from "./DisplayPhoto";
+import ChangeablePhoto from "./ChangeablePhoto";
+import FieldSet from "@/components/general/FieldSet";
 
 type proptypes = {
   isEditing?: boolean;
@@ -32,14 +34,9 @@ type proptypes = {
 
 export default function ProfileSetup({ lister }: proptypes) {
   const [isEditing, setIsEditing] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  function onOpenChange(open: boolean) {
-    setIsOpen(open);
-  }
 
   return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
+    <Dialog>
       <DialogTrigger onClick={() => setIsEditing(true)} asChild>
         <Button variant="outline" className="border border-slate-700 bg-white">
           Edit Profile
@@ -47,19 +44,12 @@ export default function ProfileSetup({ lister }: proptypes) {
         </Button>
       </DialogTrigger>
 
-      <DialogContent
-        onOpenAutoFocus={(e) => e.preventDefault()}
-        className={`bg-white sm:max-w-[${modalDialogSizes.md}]`}
-      >
+      <DialogContent className={`bg-white sm:max-w-[${modalDialogSizes.md}]`}>
         <DialogHeader>
-          <DialogTitle>
-            {isEditing ? "Edit Profile" : "Profile Setup"}
-          </DialogTitle>
+          <DialogTitle>{isEditing ? "Edit Profile" : "Profile Setup"}</DialogTitle>
 
           <DialogDescription>
-            {isEditing
-              ? "Make changes to your profile"
-              : "Lets setup your profile"}
+            {isEditing ? "Make changes to your profile" : "Lets setup your profile"}
           </DialogDescription>
         </DialogHeader>
 
@@ -67,31 +57,25 @@ export default function ProfileSetup({ lister }: proptypes) {
           className="my-5"
           onSubmit={(e) => {
             e.preventDefault();
-            setIsOpen(false);
           }}
         >
           <div className="flex items-center justify-between gap-5 px-3">
-            <DisplayPhoto lister={lister} imgClassName="w-[10rem]" />
+            <ChangeablePhoto lister={lister} name="display_photo" imgClassName="w-[10rem]" />
 
             <div className="flex items-start gap-2">
               <div>
                 <Info size={18} className="text-info-dark" />
               </div>
               <p className="-mt-1.5 max-w-[20rem] text-slate-700">
-                Choose a clear and professional photo that represents you or
-                your dealership (1x1 aspect ratio)
+                Choose a clear and professional photo that represents you or your dealership (1x1
+                aspect ratio)
               </p>
             </div>
           </div>
 
-          <fieldset className="flex flex-1 flex-col gap-4 rounded-lg border border-slate-400 p-5">
-            <legend className="mx-4 px-2">Details</legend>
-
+          <FieldSet legend="Details">
             <div className="mb-2 flex items-center justify-between gap-4">
-              <Label
-                className="mb-2 flex items-center gap-2 ps-3"
-                htmlFor="name"
-              >
+              <Label className="flex items-center gap-2 ps-3" htmlFor="name">
                 <UserCircle size={18} /> Name
               </Label>
 
@@ -106,10 +90,7 @@ export default function ProfileSetup({ lister }: proptypes) {
             </div>
 
             <div className="mb-2 flex items-center justify-between gap-4">
-              <Label
-                className="mb-2 flex items-center gap-2 ps-3"
-                htmlFor="type"
-              >
+              <Label className="flex items-center gap-2 ps-3" htmlFor="type">
                 <Users size={18} /> Type
               </Label>
 
@@ -120,11 +101,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
                 <SelectContent className="mt-3 rounded-2xl bg-white">
                   {listerOptions.map((option) => (
-                    <SelectItem
-                      key={option}
-                      value={option}
-                      className="capitalize"
-                    >
+                    <SelectItem key={option} value={option} className="capitalize">
                       {option}
                     </SelectItem>
                   ))}
@@ -133,10 +110,7 @@ export default function ProfileSetup({ lister }: proptypes) {
             </div>
 
             <div className="mb-2 flex items-center justify-between gap-4">
-              <Label
-                className="mb-2 flex items-center gap-2 ps-3"
-                htmlFor="location"
-              >
+              <Label className="flex items-center gap-2 ps-3" htmlFor="location">
                 <MapPin size={18} /> Location
               </Label>
 
@@ -151,10 +125,7 @@ export default function ProfileSetup({ lister }: proptypes) {
             </div>
 
             <div className="mb-2">
-              <Label
-                className="mb-3 flex items-center gap-2 ps-3"
-                htmlFor="description"
-              >
+              <Label className="mb-3 flex items-center gap-2 ps-3" htmlFor="description">
                 <Info size={18} /> Description
               </Label>
 
@@ -168,12 +139,14 @@ export default function ProfileSetup({ lister }: proptypes) {
                 required
               />
             </div>
-          </fieldset>
+          </FieldSet>
 
           <div className="mt-5 px-5 text-right">
-            <Button type="submit" className="bg-primary-default text-white">
-              Save
-            </Button>
+            <DialogClose asChild>
+              <Button type="submit" className="bg-primary-default text-white">
+                Save
+              </Button>
+            </DialogClose>
           </div>
         </form>
       </DialogContent>

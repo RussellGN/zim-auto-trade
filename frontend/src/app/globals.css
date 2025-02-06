@@ -21,7 +21,7 @@
   }
 }
 
-.display_photo_input::after {
+.changeable_photo_input::after {
   content: "";
   position: absolute;
   top: 0;
