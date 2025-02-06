@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import ChangeablePhoto from "./ChangeablePhoto";
+import FieldSet from "@/components/general/FieldSet";
 
 type proptypes = {
   isEditing?: boolean;
@@ -80,9 +81,7 @@ export default function ProfileSetup({ lister }: proptypes) {
             </div>
           </div>
 
-          <fieldset className="flex flex-1 flex-col gap-4 rounded-lg border border-slate-400 p-5">
-            <legend className="mx-4 px-2">Details</legend>
-
+          <FieldSet legend="Details">
             <div className="mb-2 flex items-center justify-between gap-4">
               <Label
                 className="mb-2 flex items-center gap-2 ps-3"
@@ -164,7 +163,7 @@ export default function ProfileSetup({ lister }: proptypes) {
                 required
               />
             </div>
-          </fieldset>
+          </FieldSet>
 
           <div className="mt-5 px-5 text-right">
             <DialogClose asChild>
