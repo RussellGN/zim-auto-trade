@@ -63,7 +63,11 @@ export default function ProfileSetup({ lister }: proptypes) {
           }}
         >
           <div className="flex items-center justify-between gap-5 px-3">
-            <ChangeablePhoto lister={lister} imgClassName="w-[10rem]" />
+            <ChangeablePhoto
+              lister={lister}
+              name="display_photo"
+              imgClassName="w-[10rem]"
+            />
 
             <div className="flex items-start gap-2">
               <div>
