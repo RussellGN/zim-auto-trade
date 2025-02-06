@@ -24,7 +24,8 @@ export default function ChangeablePhoto({
   lister,
   name,
 }: propTypes) {
-  const { imgPreviewSrc, onImageChange } = useChangeablePhoto(standalone);
+  const { inputRef, imgPreviewSrc, handleClick, onImageChange } =
+    useChangeablePhoto(standalone);
 
   return (
     <div className={cn("relative mb-10", className)}>
@@ -39,6 +40,8 @@ export default function ChangeablePhoto({
         )}
       />
       <Button
+        onClick={handleClick}
+        type="button"
         size="icon"
         className="absolute bottom-0 right-0 z-10 -translate-x-1/4 translate-y-1/4 rounded-full border-4 border-[whitesmoke] bg-slate-800 text-white shadow-lg"
       >
@@ -47,7 +50,8 @@ export default function ChangeablePhoto({
       <input
         type="file"
         title="change image"
-        className="changeable_photo_input absolute bottom-0 right-0 z-10 h-9 w-9 -translate-x-1/4 translate-y-1/4 cursor-pointer rounded-full opacity-0"
+        ref={inputRef}
+        hidden
         accept="image/jpg, image/jpeg, image/png"
         name={name || "changeable_photo"}
         onChange={onImageChange}

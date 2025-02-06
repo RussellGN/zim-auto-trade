@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -32,14 +33,9 @@ type proptypes = {
 
 export default function ProfileSetup({ lister }: proptypes) {
   const [isEditing, setIsEditing] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  function onOpenChange(open: boolean) {
-    setIsOpen(open);
-  }
 
   return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
+    <Dialog>
       <DialogTrigger onClick={() => setIsEditing(true)} asChild>
         <Button variant="outline" className="border border-slate-700 bg-white">
           Edit Profile
@@ -47,10 +43,7 @@ export default function ProfileSetup({ lister }: proptypes) {
         </Button>
       </DialogTrigger>
 
-      <DialogContent
-        onOpenAutoFocus={(e) => e.preventDefault()}
-        className={`bg-white sm:max-w-[${modalDialogSizes.md}]`}
-      >
+      <DialogContent className={`bg-white sm:max-w-[${modalDialogSizes.md}]`}>
         <DialogHeader>
           <DialogTitle>
             {isEditing ? "Edit Profile" : "Profile Setup"}
@@ -67,7 +60,6 @@ export default function ProfileSetup({ lister }: proptypes) {
           className="my-5"
           onSubmit={(e) => {
             e.preventDefault();
-            setIsOpen(false);
           }}
         >
           <div className="flex items-center justify-between gap-5 px-3">
@@ -171,9 +163,11 @@ export default function ProfileSetup({ lister }: proptypes) {
           </fieldset>
 
           <div className="mt-5 px-5 text-right">
-            <Button type="submit" className="bg-primary-default text-white">
-              Save
-            </Button>
+            <DialogClose asChild>
+              <Button type="submit" className="bg-primary-default text-white">
+                Save
+              </Button>
+            </DialogClose>
           </div>
         </form>
       </DialogContent>
