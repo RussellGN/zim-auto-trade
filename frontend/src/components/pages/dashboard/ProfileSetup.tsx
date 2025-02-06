@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import DisplayPhoto from "./DisplayPhoto";
+import ChangeablePhoto from "./ChangeablePhoto";
 
 type proptypes = {
   isEditing?: boolean;
@@ -71,7 +71,7 @@ export default function ProfileSetup({ lister }: proptypes) {
           }}
         >
           <div className="flex items-center justify-between gap-5 px-3">
-            <DisplayPhoto lister={lister} imgClassName="w-[10rem]" />
+            <ChangeablePhoto lister={lister} imgClassName="w-[10rem]" />
 
             <div className="flex items-start gap-2">
               <div>

@@ -1,12 +1,12 @@
 import { ListerInterface } from "@/lib/interfaces";
 import { MapPin, UserCircle, Users } from "lucide-react";
 import ProfileSetup from "./ProfileSetup";
-import DisplayPhoto from "./DisplayPhoto";
+import ChangeablePhoto from "./ChangeablePhoto";
 
 export default function DashSidebar({ lister }: { lister: ListerInterface }) {
   return (
     <aside className="sticky top-0 px-5 py-10">
-      <DisplayPhoto lister={lister} standalone />
+      <ChangeablePhoto lister={lister} standalone />
 
       <div className="mb-10 flex flex-1 flex-col gap-4">
         <div className="flex items-center gap-2">

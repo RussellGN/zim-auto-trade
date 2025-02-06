@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function useDisplayPhoto(standalone: boolean | undefined) {
+export default function useChangeablePhoto(standalone: boolean | undefined) {
   const [imgPreviewSrc, setImgPreviewSrc] = useState<string | undefined>(
     undefined,
   );
