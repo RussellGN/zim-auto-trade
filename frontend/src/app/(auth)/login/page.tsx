@@ -39,17 +39,11 @@ export default function page() {
       </div>
 
       <div className="mb-4 flex justify-between px-4">
-        <Link
-          href="/signup"
-          className="text-right text-sm text-primary-default underline"
-        >
+        <Link href="/signup" className="text-right text-sm text-primary-default underline">
           Signup
         </Link>
 
-        <Link
-          href="/forgot-password"
-          className="text-right text-sm text-primary-default underline"
-        >
+        <Link href="/forgot-password" className="text-right text-sm text-primary-default underline">
           Forgot password?
         </Link>
       </div>

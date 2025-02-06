@@ -13,11 +13,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export default function FeaturesSelector() {
   const [open, setOpen] = useState(false);
@@ -43,35 +39,19 @@ export default function FeaturesSelector() {
           </small>
         ))}
 
-        <input
-          type="hidden"
-          name="features"
-          value={selectedFeatures.join(";")}
-        />
+        <input type="hidden" name="features" value={selectedFeatures.join(";")} />
       </>
 
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <Button
-            type="button"
-            size="icon"
-            role="combobox"
-            aria-expanded={open}
-          >
+          <Button type="button" size="icon" role="combobox" aria-expanded={open}>
             <Plus size={18} />
           </Button>
         </PopoverTrigger>
 
-        <PopoverContent
-          className="w-[200px] bg-white p-0"
-          side="right"
-          align="start"
-        >
+        <PopoverContent className="w-[200px] bg-white p-0" side="right" align="start">
           <Command>
-            <CommandInput
-              placeholder="Type feature..."
-              onKeyDown={handleKeyDown}
-            />
+            <CommandInput placeholder="Type feature..." onKeyDown={handleKeyDown} />
 
             <CommandList>
               <CommandEmpty>0 found, press enter to add</CommandEmpty>

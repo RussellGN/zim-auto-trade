@@ -15,19 +15,9 @@ export type VehicleListingCategory = {
 
 export type ImageSrc = string | StaticImageData;
 
-export type AccountType =
-  | "agent"
-  | "dealership"
-  | "individual"
-  | "company"
-  | "other";
+export type AccountType = "agent" | "dealership" | "individual" | "company" | "other";
 
-export type NotificationType =
-  | "new_lead"
-  | "price_update"
-  | "trade_offer"
-  | "message"
-  | "system";
+export type NotificationType = "new_lead" | "price_update" | "trade_offer" | "message" | "system";
 
 export type CustomImageProps = {
   src: ImageSrc;

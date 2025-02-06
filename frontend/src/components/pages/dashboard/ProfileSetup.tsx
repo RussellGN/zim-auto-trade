@@ -46,14 +46,10 @@ export default function ProfileSetup({ lister }: proptypes) {
 
       <DialogContent className={`bg-white sm:max-w-[${modalDialogSizes.md}]`}>
         <DialogHeader>
-          <DialogTitle>
-            {isEditing ? "Edit Profile" : "Profile Setup"}
-          </DialogTitle>
+          <DialogTitle>{isEditing ? "Edit Profile" : "Profile Setup"}</DialogTitle>
 
           <DialogDescription>
-            {isEditing
-              ? "Make changes to your profile"
-              : "Lets setup your profile"}
+            {isEditing ? "Make changes to your profile" : "Lets setup your profile"}
           </DialogDescription>
         </DialogHeader>
 
@@ -64,19 +60,15 @@ export default function ProfileSetup({ lister }: proptypes) {
           }}
         >
           <div className="flex items-center justify-between gap-5 px-3">
-            <ChangeablePhoto
-              lister={lister}
-              name="display_photo"
-              imgClassName="w-[10rem]"
-            />
+            <ChangeablePhoto lister={lister} name="display_photo" imgClassName="w-[10rem]" />
 
             <div className="flex items-start gap-2">
               <div>
                 <Info size={18} className="text-info-dark" />
               </div>
               <p className="-mt-1.5 max-w-[20rem] text-slate-700">
-                Choose a clear and professional photo that represents you or
-                your dealership (1x1 aspect ratio)
+                Choose a clear and professional photo that represents you or your dealership (1x1
+                aspect ratio)
               </p>
             </div>
           </div>
@@ -109,11 +101,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
                 <SelectContent className="mt-3 rounded-2xl bg-white">
                   {listerOptions.map((option) => (
-                    <SelectItem
-                      key={option}
-                      value={option}
-                      className="capitalize"
-                    >
+                    <SelectItem key={option} value={option} className="capitalize">
                       {option}
                     </SelectItem>
                   ))}
@@ -122,10 +110,7 @@ export default function ProfileSetup({ lister }: proptypes) {
             </div>
 
             <div className="mb-2 flex items-center justify-between gap-4">
-              <Label
-                className="flex items-center gap-2 ps-3"
-                htmlFor="location"
-              >
+              <Label className="flex items-center gap-2 ps-3" htmlFor="location">
                 <MapPin size={18} /> Location
               </Label>
 
@@ -140,10 +125,7 @@ export default function ProfileSetup({ lister }: proptypes) {
             </div>
 
             <div className="mb-2">
-              <Label
-                className="mb-3 flex items-center gap-2 ps-3"
-                htmlFor="description"
-              >
+              <Label className="mb-3 flex items-center gap-2 ps-3" htmlFor="description">
                 <Info size={18} /> Description
               </Label>
 

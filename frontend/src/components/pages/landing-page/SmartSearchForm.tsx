@@ -7,9 +7,7 @@ import React from "react";
 export default function SmartSearchForm({ noTitle }: { noTitle?: boolean }) {
   return (
     <form>
-      {!noTitle && (
-        <h2 className="mb-5 text-center text-2xl text-white">Smart Search</h2>
-      )}
+      {!noTitle && <h2 className="mb-5 text-center text-2xl text-white">Smart Search</h2>}
 
       <div className="mb-2 flex flex-1 items-center gap-2 md:mb-5 md:gap-5">
         <div className="flex-grow">

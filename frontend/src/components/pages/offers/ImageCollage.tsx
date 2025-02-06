@@ -57,7 +57,7 @@ export default function ImageCollage({
               height={450}
               className={cn(
                 `aspect-video h-[7rem] w-auto cursor-pointer rounded-lg border-2 bg-gray-700 object-cover hover:border-primary-light ${imageOnView.img.src === img.src ? "border-primary-light" : "border-transparent"}`,
-                imgsClassname,
+                imgsClassname
               )}
             />
           ))}

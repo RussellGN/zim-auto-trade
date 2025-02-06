@@ -40,10 +40,7 @@ export default function page() {
       </div>
 
       <div className="mb-4 px-4">
-        <Link
-          href="/login"
-          className="text-right text-sm text-primary-default underline"
-        >
+        <Link href="/login" className="text-right text-sm text-primary-default underline">
           Login
         </Link>
       </div>

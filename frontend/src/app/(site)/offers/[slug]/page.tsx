@@ -32,8 +32,7 @@ export default async function page({ params }: propTypes) {
   const listing = await getListing(slug);
   const isOwner = true;
   const category = categories.find(
-    (category) =>
-      category.name.toLowerCase() === listing.category.toLowerCase(),
+    (category) => category.name.toLowerCase() === listing.category.toLowerCase()
   );
 
   return (
@@ -49,10 +48,7 @@ export default async function page({ params }: propTypes) {
           <div className="w-1/2">
             <ImageCollage
               alt={listing.name}
-              images={[
-                { src: listing.coverImage },
-                ...listing.images.map((img) => ({ src: img })),
-              ]}
+              images={[{ src: listing.coverImage }, ...listing.images.map((img) => ({ src: img }))]}
             />
           </div>
 
@@ -62,25 +58,19 @@ export default async function page({ params }: propTypes) {
                 <div className="flex items-center gap-2">
                   <Clock3 size={18} className="text-gray-600" />
                   Date Uploaded:
-                  <span className="font-semibold">
-                    {friendlyDate(listing.date)}
-                  </span>
+                  <span className="font-semibold">{friendlyDate(listing.date)}</span>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Tag size={18} className="text-gray-600" />
                   Ask Price:
-                  <span className="font-semibold">
-                    $ {formatLongNumber(listing.price)}
-                  </span>
+                  <span className="font-semibold">$ {formatLongNumber(listing.price)}</span>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <GaugeCircle size={18} className="text-gray-600" />
                   Mileage:
-                  <span className="font-semibold">
-                    {formatLongNumber(listing.mileage)} km
-                  </span>
+                  <span className="font-semibold">{formatLongNumber(listing.mileage)} km</span>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -89,9 +79,7 @@ export default async function page({ params }: propTypes) {
                   <span className="font-semibold">{listing.location} km</span>
                 </div>
 
-                <div className="text-sm text-slate-600">
-                  {listing.viewCount} views
-                </div>
+                <div className="text-sm text-slate-600">{listing.viewCount} views</div>
 
                 <div className="flex items-center gap-2">
                   <UserCircle size={18} className="text-gray-600" />
@@ -136,10 +124,7 @@ export default async function page({ params }: propTypes) {
                   <Button variant="outline" className="border-slate-600">
                     Bookmark <Bookmark size={18} />
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="border-danger-default text-danger-default"
-                  >
+                  <Button variant="outline" className="border-danger-default text-danger-default">
                     Report <MessageSquareWarning size={18} className="-mb-1" />
                   </Button>
                 </div>

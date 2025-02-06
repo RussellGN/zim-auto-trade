@@ -2,15 +2,7 @@ import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import { Potta_One } from "next/font/google";
 import { VehicleListingCategory, ListingFilter, AccountType } from "./types";
-import {
-  Bike,
-  CalendarArrowUp,
-  Car,
-  Caravan,
-  MapPin,
-  Tractor,
-  Truck,
-} from "lucide-react";
+import { Bike, CalendarArrowUp, Car, Caravan, MapPin, Tractor, Truck } from "lucide-react";
 import { ListerInterface } from "./interfaces";
 
 export const navLinks = [

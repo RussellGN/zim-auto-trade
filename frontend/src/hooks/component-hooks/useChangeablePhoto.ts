@@ -1,9 +1,7 @@
 import { useRef, useState } from "react";
 
 export default function useChangeablePhoto(standalone: boolean | undefined) {
-  const [imgPreviewSrc, setImgPreviewSrc] = useState<string | undefined>(
-    undefined,
-  );
+  const [imgPreviewSrc, setImgPreviewSrc] = useState<string | undefined>(undefined);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   function onImageChange(e: React.ChangeEvent<HTMLInputElement>) {

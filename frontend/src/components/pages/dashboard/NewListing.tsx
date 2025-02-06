@@ -145,11 +145,7 @@ export default function NewListing() {
 
                   <SelectContent className="mt-3 rounded-2xl bg-white">
                     {categories.map((category) => (
-                      <SelectItem
-                        key={category.name}
-                        value={category.name}
-                        className="capitalize"
-                      >
+                      <SelectItem key={category.name} value={category.name} className="capitalize">
                         <div className="flex items-center gap-2">
                           {category.icon}
                           {category.name}
@@ -214,10 +210,7 @@ export default function NewListing() {
 
             <FieldSet legend="Further Info" className="col-span-4">
               <div className="mb-1">
-                <Label
-                  className="mb-3 flex items-center gap-1"
-                  htmlFor="description"
-                >
+                <Label className="mb-3 flex items-center gap-1" htmlFor="description">
                   <Info size={16} /> Description
                 </Label>
 

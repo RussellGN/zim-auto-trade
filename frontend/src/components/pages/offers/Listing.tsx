@@ -1,13 +1,6 @@
 import { ListingInterface } from "@/lib/interfaces";
 import ImageCollage from "./ImageCollage";
-import {
-  ArrowRight,
-  CircleUser,
-  Clock3,
-  Gauge,
-  MapPin,
-  Tag,
-} from "lucide-react";
+import { ArrowRight, CircleUser, Clock3, Gauge, MapPin, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { formatLongNumber } from "@/lib/utils";
@@ -25,10 +18,7 @@ export default function Listing({ listing, onDash }: propTypes) {
         <ImageCollage
           compact
           alt={listing.name}
-          images={[
-            { src: listing.coverImage },
-            ...listing.images.map((img) => ({ src: img })),
-          ]}
+          images={[{ src: listing.coverImage }, ...listing.images.map((img) => ({ src: img }))]}
         />
       </div>
 

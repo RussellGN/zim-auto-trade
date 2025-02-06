@@ -24,8 +24,7 @@ export default function ChangeablePhoto({
   lister,
   name,
 }: propTypes) {
-  const { inputRef, imgPreviewSrc, handleClick, onImageChange } =
-    useChangeablePhoto(standalone);
+  const { inputRef, imgPreviewSrc, handleClick, onImageChange } = useChangeablePhoto(standalone);
 
   return (
     <div className={cn("relative mb-10", className)}>
@@ -36,7 +35,7 @@ export default function ChangeablePhoto({
         height={90}
         className={cn(
           "aspect-square w-full rounded-lg border bg-slate-800 object-cover shadow-sm",
-          imgClassName,
+          imgClassName
         )}
       />
       <Button

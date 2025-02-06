@@ -13,15 +13,13 @@ export default function Home() {
 
         <div className="my-10 px-10 py-20 text-center md:p-20">
           <h2 className="mb-5 text-xl">
-            A <span className="text-primary-default">Nation-wide</span>{" "}
-            Billboard
+            A <span className="text-primary-default">Nation-wide</span> Billboard
           </h2>
 
           <p className="mx-auto mb-5 max-w-prose">
-            Zim Auto Trade provides a way for people looking to sell their
-            vehicles reach more people nation-wide, and at the same time
-            provides a convenient means of finding a vehicle for those in
-            search. All listings are advertised free of charge on the platform.
+            Zim Auto Trade provides a way for people looking to sell their vehicles reach more
+            people nation-wide, and at the same time provides a convenient means of finding a
+            vehicle for those in search. All listings are advertised free of charge on the platform.
             Everyone is elligible, become a part of the community!
           </p>
 
