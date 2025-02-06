@@ -220,3 +220,7 @@ export const listerOptions: AccountType[] = [
   "company",
   "other",
 ];
+
+export const requiredImageInputs = 5;
+
+export const placeholderImg16x9 = "/graphics/placeholderImg16x9.png";
