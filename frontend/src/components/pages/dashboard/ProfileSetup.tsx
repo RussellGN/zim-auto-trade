@@ -83,10 +83,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
           <FieldSet legend="Details">
             <div className="mb-2 flex items-center justify-between gap-4">
-              <Label
-                className="mb-2 flex items-center gap-2 ps-3"
-                htmlFor="name"
-              >
+              <Label className="flex items-center gap-2 ps-3" htmlFor="name">
                 <UserCircle size={18} /> Name
               </Label>
 
@@ -101,10 +98,7 @@ export default function ProfileSetup({ lister }: proptypes) {
             </div>
 
             <div className="mb-2 flex items-center justify-between gap-4">
-              <Label
-                className="mb-2 flex items-center gap-2 ps-3"
-                htmlFor="type"
-              >
+              <Label className="flex items-center gap-2 ps-3" htmlFor="type">
                 <Users size={18} /> Type
               </Label>
 
@@ -129,7 +123,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
             <div className="mb-2 flex items-center justify-between gap-4">
               <Label
-                className="mb-2 flex items-center gap-2 ps-3"
+                className="flex items-center gap-2 ps-3"
                 htmlFor="location"
               >
                 <MapPin size={18} /> Location
