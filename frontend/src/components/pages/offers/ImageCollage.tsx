@@ -2,6 +2,7 @@
 
 import { placeholderImage } from "@/lib/constants";
 import { ImageSrc } from "@/lib/types";
+import { cn } from "@/lib/utils";
 import { Images } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -11,6 +12,7 @@ type propTypes = {
   images: { src: ImageSrc; alt?: string }[];
   alt: string;
   compact?: boolean;
+  imgsClassname: string;
 };
 
 export default function ImageCollage({
@@ -18,6 +20,7 @@ export default function ImageCollage({
   images,
   alt,
   compact,
+  imgsClassname,
 }: propTypes) {
   const [imageOnView, setImageOnView] = useState(coverImage);
 
@@ -47,7 +50,10 @@ export default function ImageCollage({
               alt={img.alt || alt}
               width={800}
               height={450}
-              className={`h-[9rem] w-[16rem] cursor-pointer rounded-lg border-4 bg-gray-700 object-cover hover:border-primary-default ${imageOnView.src === img.src ? "border-primary-default" : "border-transparent"}`}
+              className={cn(
+                `aspect-video h-[7rem] cursor-pointer rounded-lg border-4 bg-gray-700 object-cover hover:border-primary-default ${imageOnView.src === img.src ? "border-primary-default" : "border-transparent"}`,
+                imgsClassname,
+              )}
             />
           ))}
         </div>
