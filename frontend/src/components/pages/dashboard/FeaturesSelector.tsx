@@ -1,87 +1,78 @@
 "use client";
 
-import { vehicleFeatures } from "@/lib/constants";
-import { capitalize } from "lodash";
-import { useState } from "react";
-import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Input } from "@/components/ui/input";
+import useFeaturesSelector from "@/hooks/component-hooks/useFeaturesSelector";
+import { Square, X } from "lucide-react";
 
 export default function FeaturesSelector() {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("");
-  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
-
-  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key === "Enter") {
-      console.log("Option selected or Enter pressed:", value);
-      setSelectedFeatures((prev) => [...prev, value]);
-    }
-  }
+  const {
+    query,
+    selectedFeatures,
+    filteredFeatures,
+    handleQueryChange,
+    deselectFeat,
+    selectFeat,
+    handleKeyDown,
+  } = useFeaturesSelector();
 
   return (
-    <div className="flex max-h-[8rem] flex-wrap gap-2.5 overflow-y-auto border bg-slate-50 p-3">
-      <>
-        {selectedFeatures.map((feature) => (
-          <small
-            key={feature}
-            className="rounded-md border border-slate-300 bg-[whitesmoke] px-1.5 py-1 text-sm"
-          >
-            {capitalize(feature)}
-          </small>
+    <div className="h-[15rem]">
+      <div className="flex max-h-full flex-wrap items-start gap-1 overflow-y-auto border bg-slate-50 px-3 py-5">
+        <>
+          {selectedFeatures.map((feat) => (
+            <FeatureOption
+              feat={feat}
+              key={feat}
+              selectFeat={selectFeat}
+              deselectFeat={deselectFeat}
+              isSelected
+            />
+          ))}
+
+          <input type="hidden" name="features" value={selectedFeatures.join(";")} />
+        </>
+
+        <Input
+          id="dontSubmit"
+          value={query}
+          onChange={handleQueryChange}
+          onKeyDown={handleKeyDown}
+          placeholder="Type features..."
+          className="my-1 h-fit w-full border-0 bg-transparent p-0 focus-visible:shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
+        />
+
+        {filteredFeatures.map((feat) => (
+          <FeatureOption
+            feat={feat}
+            key={feat}
+            selectFeat={selectFeat}
+            deselectFeat={deselectFeat}
+          />
         ))}
-
-        <input type="hidden" name="features" value={selectedFeatures.join(";")} />
-      </>
-
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button type="button" size="icon" role="combobox" aria-expanded={open}>
-            <Plus size={18} />
-          </Button>
-        </PopoverTrigger>
-
-        <PopoverContent className="w-[200px] bg-white p-0" side="right" align="start">
-          <Command>
-            <CommandInput placeholder="Type feature..." onKeyDown={handleKeyDown} />
-
-            <CommandList>
-              <CommandEmpty>0 found, press enter to add</CommandEmpty>
-
-              <CommandGroup className="m-2 ml-0 max-h-[6.5rem] overflow-y-auto">
-                {vehicleFeatures
-                  .map((f) => ({ value: f, label: f.toUpperCase() }))
-                  .map((feature) => (
-                    <CommandItem
-                      key={feature.value}
-                      value={feature.value}
-                      onSelect={(currentValue) => {
-                        setValue(currentValue === value ? "" : currentValue);
-                        setOpen(false);
-                      }}
-                    >
-                      {/* <Check
-                        className={cn(
-                          "mr-2 h-4 w-4",
-                          value === feature.value ? "opacity-100" : "opacity-0"
-                        )}
-                      /> */}
-                      {capitalize(feature.label)}
-                    </CommandItem>
-                  ))}
-              </CommandGroup>
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
+      </div>
     </div>
+  );
+}
+
+type featureOptionPropTypes = {
+  feat: string;
+  isSelected?: boolean;
+  selectFeat: (feat: string) => void;
+  deselectFeat: (feat: string) => void;
+};
+
+function FeatureOption({ feat, isSelected, selectFeat, deselectFeat }: featureOptionPropTypes) {
+  return (
+    <Button
+      onClick={isSelected ? () => deselectFeat(feat) : () => selectFeat(feat)}
+      variant="outline"
+      type="button"
+      size="sm"
+      className={`h-fit w-fit border-slate-500 px-1.5 py-1 text-xs font-normal ${isSelected ? "bg-slate-300" : ""}`}
+    >
+      {feat}
+      {isSelected ? <X size={14} /> : <Square size={14} />}
+    </Button>
   );
 }
