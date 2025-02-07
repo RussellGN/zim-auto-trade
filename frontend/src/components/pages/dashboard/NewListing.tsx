@@ -9,6 +9,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import {
+  ArrowRight,
+  Bookmark,
   Boxes,
   Calendar1,
   CircleDollarSign,
@@ -57,7 +59,16 @@ export default function NewListing() {
           <DialogDescription>Create a new vahicle listing</DialogDescription>
         </DialogHeader>
 
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
+            const data: { [k: string]: FormDataEntryValue | FormDataEntryValue[] } =
+              Object.fromEntries(formData);
+            data["images"] = formData.getAll("images");
+            console.log({ formData, data });
+          }}
+        >
           <div className="grid w-[80vw] grid-cols-12 justify-between gap-3 py-5">
             <FieldSet
               legend="Images"
@@ -216,7 +227,7 @@ export default function NewListing() {
 
                 <Textarea
                   className="w-full bg-[whitesmoke]"
-                  rows={10}
+                  rows={8}
                   id="description"
                   name="description"
                   placeholder="give more details about the car"
@@ -230,6 +241,16 @@ export default function NewListing() {
                 <FeaturesSelector />
               </div>
             </FieldSet>
+          </div>
+
+          <div className="m-5 text-right">
+            <Button type="button" className="bottom-3 mr-3 border-slate-500" variant="outline">
+              Save As Draft <Bookmark />
+            </Button>
+
+            <Button type="submit" className="bg-primary-default text-white">
+              Create Listing <ArrowRight />
+            </Button>
           </div>
         </form>
       </DialogContent>
