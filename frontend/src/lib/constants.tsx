@@ -2,8 +2,21 @@ import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import { Potta_One } from "next/font/google";
 import { VehicleListingCategory, ListingFilter, AccountType } from "./types";
-import { Bike, CalendarArrowUp, Car, Caravan, MapPin, Tractor, Truck } from "lucide-react";
+import {
+  Bell,
+  Bike,
+  CalendarArrowUp,
+  Car,
+  Caravan,
+  MapPin,
+  Tractor,
+  Truck,
+  UserCircle,
+} from "lucide-react";
 import { ListerInterface } from "./interfaces";
+import AccountSettings from "@/components/pages/settings/AccountSettings";
+import NotificationSettings from "@/components/pages/settings/NotificationSettings";
+import { ReactNode } from "react";
 
 export const navLinks = [
   {
@@ -216,3 +229,23 @@ export const listerOptions: AccountType[] = [
 export const requiredImageInputs = 5;
 
 export const placeholderImg16x9 = "/graphics/placeholderImg16x9.png";
+
+export const settings: {
+  title: string;
+  description: string;
+  content: ReactNode;
+  icon: ReactNode;
+}[] = [
+  {
+    title: "Account",
+    description: "Manage account status",
+    content: <AccountSettings />,
+    icon: <UserCircle size={18} />,
+  },
+  {
+    title: "Notifications",
+    description: "Manage how you receive notifications",
+    content: <NotificationSettings />,
+    icon: <Bell size={18} />,
+  },
+];
