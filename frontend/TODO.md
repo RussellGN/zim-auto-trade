@@ -1,8 +1,7 @@
-1. implement pagination
-2. implement confirmation modals
-3. implement saved tab
-4. make site mobile responsive
-5. put icon size into constants file
-6. build api for currently needed functionality
-7. deploy MVP
-8. create features/fixes roadmap
+1. implement confirmation modals
+2. implement saved tab
+3. make site mobile responsive
+4. put icon size into constants file
+5. build api for currently needed functionality
+6. deploy MVP
+7. create features/fixes roadmap
