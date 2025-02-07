@@ -16,8 +16,8 @@ type propTypes = {
 
 export default function StandalonePagination({ numberOfPages }: propTypes) {
   const searchParams = useSearchParams();
-  let currentPage = Number(searchParams.get("page")) || 1;
-  const allPages = new Array(numberOfPages).fill(0);
+  const currentPage = Number(searchParams.get("page")) || 1;
+  const allPages = Array.from({ length: numberOfPages }, (_, i) => i + 1);
   const mappablePages = closestPages(currentPage, allPages, 5);
 
   return (
@@ -28,21 +28,18 @@ export default function StandalonePagination({ numberOfPages }: propTypes) {
             <PaginationPrevious href={{ query: { page: currentPage - 1 } }} />
           </PaginationItem>
         )}
-        {mappablePages.map((_, index) => (
-          <PaginationItem key={index}>
+        {mappablePages.map((pageNumber) => (
+          <PaginationItem key={pageNumber}>
             <PaginationLink
-              className={`border border-slate-500 p-1 transition-all ${currentPage === index + 1 ? "bg-primary-default text-white" : "bg-white"}`}
-              href={{ query: { page: index + 1 } }}
+              className={`border border-slate-500 p-1 transition-all ${
+                currentPage === pageNumber ? "bg-primary-default text-white" : "bg-white"
+              }`}
+              href={{ query: { page: pageNumber } }}
             >
-              {index + 1}
+              {pageNumber}
             </PaginationLink>
           </PaginationItem>
         ))}
-
-        {/* <PaginationItem>
-          <PaginationEllipsis />
-        </PaginationItem> */}
-
         {currentPage < numberOfPages && (
           <PaginationItem>
             <PaginationNext href={{ query: { page: currentPage + 1 } }} />
@@ -53,8 +50,18 @@ export default function StandalonePagination({ numberOfPages }: propTypes) {
   );
 }
 
-function closestPages(midIndex: number, pages: number[], rangeLength: number) {
-  if (pages.length <= rangeLength) return pages;
-  else if (midIndex - 2 > -1) return pages.slice(midIndex - 2, midIndex + 2);
-  else return pages.slice(0, 4);
+function closestPages(currentPage: number, pages: number[], rangeLength: number) {
+  const totalPages = pages.length;
+  if (totalPages <= rangeLength) return pages;
+
+  const halfRange = Math.floor(rangeLength / 2);
+  let start = Math.max(0, currentPage - halfRange - 1);
+  let end = start + rangeLength;
+
+  if (end > totalPages) {
+    end = totalPages;
+    start = Math.max(0, end - rangeLength);
+  }
+
+  return pages.slice(start, end);
 }
