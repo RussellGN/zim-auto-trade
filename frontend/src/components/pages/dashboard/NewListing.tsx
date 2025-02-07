@@ -42,7 +42,7 @@ export default function NewListing() {
   const { images, onImageChange } = useNewListing();
 
   return (
-    <Dialog defaultOpen>
+    <Dialog>
       <DialogTrigger asChild>
         <Button className="bg-primary-default text-white" title="new listing">
           New Listing
