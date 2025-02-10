@@ -38,14 +38,16 @@ export default async function page({ params }: propTypes) {
       <div className="py-10">
         <div className="flex items-center justify-center gap-4">
           <BackBtn />
-          <h1 className="text-center text-3xl">{listing.name}</h1>
+          <h1 className="text-center text-3xl">
+            `${listing.year} ${listing.make} ${listing.model}`
+          </h1>
           <span className="">{category?.icon}</span>
         </div>
 
         <div className="my-5 flex">
           <div className="w-1/2">
             <ImageCollage
-              alt={listing.name}
+              alt={`${listing.year} ${listing.make} ${listing.model}`}
               images={[{ src: listing.coverImage }, ...listing.images.map((img) => ({ src: img }))]}
             />
           </div>

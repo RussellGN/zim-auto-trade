@@ -13,7 +13,9 @@ export interface ListingInterface {
   id: ID;
   images: ImageSrc[];
   coverImage: ImageSrc;
-  name: string;
+  make: string;
+  model: string;
+  year: number;
   slug: string;
   category: string;
   description: string;
