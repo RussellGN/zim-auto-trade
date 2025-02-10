@@ -7,8 +7,6 @@ type propTypes = {
 };
 
 export default function ListerListingActions({ listing }: propTypes) {
-  console.log(listing.slug);
-
   return (
     <div className="flex items-center gap-2">
       <Button
