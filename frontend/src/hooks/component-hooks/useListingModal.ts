@@ -2,6 +2,7 @@ import { placeholderImg16x9 } from "@/lib/constants";
 import { FormEvent, useState } from "react";
 import { useToast } from "@/hooks/general/use-toast";
 import { ListingInterface } from "@/lib/interfaces";
+import { ImageSrc } from "@/lib/types";
 
 export default function useListingModal(listing?: ListingInterface) {
   const [images, setImages] = useState(
@@ -51,11 +52,11 @@ export default function useListingModal(listing?: ListingInterface) {
   function submitHandler(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data: { [k: string]: FormDataEntryValue | FormDataEntryValue[] } =
+    const data: { [k: string]: FormDataEntryValue | FormDataEntryValue[] | ImageSrc[] } =
       Object.fromEntries(formData);
     data["images"] = (formData.getAll("images")[0] as File).size
       ? formData.getAll("images")
-      : images.map((i) => i.src.toString());
+      : images.map((i) => i.src);
     console.log({ formData, data });
   }
 
