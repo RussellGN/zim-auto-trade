@@ -26,7 +26,7 @@ type propTypes = {
   cancelClassName?: string;
   onProceed?: () => void;
   onCancel?: () => void;
-  showCancel: boolean;
+  showCancel?: boolean;
 };
 
 export default function CustomModal({
@@ -55,7 +55,7 @@ export default function CustomModal({
             {icon && icon}
           </DialogTitle>
 
-          <DialogDescription hidden={!!!description}>{description || message}</DialogDescription>
+          <DialogDescription hidden={!!description}>{description || message}</DialogDescription>
         </DialogHeader>
 
         <div className="my-5">
