@@ -23,3 +23,5 @@ export type CustomImageProps = {
   src: ImageSrc;
   alt?: string;
 };
+
+export type modalDialogSize = "425px" | "700px" | "1000px";
