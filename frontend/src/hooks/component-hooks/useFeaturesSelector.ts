@@ -2,8 +2,10 @@ import { vehicleFeatures } from "@/lib/constants";
 import { useState } from "react";
 import { toast } from "../general/use-toast";
 
-export default function useFeaturesSelector() {
-  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
+export default function useFeaturesSelector(defaultFeatures: string | undefined) {
+  const [selectedFeatures, setSelectedFeatures] = useState<string[]>(
+    defaultFeatures?.split(";") || []
+  );
   const [query, setQuery] = useState("");
 
   function handleQueryChange(e: React.ChangeEvent<HTMLInputElement>) {
