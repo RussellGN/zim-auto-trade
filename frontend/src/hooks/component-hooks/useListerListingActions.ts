@@ -8,14 +8,14 @@ export default function useListerListingActions(listing: ListingInterface) {
       .then(() =>
         toast({
           title: "Listing Deleted Successfully",
-          description: `${listing.name} was deleted`,
+          description: `${listing.year} ${listing.make} ${listing.model} was deleted`,
           className: "bg-white shadow-lg",
         })
       )
       .catch((err) =>
         toast({
           title: "Error",
-          description: `${listing.name} could not be deleted`,
+          description: `${listing.year} ${listing.make} ${listing.model} could not be deleted: ${err}`,
           className: "bg-white shadow-lg",
         })
       );
@@ -26,14 +26,14 @@ export default function useListerListingActions(listing: ListingInterface) {
       .then(() =>
         toast({
           title: "Listing Delisted Successfully",
-          description: `${listing.name} was delisted`,
+          description: `${listing.year} ${listing.make} ${listing.model} was delisted`,
           className: "bg-white shadow-lg",
         })
       )
       .catch((err) =>
         toast({
           title: "Error",
-          description: `${listing.name} could not be delisted`,
+          description: `${listing.year} ${listing.make} ${listing.model} could not be delisted: ${err}`,
           className: "bg-white shadow-lg",
         })
       );
