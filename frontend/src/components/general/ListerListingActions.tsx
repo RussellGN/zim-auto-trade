@@ -2,6 +2,7 @@
 
 import CustomModal from "@/components/general/CustomModal";
 import { Button } from "@/components/ui/button";
+import useListerListingActions from "@/hooks/component-hooks/useListerListingActions";
 import { ListingInterface } from "@/lib/interfaces";
 import { Edit2, EyeOff, Trash2 } from "lucide-react";
 
@@ -11,6 +12,8 @@ type propTypes = {
 };
 
 export default function ListerListingActions({ listing, compact }: propTypes) {
+  const { deleteListing, delistListing } = useListerListingActions(listing);
+
   return (
     <div className="flex items-center gap-2">
       <Button
@@ -26,7 +29,7 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
       <CustomModal
         title="Delist Listing"
         message={`Are you sure want to delist '${listing.name}'? It will no longer be visible on Zim Auto Trade, but will not be deleted and can be re-listed anytime by clicking 'Re-list'.`}
-        onProceed={() => {}}
+        onProceed={delistListing}
         proceedText="Delist"
         showCancel
         cancelClassName="bg-primary-default text-white"
@@ -45,7 +48,7 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
       <CustomModal
         title="Delete Listing"
         message={`Are you sure want to delete '${listing.name}'? This cannot be undone.`}
-        onProceed={() => {}}
+        onProceed={deleteListing}
         proceedText="Delete"
         proceedClassName="bg-danger-default text-white"
         showCancel

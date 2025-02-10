@@ -40,8 +40,12 @@ export async function logoutAction() {
   redirect("/");
 }
 
-export async function delistListingAction(id: ID): Promise<Result> {
+export async function delistListingAction(id: ID) {
   await wait(1);
   console.log("TODO: delist " + id);
-  return { successfull: true };
+}
+
+export async function deleteListingAction(id: ID) {
+  await wait(1);
+  console.log("TODO: delete " + id);
 }
