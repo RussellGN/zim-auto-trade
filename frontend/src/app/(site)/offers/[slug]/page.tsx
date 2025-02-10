@@ -7,7 +7,6 @@ import {
   Mail,
   MapPin,
   MessageSquareWarning,
-  Share,
   Tag,
   UserCircle,
 } from "lucide-react";
@@ -20,6 +19,7 @@ import DetailSection from "@/components/pages/offers/DetailSection";
 import { categories } from "@/lib/constants";
 import { capitalize } from "lodash";
 import ListerListingActions from "@/components/general/ListerListingActions";
+import ShareBtn from "@/components/pages/offers/ShareBtn";
 
 type propTypes = {
   params: Promise<{ slug: string }>;
@@ -28,7 +28,7 @@ type propTypes = {
 export default async function page({ params }: propTypes) {
   const slug = (await params).slug;
   const listing = await getListingAction(slug);
-  const isOwner = true;
+  const isOwner = false;
   const category = categories.find(
     (category) => category.name.toLowerCase() === listing.category.toLowerCase()
   );
@@ -39,7 +39,7 @@ export default async function page({ params }: propTypes) {
         <div className="flex items-center justify-center gap-4">
           <BackBtn />
           <h1 className="text-center text-3xl">
-            `${listing.year} ${listing.make} ${listing.model}`
+            {listing.year} {listing.make} {listing.model}
           </h1>
           <span className="">{category?.icon}</span>
         </div>
@@ -103,10 +103,7 @@ export default async function page({ params }: propTypes) {
 
               <DetailSection className="mb-3" title="actions">
                 <div className="grid grid-cols-2 gap-3">
-                  <Button variant="outline" className="border-slate-600">
-                    Share <Share size={18} />
-                  </Button>
-
+                  <ShareBtn />
                   <Button variant="outline" className="border-slate-600">
                     Bookmark <Bookmark size={18} />
                   </Button>
