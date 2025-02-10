@@ -26,6 +26,7 @@ type propTypes = {
   cancelClassName?: string;
   onProceed?: () => void;
   onCancel?: () => void;
+  showCancel: boolean;
 };
 
 export default function CustomModal({
@@ -41,6 +42,7 @@ export default function CustomModal({
   proceedClassName,
   onCancel,
   onProceed,
+  showCancel,
 }: propTypes) {
   return (
     <Dialog>
@@ -61,7 +63,7 @@ export default function CustomModal({
         </div>
 
         <DialogFooter>
-          {onCancel && (
+          {(showCancel || onCancel) && (
             <DialogClose asChild>
               <Button variant="outline" onClick={onCancel} className={cancelClassName}>
                 {cancelText || "Cancel"}
