@@ -19,7 +19,7 @@ import BackBtn from "@/components/layout/BackBtn";
 import DetailSection from "@/components/pages/offers/DetailSection";
 import { categories } from "@/lib/constants";
 import { capitalize } from "lodash";
-import ListerListingActions from "@/components/pages/offers/ListerListingActions";
+import ListerListingActions from "@/components/general/ListerListingActions";
 
 type propTypes = {
   params: Promise<{ slug: string }>;

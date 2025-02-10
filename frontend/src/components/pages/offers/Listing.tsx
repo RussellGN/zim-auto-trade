@@ -4,7 +4,7 @@ import { ArrowRight, CircleUser, Clock3, Gauge, MapPin, Tag } from "lucide-react
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { formatLongNumber } from "@/lib/utils";
-import ListerListingActions from "./ListerListingActions";
+import ListerListingActions from "../../general/ListerListingActions";
 
 type propTypes = {
   listing: ListingInterface;
