@@ -1,40 +1,66 @@
+"use client";
+
+import CustomModal from "@/components/general/CustomModal";
 import { Button } from "@/components/ui/button";
 import { ListingInterface } from "@/lib/interfaces";
 import { Edit2, EyeOff, Trash2 } from "lucide-react";
 
 type propTypes = {
   listing: ListingInterface;
+  compact?: boolean;
 };
 
-export default function ListerListingActions({ listing }: propTypes) {
+export default function ListerListingActions({ listing, compact }: propTypes) {
   return (
     <div className="flex items-center gap-2">
       <Button
-        size="icon"
         title="edit listing"
+        size={compact ? "icon" : "default"}
         variant="outline"
-        className="rounded-full border-slate-500"
+        className={`${compact ? "rounded-full" : ""} border-slate-500`}
       >
+        {!compact && "Edit"}
         <Edit2 size={18} />
       </Button>
 
-      <Button
-        size="icon"
-        title="delist listing"
-        variant="outline"
-        className="rounded-full border-slate-500"
+      <CustomModal
+        title="Delist Listing"
+        message={`Are you sure want to delist '${listing.name}'? It will no longer be visible on Zim Auto Trade, but will not be deleted and can be re-listed anytime by clicking 'Re-list'.`}
+        onProceed={() => {}}
+        proceedText="Delist"
+        showCancel
+        cancelClassName="bg-primary-default text-white"
       >
-        <EyeOff size={18} />
-      </Button>
+        <Button
+          title="delist listing"
+          size={compact ? "icon" : "default"}
+          variant="outline"
+          className={`${compact ? "rounded-full" : ""} border-slate-500`}
+        >
+          {!compact && "Delist"}
+          <EyeOff size={18} />
+        </Button>
+      </CustomModal>
 
-      <Button
-        size="icon"
-        title="delete listing"
-        variant="outline"
-        className="rounded-full border-danger-default text-danger-default"
+      <CustomModal
+        title="Delete Listing"
+        message={`Are you sure want to delete '${listing.name}'? This cannot be undone.`}
+        onProceed={() => {}}
+        proceedText="Delete"
+        proceedClassName="bg-danger-default text-white"
+        showCancel
+        cancelClassName="bg-primary-default text-white"
       >
-        <Trash2 size={18} />
-      </Button>
+        <Button
+          title="delete listing"
+          size={compact ? "icon" : "default"}
+          variant="outline"
+          className={`${compact ? "rounded-full" : ""} border-danger-default text-danger-default`}
+        >
+          {!compact && "Delete"}
+          <Trash2 size={18} />
+        </Button>
+      </CustomModal>
     </div>
   );
 }

@@ -63,7 +63,7 @@ export default function Listing({ listing, onDash }: propTypes) {
           </div>
 
           {onDash ? (
-            <ListerListingActions listing={listing} />
+            <ListerListingActions listing={listing} compact />
           ) : (
             <div className="flex items-center gap-2">
               <Link
