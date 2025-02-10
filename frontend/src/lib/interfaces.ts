@@ -1,4 +1,4 @@
-import { AccountType, ImageSrc, NotificationType } from "./types";
+import { AccountType, ID, ImageSrc, NotificationType } from "./types";
 
 export interface ListerInterface {
   type: AccountType;
@@ -10,6 +10,7 @@ export interface ListerInterface {
 }
 
 export interface ListingInterface {
+  id: ID;
   images: ImageSrc[];
   coverImage: ImageSrc;
   name: string;
@@ -26,7 +27,7 @@ export interface ListingInterface {
 }
 
 export interface NotificationInterface {
-  id: string;
+  id: ID;
   type: NotificationType;
   title: string;
   body: string;
