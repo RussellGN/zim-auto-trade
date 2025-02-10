@@ -1,6 +1,7 @@
 "use server";
 
 import { sampleLister } from "@/lib/constants";
+import { ID, Result } from "@/lib/types";
 import { wait } from "@/lib/utils";
 import { sampleListings } from "@/sample-data/listings";
 import { sampleNotifications } from "@/sample-data/notifications";
@@ -37,4 +38,10 @@ export async function logoutAction() {
   await wait(1);
   console.log("TODO: logout");
   redirect("/");
+}
+
+export async function delistListingAction(id: ID): Promise<Result> {
+  await wait(1);
+  console.log("TODO: delist " + id);
+  return { successfull: true };
 }
