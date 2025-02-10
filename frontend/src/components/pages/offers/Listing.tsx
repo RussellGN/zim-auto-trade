@@ -4,7 +4,7 @@ import { ArrowRight, CircleUser, Clock3, Gauge, MapPin, Tag } from "lucide-react
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { formatLongNumber } from "@/lib/utils";
-import ListerListingActions from "./ListerListingActions";
+import ListerListingActions from "../../general/ListerListingActions";
 
 type propTypes = {
   listing: ListingInterface;
@@ -17,14 +17,14 @@ export default function Listing({ listing, onDash }: propTypes) {
       <div className="w-1/2">
         <ImageCollage
           compact
-          alt={listing.name}
+          alt={`${listing.year} ${listing.make} ${listing.model}`}
           images={[{ src: listing.coverImage }, ...listing.images.map((img) => ({ src: img }))]}
         />
       </div>
 
       <div className="flex w-1/2 flex-1 flex-col gap-4 p-4">
         <div className="flex items-center justify-between gap-5">
-          <h2 className="text-xl">{listing.name}</h2>
+          <h2 className="text-xl">{`${listing.year} ${listing.make} ${listing.model}`}</h2>
 
           <div className="flex w-fit items-center gap-1 text-nowrap text-sm text-slate-500">
             <Clock3 size={18} />
@@ -63,7 +63,7 @@ export default function Listing({ listing, onDash }: propTypes) {
           </div>
 
           {onDash ? (
-            <ListerListingActions listing={listing} />
+            <ListerListingActions listing={listing} compact />
           ) : (
             <div className="flex items-center gap-2">
               <Link

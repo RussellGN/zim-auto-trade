@@ -1,7 +1,7 @@
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import { Potta_One } from "next/font/google";
-import { VehicleListingCategory, ListingFilter, AccountType } from "./types";
+import { VehicleListingCategory, ListingFilter, AccountType, modalDialogSize } from "./types";
 import {
   Bell,
   Bike,
@@ -212,7 +212,7 @@ export const sampleLister: ListerInterface = {
     "https://www.autodeal.com.ph/custom/blog-post/header/how-to-tell-if-youre-dealing-with-a-good-sales-agent-60dd890b1664d.jpg",
 };
 
-export const modalDialogSizes = {
+export const modalDialogSizes: { [k: string]: modalDialogSize } = {
   sm: "425px",
   md: "700px",
   lg: "1000px",

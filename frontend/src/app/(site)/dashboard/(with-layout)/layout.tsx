@@ -1,11 +1,11 @@
-import { getLister } from "@/actions";
+import { getListerAction } from "@/actions";
 import Container from "@/components/layout/Container";
 import DashNavigation from "@/components/pages/dashboard/DashNavigation";
 import DashSidebar from "@/components/pages/dashboard/DashSidebar";
 import { PropsWithChildren } from "react";
 
 export default async function layout({ children }: PropsWithChildren) {
-  const lister = await getLister();
+  const lister = await getListerAction();
 
   return (
     <Container>

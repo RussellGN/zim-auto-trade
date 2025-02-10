@@ -1,17 +1,12 @@
-import { getListing } from "@/actions";
+import { getListingAction } from "@/actions";
 import ImageCollage from "@/components/pages/offers/ImageCollage";
 import {
-  Bookmark,
   Clock3,
-  Edit,
-  EyeOff,
   GaugeCircle,
   Mail,
   MapPin,
   MessageSquareWarning,
-  Share,
   Tag,
-  Trash2,
   UserCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,6 +17,9 @@ import BackBtn from "@/components/layout/BackBtn";
 import DetailSection from "@/components/pages/offers/DetailSection";
 import { categories } from "@/lib/constants";
 import { capitalize } from "lodash";
+import ListerListingActions from "@/components/general/ListerListingActions";
+import ShareBtn from "@/components/pages/offers/ShareBtn";
+import BookmarkBtn from "@/components/pages/offers/BookmarkBtn";
 
 type propTypes = {
   params: Promise<{ slug: string }>;
@@ -29,8 +27,8 @@ type propTypes = {
 
 export default async function page({ params }: propTypes) {
   const slug = (await params).slug;
-  const listing = await getListing(slug);
-  const isOwner = true;
+  const listing = await getListingAction(slug);
+  const isOwner = false;
   const category = categories.find(
     (category) => category.name.toLowerCase() === listing.category.toLowerCase()
   );
@@ -40,14 +38,16 @@ export default async function page({ params }: propTypes) {
       <div className="py-10">
         <div className="flex items-center justify-center gap-4">
           <BackBtn />
-          <h1 className="text-center text-3xl">{listing.name}</h1>
+          <h1 className="text-center text-3xl">
+            {listing.year} {listing.make} {listing.model}
+          </h1>
           <span className="">{category?.icon}</span>
         </div>
 
         <div className="my-5 flex">
           <div className="w-1/2">
             <ImageCollage
-              alt={listing.name}
+              alt={`${listing.year} ${listing.make} ${listing.model}`}
               images={[{ src: listing.coverImage }, ...listing.images.map((img) => ({ src: img }))]}
             />
           </div>
@@ -96,37 +96,24 @@ export default async function page({ params }: propTypes) {
 
             <div className="col-span-2">
               <div className="p-4">
-                <Button className="w-full bg-primary-default text-white">
+                <Button disabled={isOwner} className="w-full bg-primary-default text-white">
                   Enquire <Mail size={18} />
                 </Button>
               </div>
 
               <DetailSection className="mb-3" title="actions">
                 <div className="grid grid-cols-2 gap-3">
-                  {isOwner && (
-                    <>
-                      <Button variant="outline" className="border-slate-600">
-                        Edit <Edit size={18} />
-                      </Button>
-                      <Button variant="outline" className="border-slate-600">
-                        Delist <EyeOff size={18} />
-                      </Button>
-                      <Button variant="outline" className="border-slate-600">
-                        Delete <Trash2 size={18} />
-                      </Button>
-                    </>
+                  <ShareBtn />
+
+                  <BookmarkBtn id={listing.id} />
+
+                  {isOwner ? (
+                    <ListerListingActions listing={listing} />
+                  ) : (
+                    <Button variant="outline" className="border-danger-default text-danger-default">
+                      Report <MessageSquareWarning size={18} className="-mb-1" />
+                    </Button>
                   )}
-
-                  <Button variant="outline" className="border-slate-600">
-                    Share <Share size={18} />
-                  </Button>
-
-                  <Button variant="outline" className="border-slate-600">
-                    Bookmark <Bookmark size={18} />
-                  </Button>
-                  <Button variant="outline" className="border-danger-default text-danger-default">
-                    Report <MessageSquareWarning size={18} className="-mb-1" />
-                  </Button>
                 </div>
               </DetailSection>
             </div>

@@ -1,9 +1,9 @@
 import Listing from "./Listing";
-import { getListersListings, getListings } from "@/actions";
+import { getListersListingsAction, getListingsAction } from "@/actions";
 import StandalonePagination from "./StandalonePagination";
 
 export default async function Listings({ onDash }: { onDash?: boolean }) {
-  const listings = onDash ? await getListersListings() : await getListings();
+  const listings = onDash ? await getListersListingsAction() : await getListingsAction();
 
   return (
     <div>

@@ -9,11 +9,11 @@ import {
 import { Bell } from "lucide-react";
 import { modalDialogSizes } from "@/lib/constants";
 import { DialogDescription } from "@radix-ui/react-dialog";
-import { getNotifications } from "@/actions";
+import { getNotificationsAction } from "@/actions";
 import Notification from "./Notification";
 
 export default async function Notifications() {
-  const notifications = await getNotifications();
+  const notifications = await getNotificationsAction();
   const unread = notifications.filter((n) => n.read).length;
 
   return (

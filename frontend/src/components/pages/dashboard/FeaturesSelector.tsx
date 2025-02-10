@@ -5,7 +5,11 @@ import { Input } from "@/components/ui/input";
 import useFeaturesSelector from "@/hooks/component-hooks/useFeaturesSelector";
 import { Square, X } from "lucide-react";
 
-export default function FeaturesSelector() {
+export default function FeaturesSelector({
+  defaultFeatures,
+}: {
+  defaultFeatures: string | undefined;
+}) {
   const {
     query,
     selectedFeatures,
@@ -14,7 +18,7 @@ export default function FeaturesSelector() {
     deselectFeat,
     selectFeat,
     handleKeyDown,
-  } = useFeaturesSelector();
+  } = useFeaturesSelector(defaultFeatures);
 
   return (
     <div className="h-[15rem]">
