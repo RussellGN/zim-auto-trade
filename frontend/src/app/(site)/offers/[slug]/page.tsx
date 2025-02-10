@@ -1,4 +1,4 @@
-import { getListing } from "@/actions";
+import { getListingAction } from "@/actions";
 import ImageCollage from "@/components/pages/offers/ImageCollage";
 import {
   Bookmark,
@@ -29,7 +29,7 @@ type propTypes = {
 
 export default async function page({ params }: propTypes) {
   const slug = (await params).slug;
-  const listing = await getListing(slug);
+  const listing = await getListingAction(slug);
   const isOwner = true;
   const category = categories.find(
     (category) => category.name.toLowerCase() === listing.category.toLowerCase()
