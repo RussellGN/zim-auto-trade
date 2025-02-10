@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import useListerListingActions from "@/hooks/component-hooks/useListerListingActions";
 import { ListingInterface } from "@/lib/interfaces";
 import { Edit2, EyeOff, Trash2 } from "lucide-react";
+import ListingModal from "./ListingModal";
 
 type propTypes = {
   listing: ListingInterface;
@@ -16,19 +17,24 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
 
   return (
     <div className="flex items-center gap-2">
-      <Button
-        title="edit listing"
-        size={compact ? "icon" : "default"}
-        variant="outline"
-        className={`${compact ? "rounded-full" : ""} border-slate-500`}
-      >
-        {!compact && "Edit"}
-        <Edit2 size={18} />
-      </Button>
+      <ListingModal
+        listing={listing}
+        trigger={
+          <Button
+            title="edit listing"
+            size={compact ? "icon" : "default"}
+            variant="outline"
+            className={`${compact ? "rounded-full" : ""} border-slate-500`}
+          >
+            {!compact && "Edit"}
+            <Edit2 size={18} />
+          </Button>
+        }
+      />
 
       <CustomModal
         title="Delist Listing"
-        message={`Are you sure want to delist '${listing.name}'? It will no longer be visible on Zim Auto Trade, but will not be deleted and can be re-listed anytime by clicking 'Re-list'.`}
+        message={`Are you sure want to delist '${`${listing.year} ${listing.make} ${listing.model}`}'? It will no longer be visible on Zim Auto Trade, but will not be deleted and can be re-listed anytime by clicking 'Re-list'.`}
         onProceed={delistListing}
         proceedText="Delist"
         showCancel
@@ -47,7 +53,7 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
 
       <CustomModal
         title="Delete Listing"
-        message={`Are you sure want to delete '${listing.name}'? This cannot be undone.`}
+        message={`Are you sure want to delete '${`${listing.year} ${listing.make} ${listing.model}`}'? This cannot be undone.`}
         onProceed={deleteListing}
         proceedText="Delete"
         proceedClassName="bg-danger-default text-white"
