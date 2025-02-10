@@ -2,6 +2,7 @@
 
 import { checkIsBookmarkedAction, toggleBookmarkListingAction } from "@/actions";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/hooks/general/use-toast";
 import { ID } from "@/lib/types";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -10,12 +11,26 @@ export default function BookmarkBtn({ id }: { id: ID }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   function toggleBookmarkListing() {
-    toggleBookmarkListingAction(id).then(() => setIsBookmarked((prev) => !prev));
+    toggleBookmarkListingAction(id)
+      .then(() => setIsBookmarked((prev) => !prev))
+      .catch(() =>
+        toast({
+          title: "Could not toggle bookmark",
+          className: "bg-white shadow-lg",
+        })
+      );
   }
 
   useEffect(() => {
-    checkIsBookmarkedAction(id).then((res) => setIsBookmarked(res));
-  }, []);
+    checkIsBookmarkedAction(id)
+      .then((res) => setIsBookmarked(res))
+      .catch(() =>
+        toast({
+          title: "Could not toggle bookmark",
+          className: "bg-white shadow-lg",
+        })
+      );
+  }, [id]);
 
   return (
     <Button
