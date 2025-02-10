@@ -1,7 +1,6 @@
 import { getListingAction } from "@/actions";
 import ImageCollage from "@/components/pages/offers/ImageCollage";
 import {
-  Bookmark,
   Clock3,
   GaugeCircle,
   Mail,
@@ -20,6 +19,7 @@ import { categories } from "@/lib/constants";
 import { capitalize } from "lodash";
 import ListerListingActions from "@/components/general/ListerListingActions";
 import ShareBtn from "@/components/pages/offers/ShareBtn";
+import BookmarkBtn from "@/components/pages/offers/BookmarkBtn";
 
 type propTypes = {
   params: Promise<{ slug: string }>;
@@ -104,9 +104,8 @@ export default async function page({ params }: propTypes) {
               <DetailSection className="mb-3" title="actions">
                 <div className="grid grid-cols-2 gap-3">
                   <ShareBtn />
-                  <Button variant="outline" className="border-slate-600">
-                    Bookmark <Bookmark size={18} />
-                  </Button>
+
+                  <BookmarkBtn id={listing.id} />
 
                   {isOwner ? (
                     <ListerListingActions listing={listing} />

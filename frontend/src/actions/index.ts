@@ -1,10 +1,11 @@
 "use server";
 
 import { sampleLister } from "@/lib/constants";
-import { ID, Result } from "@/lib/types";
+import { ID } from "@/lib/types";
 import { wait } from "@/lib/utils";
 import { sampleListings } from "@/sample-data/listings";
 import { sampleNotifications } from "@/sample-data/notifications";
+import { random } from "lodash";
 import { redirect } from "next/navigation";
 
 export async function getListingAction(slug: string) {
@@ -48,4 +49,17 @@ export async function delistListingAction(id: ID) {
 export async function deleteListingAction(id: ID) {
   await wait(1);
   console.log("TODO: delete " + id);
+}
+
+export async function toggleBookmarkListingAction(id: ID) {
+  await wait(1);
+  console.log("TODO: bookmark " + id);
+}
+
+export async function checkIsBookmarkedAction(id: ID) {
+  await wait(1);
+  console.log("TODO: bookmark " + id);
+
+  if (random(1) === 1) return true;
+  else return false;
 }
