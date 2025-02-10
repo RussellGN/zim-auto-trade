@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { LogOut, Settings } from "lucide-react";
+import { Settings } from "lucide-react";
 import Link from "next/link";
 import NewListing from "./NewListing";
 import Notifications from "./Notifications";
+import LogoutBtn from "./LogoutBtn";
 
 export default function DashNavigation() {
   return (
@@ -17,10 +18,7 @@ export default function DashNavigation() {
           </Link>
         </Button>
 
-        <Button className="border-slate-700 bg-white" variant="outline">
-          Logout
-          <LogOut size={18} />
-        </Button>
+        <LogoutBtn />
       </div>
 
       <NewListing />
