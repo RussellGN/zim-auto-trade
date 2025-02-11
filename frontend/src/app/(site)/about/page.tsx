@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Car, Users, Search, ShieldCheck } from "lucide-react";
+import { Users, Search } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
