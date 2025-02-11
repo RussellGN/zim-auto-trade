@@ -11,7 +11,7 @@ export default function LogoutBtn() {
     logoutAction().catch(() =>
       toast({
         title: "Error logging out",
-        className: "bg-white shadow-lg",
+        variant: "destructive",
       })
     );
   }

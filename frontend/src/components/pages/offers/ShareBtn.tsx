@@ -16,7 +16,7 @@ export default function ShareBtn({ shareLink }: { shareLink?: string }) {
         toast({
           title: "Could not copy to clipboard",
           description: `Failed to copy share link: ${err}`,
-          className: "bg-white shadow-lg",
+          variant: "destructive",
         })
       );
   }

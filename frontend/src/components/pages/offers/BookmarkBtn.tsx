@@ -16,7 +16,7 @@ export default function BookmarkBtn({ id }: { id: ID }) {
       .catch(() =>
         toast({
           title: "Could not toggle bookmark",
-          className: "bg-white shadow-lg",
+          variant: "destructive",
         })
       );
   }
@@ -27,7 +27,7 @@ export default function BookmarkBtn({ id }: { id: ID }) {
       .catch(() =>
         toast({
           title: "Could not toggle bookmark",
-          className: "bg-white shadow-lg",
+          variant: "destructive",
         })
       );
   }, [id]);
