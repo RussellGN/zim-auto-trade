@@ -1,7 +1,6 @@
 import { getListingAction } from "@/actions";
 import ImageCollage from "@/components/pages/offers/ImageCollage";
-import { Clock3, GaugeCircle, Mail, MapPin, Tag, UserCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Clock3, GaugeCircle, MapPin, Tag, UserCircle } from "lucide-react";
 import Link from "next/link";
 import { formatLongNumber, friendlyDate } from "@/lib/utils";
 import Container from "@/components/layout/Container";
@@ -13,6 +12,7 @@ import ListerListingActions from "@/components/general/ListerListingActions";
 import ShareBtn from "@/components/pages/offers/ShareBtn";
 import BookmarkBtn from "@/components/pages/offers/BookmarkBtn";
 import ReportBtn from "@/components/pages/offers/ReportBtn";
+import Enquire from "@/components/pages/offers/Enquire";
 
 type propTypes = {
   params: Promise<{ slug: string }>;
@@ -89,9 +89,7 @@ export default async function page({ params }: propTypes) {
 
             <div className="col-span-2">
               <div className="p-4">
-                <Button disabled={isOwner} className="w-full bg-primary-default text-white">
-                  Enquire <Mail size={18} />
-                </Button>
+                <Enquire disabled={isOwner} listing={listing} />
               </div>
 
               <DetailSection className="mb-3" title="actions">
