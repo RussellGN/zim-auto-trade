@@ -39,12 +39,7 @@ export default function Enquire({ disabled, listing }: propTypes) {
                 />
 
                 <div>
-                  <Link
-                    className="mb-2 block text-primary-default underline"
-                    href={`/${listing.lister.slug}`}
-                  >
-                    {listing.lister.name}
-                  </Link>
+                  <div className="mb-2 text-lg font-semibold">{listing.lister.name}</div>
 
                   <div className="mb-2 flex items-center gap-1">
                     <MapPin size={16} />
