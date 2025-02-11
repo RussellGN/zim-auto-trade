@@ -212,10 +212,10 @@ export const sampleLister: ListerInterface = {
     "https://www.autodeal.com.ph/custom/blog-post/header/how-to-tell-if-youre-dealing-with-a-good-sales-agent-60dd890b1664d.jpg",
 };
 
-export const modalDialogSizes: { [k: string]: modalDialogSize } = {
-  sm: "425px",
-  md: "700px",
-  lg: "1000px",
+export const modalDialogSizes = {
+  sm: "425px" as modalDialogSize,
+  md: "700px" as modalDialogSize,
+  lg: "1000px" as modalDialogSize,
 };
 
 export const listerOptions: AccountType[] = [
@@ -248,4 +248,14 @@ export const settings: {
     content: <NotificationSettings />,
     icon: <Bell size={18} />,
   },
+];
+
+export const violationOptions = [
+  { value: "fraud", label: "Fraudulent or Scam" },
+  { value: "incorrect_info", label: "Incorrect Information" },
+  { value: "sold", label: "Already Sold" },
+  { value: "duplicate", label: "Duplicate Listing" },
+  { value: "spam", label: "Spam or Irrelevant" },
+  { value: "offensive", label: "Offensive or Inappropriate Content" },
+  { value: "other", label: "Other (explain below)" },
 ];

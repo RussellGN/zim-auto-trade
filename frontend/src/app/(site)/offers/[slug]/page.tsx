@@ -1,14 +1,6 @@
 import { getListingAction } from "@/actions";
 import ImageCollage from "@/components/pages/offers/ImageCollage";
-import {
-  Clock3,
-  GaugeCircle,
-  Mail,
-  MapPin,
-  MessageSquareWarning,
-  Tag,
-  UserCircle,
-} from "lucide-react";
+import { Clock3, GaugeCircle, Mail, MapPin, Tag, UserCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { formatLongNumber, friendlyDate } from "@/lib/utils";
@@ -20,6 +12,7 @@ import { capitalize } from "lodash";
 import ListerListingActions from "@/components/general/ListerListingActions";
 import ShareBtn from "@/components/pages/offers/ShareBtn";
 import BookmarkBtn from "@/components/pages/offers/BookmarkBtn";
+import ReportBtn from "@/components/pages/offers/ReportBtn";
 
 type propTypes = {
   params: Promise<{ slug: string }>;
@@ -107,13 +100,7 @@ export default async function page({ params }: propTypes) {
 
                   <BookmarkBtn id={listing.id} />
 
-                  {isOwner ? (
-                    <ListerListingActions listing={listing} />
-                  ) : (
-                    <Button variant="outline" className="border-danger-default text-danger-default">
-                      Report <MessageSquareWarning size={18} className="-mb-1" />
-                    </Button>
-                  )}
+                  {isOwner ? <ListerListingActions listing={listing} /> : <ReportBtn />}
                 </div>
               </DetailSection>
             </div>
