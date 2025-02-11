@@ -37,7 +37,7 @@ export default function ReportBtn() {
         <div className="mb-8">
           <Label className="mb-5 flex items-center gap-2 px-3" htmlFor="violation">
             <MailWarning size={iconSize} />
-            What's wrong with this listing?
+            What&apos;s wrong with this listing?
           </Label>
 
           <Select name="violation" required>
