@@ -1,4 +1,4 @@
-import { AccountType, ID, ImageSrc, NotificationType } from "./types";
+import { AccountType, ID, ImageSrc, NotificationType, SocialMediaProfile } from "./types";
 
 export interface ListerInterface {
   type: AccountType;
@@ -7,6 +7,10 @@ export interface ListerInterface {
   description: string;
   location: string;
   image?: string;
+  email: string;
+  phoneNumbers: string[];
+  socials?: SocialMediaProfile[];
+  website?: string;
 }
 
 export interface ListingInterface {

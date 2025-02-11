@@ -210,6 +210,8 @@ export const sampleLister: ListerInterface = {
   location: "Harare",
   image:
     "https://www.autodeal.com.ph/custom/blog-post/header/how-to-tell-if-youre-dealing-with-a-good-sales-agent-60dd890b1664d.jpg",
+  email: "rgund@gmail.com",
+  phoneNumbers: ["+263 7655 4453", "+263 7615 4004"],
 };
 
 export const modalDialogSizes = {

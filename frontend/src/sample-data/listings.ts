@@ -45,6 +45,17 @@ export const sampleListings: ListingInterface[] = [
     location: "Harare",
     viewCount: 123,
     lister: {
+      email: "info@johnsauto.com",
+      website: "www.johnsauto.com",
+      phoneNumbers: ["+263 7655 4453", "+263 7625 1155", "+263 7615 4004"],
+      socials: [
+        { platform: "Facebook", url: "facebook.com" },
+        { platform: "LinkedIn", url: "linkedin.com" },
+        { platform: "Instagram", url: "instagram.com" },
+        { platform: "X", url: "x.com" },
+        { platform: "WhatsApp", url: "chat.whatsApp.com" },
+        { platform: "YouTube", url: "youTube.com" },
+      ],
       type: "dealership",
       image:
         "https://realtimeuk.com/wp-content/uploads/2019/05/BMW-dealership-photography-auto-dealership-360-tour-company-virtual-tours-for-automotive-dealerships-e1573736938239.jpg",
@@ -96,6 +107,17 @@ export const sampleListings: ListingInterface[] = [
     location: "Bulawayo",
     viewCount: 89,
     lister: {
+      email: "info@speedymotors.com",
+      website: "www.speedymotors.com",
+      phoneNumbers: ["+263 7655 4453", "+263 7625 1155", "+263 7615 4004"],
+      socials: [
+        { platform: "Facebook", url: "facebook.com" },
+        { platform: "LinkedIn", url: "linkedin.com" },
+        { platform: "Instagram", url: "instagram.com" },
+        { platform: "X", url: "x.com" },
+        { platform: "WhatsApp", url: "chat.whatsApp.com" },
+        { platform: "YouTube", url: "youTube.com" },
+      ],
       name: "Speedy Motors",
       type: "dealership",
       image:
@@ -149,6 +171,17 @@ export const sampleListings: ListingInterface[] = [
     location: "Mutare",
     viewCount: 112,
     lister: {
+      email: "info@citywheels.com",
+      website: "www.citywheels.com",
+      phoneNumbers: ["+263 7655 4453", "+263 7625 1155", "+263 7615 4004"],
+      socials: [
+        { platform: "Facebook", url: "facebook.com" },
+        { platform: "LinkedIn", url: "linkedin.com" },
+        { platform: "Instagram", url: "instagram.com" },
+        { platform: "X", url: "x.com" },
+        { platform: "WhatsApp", url: "chat.whatsApp.com" },
+        { platform: "YouTube", url: "youTube.com" },
+      ],
       name: "City Wheels",
       type: "dealership",
       image:
@@ -206,6 +239,17 @@ export const sampleListings: ListingInterface[] = [
     location: "Gweru",
     viewCount: 98,
     lister: {
+      email: "info@heavydutytrucks.com",
+      website: "www.heavydutytrucks.com",
+      phoneNumbers: ["+263 7655 4453", "+263 7625 1155", "+263 7615 4004"],
+      socials: [
+        { platform: "Facebook", url: "facebook.com" },
+        { platform: "LinkedIn", url: "linkedin.com" },
+        { platform: "Instagram", url: "instagram.com" },
+        { platform: "X", url: "x.com" },
+        { platform: "WhatsApp", url: "chat.whatsApp.com" },
+        { platform: "YouTube", url: "youTube.com" },
+      ],
       name: "Heavy Duty Trucks",
       slug: "heavy-duty-trucks",
       type: "dealership",
