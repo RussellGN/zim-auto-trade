@@ -1,3 +1,4 @@
+import { iconSize } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Info } from "lucide-react";
 import { ReactNode } from "react";
@@ -18,7 +19,7 @@ export default function FieldSet({ children, legend, className, description }: p
 
       {description && (
         <p className="mb-2">
-          <Info size={14} className="-mt-1 inline" /> {description}
+          <Info size={iconSize - 4} className="-mt-1 inline" /> {description}
         </p>
       )}
 

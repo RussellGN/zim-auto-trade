@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/general/use-toast";
+import { iconSize } from "@/lib/constants";
 import { CheckCircle, Share } from "lucide-react";
 import { useState } from "react";
 
@@ -30,11 +31,11 @@ export default function ShareBtn({ shareLink }: { shareLink?: string }) {
     >
       {copied ? (
         <>
-          Copied <CheckCircle size={18} />
+          Copied <CheckCircle size={iconSize} />
         </>
       ) : (
         <>
-          Share <Share size={18} />
+          Share <Share size={iconSize} />
         </>
       )}
     </Button>

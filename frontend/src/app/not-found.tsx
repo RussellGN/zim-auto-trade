@@ -1,5 +1,6 @@
 import BackBtn from "@/components/layout/BackBtn";
 import { Button } from "@/components/ui/button";
+import { iconSize } from "@/lib/constants";
 import { Home } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -15,7 +16,7 @@ export default function NotFound() {
 
       <Button asChild className="bg-primary-default text-white">
         <Link href="/">
-          Homepage <Home size={18} />
+          Homepage <Home size={iconSize} />
         </Link>
       </Button>
     </div>

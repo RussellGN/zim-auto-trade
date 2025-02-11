@@ -4,6 +4,7 @@ import { logoutAction } from "@/actions";
 import CustomModal from "@/components/general/CustomModal";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/general/use-toast";
+import { iconSize } from "@/lib/constants";
 import { LogOut } from "lucide-react";
 
 export default function LogoutBtn() {
@@ -19,7 +20,7 @@ export default function LogoutBtn() {
     <CustomModal
       title="Logout"
       message="Are you sure you want to logout"
-      icon={<LogOut size={18} />}
+      icon={<LogOut size={iconSize} />}
       onProceed={logout}
       onCancel={() => {}}
       proceedText="Logout"
@@ -28,7 +29,7 @@ export default function LogoutBtn() {
     >
       <Button className="border-slate-700 bg-white" variant="outline">
         Logout
-        <LogOut size={18} />
+        <LogOut size={iconSize} />
       </Button>
     </CustomModal>
   );

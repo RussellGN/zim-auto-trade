@@ -33,7 +33,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { categories } from "@/lib/constants";
+import { categories, iconSize } from "@/lib/constants";
 import { Textarea } from "@/components/ui/textarea";
 import { ListingInterface } from "@/lib/interfaces";
 import useListingModal from "@/hooks/component-hooks/useListingModal";
@@ -58,11 +58,11 @@ export default function ListingModal({ listing, trigger }: propTypes) {
           <DialogTitle className="flex items-center gap-2">
             {isEditing ? (
               <>
-                Edit Listing <Edit size={18} />
+                Edit Listing <Edit size={iconSize} />
               </>
             ) : (
               <>
-                New Listing <Plus size={18} />
+                New Listing <Plus size={iconSize} />
               </>
             )}
           </DialogTitle>
@@ -102,7 +102,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
             <FieldSet legend="General Info" className="col-span-4">
               <div className="mb-1 flex items-center justify-between gap-4">
                 <Label className="flex items-center gap-1" htmlFor="make">
-                  <Shield size={16} /> Make
+                  <Shield size={iconSize - 2} /> Make
                 </Label>
 
                 <Input
@@ -118,7 +118,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
 
               <div className="mb-1 flex items-center justify-between gap-4">
                 <Label className="flex items-center gap-1" htmlFor="model">
-                  <ShieldEllipsis size={16} /> Model
+                  <ShieldEllipsis size={iconSize - 2} /> Model
                 </Label>
 
                 <Input
@@ -134,7 +134,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
 
               <div className="mb-1 flex items-center justify-between gap-4">
                 <Label className="flex items-center gap-1" htmlFor="year">
-                  <Calendar1 size={16} /> Year
+                  <Calendar1 size={iconSize - 2} /> Year
                 </Label>
 
                 <Input
@@ -153,7 +153,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
 
               <div className="mb-1 flex items-center justify-between gap-4">
                 <Label className="flex items-center gap-1" htmlFor="category">
-                  <Boxes size={16} /> Category
+                  <Boxes size={iconSize - 2} /> Category
                 </Label>
 
                 <Select defaultValue={listing?.category} required={!isEditing} name="category">
@@ -176,7 +176,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
 
               <div className="mb-1 flex items-center justify-between gap-4">
                 <Label className="flex items-center gap-1" htmlFor="price">
-                  <CircleDollarSign size={16} /> Price
+                  <CircleDollarSign size={iconSize - 2} /> Price
                 </Label>
 
                 <Input
@@ -195,7 +195,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
 
               <div className="mb-1 flex items-center justify-between gap-4">
                 <Label className="flex items-center gap-1" htmlFor="mileage">
-                  <GaugeCircle size={16} /> Mileage
+                  <GaugeCircle size={iconSize - 2} /> Mileage
                 </Label>
 
                 <Input
@@ -214,7 +214,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
 
               <div className="mb-1 flex items-center justify-between gap-4">
                 <Label className="flex items-center gap-1" htmlFor="location">
-                  <MapPin size={16} /> Location
+                  <MapPin size={iconSize - 2} /> Location
                 </Label>
 
                 <Input
@@ -232,7 +232,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
             <FieldSet legend="Further Info" className="col-span-4">
               <div className="mb-1">
                 <Label className="mb-3 flex items-center gap-1" htmlFor="description">
-                  <Info size={16} /> Description
+                  <Info size={iconSize - 2} /> Description
                 </Label>
 
                 <Textarea

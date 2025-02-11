@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import useFeaturesSelector from "@/hooks/component-hooks/useFeaturesSelector";
+import { iconSize } from "@/lib/constants";
 import { Square, X } from "lucide-react";
 
 export default function FeaturesSelector({
@@ -76,7 +77,7 @@ function FeatureOption({ feat, isSelected, selectFeat, deselectFeat }: featureOp
       className={`h-fit w-fit border-slate-500 px-1.5 py-1 text-xs font-normal ${isSelected ? "bg-slate-300" : ""}`}
     >
       {feat}
-      {isSelected ? <X size={14} /> : <Square size={14} />}
+      {isSelected ? <X size={iconSize - 4} /> : <Square size={iconSize - 4} />}
     </Button>
   );
 }

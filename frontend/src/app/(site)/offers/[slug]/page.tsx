@@ -6,7 +6,7 @@ import { formatLongNumber, friendlyDate } from "@/lib/utils";
 import Container from "@/components/layout/Container";
 import BackBtn from "@/components/layout/BackBtn";
 import DetailSection from "@/components/pages/offers/DetailSection";
-import { categories } from "@/lib/constants";
+import { categories, iconSize } from "@/lib/constants";
 import { capitalize } from "lodash";
 import ListerListingActions from "@/components/general/ListerListingActions";
 import ShareBtn from "@/components/pages/offers/ShareBtn";
@@ -49,25 +49,25 @@ export default async function page({ params }: propTypes) {
             <DetailSection className="col-span-2" title="About Listing">
               <div className="flex flex-1 flex-col gap-3">
                 <div className="flex items-center gap-2">
-                  <Clock3 size={18} className="text-gray-600" />
+                  <Clock3 size={iconSize} className="text-gray-600" />
                   Date Uploaded:
                   <span className="font-semibold">{friendlyDate(listing.date)}</span>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <Tag size={18} className="text-gray-600" />
+                  <Tag size={iconSize} className="text-gray-600" />
                   Ask Price:
                   <span className="font-semibold">$ {formatLongNumber(listing.price)}</span>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <GaugeCircle size={18} className="text-gray-600" />
+                  <GaugeCircle size={iconSize} className="text-gray-600" />
                   Mileage:
                   <span className="font-semibold">{formatLongNumber(listing.mileage)} km</span>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <MapPin size={18} className="text-gray-600" />
+                  <MapPin size={iconSize} className="text-gray-600" />
                   Location:
                   <span className="font-semibold">{listing.location} km</span>
                 </div>
@@ -75,7 +75,7 @@ export default async function page({ params }: propTypes) {
                 <div className="text-sm text-slate-600">{listing.viewCount} views</div>
 
                 <div className="flex items-center gap-2">
-                  <UserCircle size={18} className="text-gray-600" />
+                  <UserCircle size={iconSize} className="text-gray-600" />
                   Listed By:
                   <Link
                     href={`/${listing.lister.slug}`}

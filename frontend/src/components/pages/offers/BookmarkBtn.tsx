@@ -3,6 +3,7 @@
 import { checkIsBookmarkedAction, toggleBookmarkListingAction } from "@/actions";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/general/use-toast";
+import { iconSize } from "@/lib/constants";
 import { ID } from "@/lib/types";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -41,11 +42,11 @@ export default function BookmarkBtn({ id }: { id: ID }) {
     >
       {isBookmarked ? (
         <>
-          Bookmarked <BookmarkCheck size={18} />
+          Bookmarked <BookmarkCheck size={iconSize} />
         </>
       ) : (
         <>
-          Bookmark <Bookmark size={18} />
+          Bookmark <Bookmark size={iconSize} />
         </>
       )}
     </Button>

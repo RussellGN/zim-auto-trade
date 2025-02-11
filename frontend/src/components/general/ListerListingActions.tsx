@@ -6,6 +6,7 @@ import useListerListingActions from "@/hooks/component-hooks/useListerListingAct
 import { ListingInterface } from "@/lib/interfaces";
 import { Edit2, EyeOff, Trash2 } from "lucide-react";
 import ListingModal from "./ListingModal";
+import { iconSize } from "@/lib/constants";
 
 type propTypes = {
   listing: ListingInterface;
@@ -27,7 +28,7 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
             className={`${compact ? "rounded-full" : ""} border-slate-500`}
           >
             {!compact && "Edit"}
-            <Edit2 size={18} />
+            <Edit2 size={iconSize} />
           </Button>
         }
       />
@@ -47,7 +48,7 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
           className={`${compact ? "rounded-full" : ""} border-slate-500`}
         >
           {!compact && "Delist"}
-          <EyeOff size={18} />
+          <EyeOff size={iconSize} />
         </Button>
       </CustomModal>
 
@@ -67,7 +68,7 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
           className={`${compact ? "rounded-full" : ""} border-danger-default text-danger-default`}
         >
           {!compact && "Delete"}
-          <Trash2 size={18} />
+          <Trash2 size={iconSize} />
         </Button>
       </CustomModal>
     </div>

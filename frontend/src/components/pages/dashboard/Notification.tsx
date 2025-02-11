@@ -1,4 +1,5 @@
 import ExpandableText from "@/components/general/ExpandableText";
+import { iconSize } from "@/lib/constants";
 import { NotificationInterface } from "@/lib/interfaces";
 import { getTimeElapsedSince } from "@/lib/utils";
 import { Clock3 } from "lucide-react";
@@ -17,7 +18,7 @@ export default function Notification({ notification }: propTypes) {
           <div className="flex items-center gap-3">
             {notification.read && <div className="size-3 rounded-full bg-primary-light"></div>}
             <div className="flex items-center gap-2 text-sm text-slate-600">
-              <Clock3 size={15} />
+              <Clock3 size={iconSize - 3} />
               {getTimeElapsedSince(notification.timestamp)}
             </div>
           </div>

@@ -1,5 +1,6 @@
 import ListingModal from "@/components/general/ListingModal";
 import { Button } from "@/components/ui/button";
+import { iconSize } from "@/lib/constants";
 import { Plus } from "lucide-react";
 
 export default function NewListing() {
@@ -8,7 +9,7 @@ export default function NewListing() {
       trigger={
         <Button className="bg-primary-default text-white" title="new listing">
           New Listing
-          <Plus size={18} />
+          <Plus size={iconSize} />
         </Button>
       }
     />

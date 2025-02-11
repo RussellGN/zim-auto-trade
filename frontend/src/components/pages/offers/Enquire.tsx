@@ -1,6 +1,6 @@
 import ContentModal from "@/components/general/ContentModal";
 import { Button } from "@/components/ui/button";
-import { placeholderImage } from "@/lib/constants";
+import { iconSize, placeholderImage } from "@/lib/constants";
 import { ListingInterface } from "@/lib/interfaces";
 import { AtSign, LinkIcon, Mail, MapPin, Phone, Users } from "lucide-react";
 import Image from "next/image";
@@ -16,10 +16,10 @@ export default function Enquire({ disabled, listing }: propTypes) {
     <ContentModal
       trigger={
         <Button disabled={disabled} className="w-full bg-primary-default text-white">
-          Enquire <Mail size={18} />
+          Enquire <Mail size={iconSize} />
         </Button>
       }
-      icon={<Mail size={18} />}
+      icon={<Mail size={iconSize} />}
       title="Enquire Listing"
       description={`Here's how to get in touch with the ${listing.lister.type} that listed this vehicle`}
     >
@@ -42,12 +42,12 @@ export default function Enquire({ disabled, listing }: propTypes) {
                   <div className="mb-2 text-lg font-semibold">{listing.lister.name}</div>
 
                   <div className="mb-2 flex items-center gap-1">
-                    <MapPin size={16} />
+                    <MapPin size={iconSize - 2} />
                     {listing.lister.location}
                   </div>
 
                   <div className="mb-3 flex items-center gap-1">
-                    <Users size={16} />
+                    <Users size={iconSize - 2} />
                     {listing.lister.type}
                   </div>
 
@@ -65,13 +65,13 @@ export default function Enquire({ disabled, listing }: propTypes) {
 
               <div className="mb-8 rounded-lg border bg-[whitesmoke] p-3 shadow">
                 <div className="mb-1 flex items-center gap-1">
-                  <Phone size={16} />
+                  <Phone size={iconSize - 2} />
                   <div>Phone numbers: </div>
                   <div>{listing.lister.phoneNumbers.join(", ")}</div>
                 </div>
 
                 <div className="mb-1 flex items-center gap-1">
-                  <AtSign size={16} />
+                  <AtSign size={iconSize - 2} />
                   <div>Email: </div>
                   <Link
                     href={`mailto:${listing.lister.email}`}
@@ -83,7 +83,7 @@ export default function Enquire({ disabled, listing }: propTypes) {
 
                 {listing.lister.website && (
                   <div className="mb-1 flex items-center gap-1">
-                    <LinkIcon size={16} />
+                    <LinkIcon size={iconSize - 2} />
                     <div>Website: </div>
                     <Link
                       href={`mailto:${listing.lister.website}`}

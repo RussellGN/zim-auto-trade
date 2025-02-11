@@ -18,6 +18,8 @@ import AccountSettings from "@/components/pages/settings/AccountSettings";
 import NotificationSettings from "@/components/pages/settings/NotificationSettings";
 import { ReactNode } from "react";
 
+export const iconSize = 18;
+
 export const navLinks = [
   {
     label: "home",
@@ -242,13 +244,13 @@ export const settings: {
     title: "Account",
     description: "Manage account status",
     content: <AccountSettings />,
-    icon: <UserCircle size={18} />,
+    icon: <UserCircle size={iconSize} />,
   },
   {
     title: "Notifications",
     description: "Manage how you receive notifications",
     content: <NotificationSettings />,
-    icon: <Bell size={18} />,
+    icon: <Bell size={iconSize} />,
   },
 ];
 

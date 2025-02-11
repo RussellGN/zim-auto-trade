@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Images } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { iconSize } from "@/lib/constants";
 
 type propTypes = {
   images: CustomImageProps[];
@@ -38,7 +39,7 @@ export default function ImageCollage({
           className={`aspect-video w-full ${compact ? "rounded-s-2xl" : "rounded-2xl"} bg-gray-700 object-cover`}
         />
         <div className="absolute left-0 top-0 m-0.5 flex items-center gap-2 rounded rounded-ee-xl rounded-ss-2xl bg-black/50 px-2 py-1 text-sm text-white backdrop-blur">
-          <Images size={18} />
+          <Images size={iconSize} />
           {`${imageOnView.pos + 1}/${images.length}`}
         </div>
       </div>

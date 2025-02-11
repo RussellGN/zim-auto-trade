@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { formatLongNumber } from "@/lib/utils";
 import ListerListingActions from "../../general/ListerListingActions";
+import { iconSize } from "@/lib/constants";
 
 type propTypes = {
   listing: ListingInterface;
@@ -27,23 +28,23 @@ export default function Listing({ listing, onDash }: propTypes) {
           <h2 className="text-xl">{`${listing.year} ${listing.make} ${listing.model}`}</h2>
 
           <div className="flex w-fit items-center gap-1 text-nowrap text-sm text-slate-500">
-            <Clock3 size={18} />
+            <Clock3 size={iconSize} />
             {listing.date}
           </div>
         </div>
 
         <div className="flex items-center gap-2">
-          <Tag size={18} />
+          <Tag size={iconSize} />
           <span>$ {formatLongNumber(listing.price)}</span>
         </div>
 
         <div className="flex items-center gap-2">
-          <Gauge size={18} />
+          <Gauge size={iconSize} />
           {formatLongNumber(listing.mileage)} km
         </div>
 
         <div className="flex items-center gap-2">
-          <MapPin size={18} />
+          <MapPin size={iconSize} />
           {listing.location}
         </div>
 
@@ -57,7 +58,7 @@ export default function Listing({ listing, onDash }: propTypes) {
                 className="flex items-center justify-center gap-2"
               >
                 View
-                <ArrowRight size={18} />
+                <ArrowRight size={iconSize} />
               </Link>
             </Button>
           </div>
@@ -70,7 +71,7 @@ export default function Listing({ listing, onDash }: propTypes) {
                 href={`/${listing.lister.slug}`}
                 className="flex items-center justify-center gap-2 text-primary-default"
               >
-                <CircleUser size={18} />
+                <CircleUser size={iconSize} />
                 {listing.lister.name}
               </Link>
             </div>
