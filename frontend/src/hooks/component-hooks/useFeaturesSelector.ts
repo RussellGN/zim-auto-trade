@@ -30,7 +30,7 @@ export default function useFeaturesSelector(defaultFeatures: string | undefined)
         toast({
           title: "Could not add filter",
           description: `'${query}' has already been entered`,
-          className: "bg-white shadow-lg",
+          variant: "destructive",
         });
       }
     }

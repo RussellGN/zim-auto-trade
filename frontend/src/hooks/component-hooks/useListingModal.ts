@@ -28,7 +28,7 @@ export default function useListingModal(listing?: ListingInterface) {
       toast({
         title: "Error previewing images",
         description: `A minimum of 6 images is required, you selected ${length}`,
-        className: "bg-white shadow-lg",
+        variant: "destructive",
       });
       return;
     }
@@ -36,7 +36,7 @@ export default function useListingModal(listing?: ListingInterface) {
       toast({
         title: "Error previewing images",
         description: `A maximum of 30 images is allowed, you selected ${length}`,
-        className: "bg-white shadow-lg",
+        variant: "destructive",
       });
       return;
     }

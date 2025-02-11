@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { modalDialogSizes, violationOptions } from "@/lib/constants";
+import { iconSize, modalDialogSizes, violationOptions } from "@/lib/constants";
 import { Info, MailWarning, MessageSquareWarning } from "lucide-react";
 
 export default function ReportBtn() {
@@ -20,10 +20,10 @@ export default function ReportBtn() {
     <ContentModal
       trigger={
         <Button variant="outline" className="border-danger-default text-danger-default">
-          Report <MessageSquareWarning size={18} className="-mb-1" />
+          Report <MessageSquareWarning size={iconSize} className="-mb-1" />
         </Button>
       }
-      icon={<MessageSquareWarning size={18} />}
+      icon={<MessageSquareWarning size={iconSize} />}
       title="Report Listing"
       description="Report this listing if it contains incorrect information, is misleading, or violates our guidelines."
       size={modalDialogSizes.md}
@@ -36,8 +36,8 @@ export default function ReportBtn() {
       >
         <div className="mb-8">
           <Label className="mb-5 flex items-center gap-2 px-3" htmlFor="violation">
-            <MailWarning size={18} />
-            What's wrong with this listing?
+            <MailWarning size={iconSize} />
+            What&apos;s wrong with this listing?
           </Label>
 
           <Select name="violation" required>
@@ -57,7 +57,7 @@ export default function ReportBtn() {
 
         <div className="mb-10">
           <Label className="mb-5 flex items-center gap-2 ps-3" htmlFor="description">
-            <Info size={18} />
+            <Info size={iconSize} />
             Elaborate on your report (optional)
           </Label>
 

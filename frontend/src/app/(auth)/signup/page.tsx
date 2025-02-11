@@ -1,6 +1,7 @@
 import AuthProviders from "@/components/pages/auth/AuthProviders";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { iconSize } from "@/lib/constants";
 import { Label } from "@radix-ui/react-label";
 import { Lock, UserCircle } from "lucide-react";
 import Link from "next/link";
@@ -12,7 +13,7 @@ export default function page() {
 
       <div className="mb-4">
         <Label className="mb-2 flex items-center gap-2 ps-3" htmlFor="email">
-          <UserCircle size={18} /> Your Email
+          <UserCircle size={iconSize} /> Your Email
         </Label>
         <Input
           className="w-full border-0 border-b-2"
@@ -25,7 +26,7 @@ export default function page() {
 
       <div className="mb-4">
         <Label className="mb-2 flex items-center gap-2 ps-3" htmlFor="email">
-          <Lock size={18} />
+          <Lock size={iconSize} />
           Enter a Strong Password
         </Label>
         <Input

@@ -4,6 +4,7 @@ import Link from "next/link";
 import NewListing from "./NewListing";
 import Notifications from "./Notifications";
 import LogoutBtn from "./LogoutBtn";
+import { iconSize } from "@/lib/constants";
 
 export default function DashNavigation() {
   return (
@@ -14,7 +15,7 @@ export default function DashNavigation() {
         <Button asChild className="border-slate-700 bg-white" variant="outline">
           <Link href="/dashboard/settings">
             Settings
-            <Settings size={18} />
+            <Settings size={iconSize} />
           </Link>
         </Button>
 

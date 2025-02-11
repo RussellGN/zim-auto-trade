@@ -26,7 +26,7 @@ export function SmartSearchDialog() {
           <DialogDescription>Search for the exact vehicle you need!</DialogDescription>
         </DialogHeader>
 
-        <div className="my-5">
+        <div className="mt-5">
           <SmartSearchForm noTitle />
         </div>
       </DialogContent>

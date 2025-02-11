@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/dialog";
 import { modalDialogSize } from "@/lib/types";
 import { ReactNode } from "react";
-import { modalDialogSizes } from "@/lib/constants";
 
 type propTypes = {
   trigger: ReactNode;

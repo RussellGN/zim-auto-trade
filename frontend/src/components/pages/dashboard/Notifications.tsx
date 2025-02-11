@@ -7,7 +7,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Bell } from "lucide-react";
-import { modalDialogSizes } from "@/lib/constants";
+import { iconSize, modalDialogSizes } from "@/lib/constants";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { getNotificationsAction } from "@/actions";
 import Notification from "./Notification";
@@ -21,7 +21,7 @@ export default async function Notifications() {
       <DialogTrigger asChild>
         <Button className="border-slate-700 bg-white" variant="outline">
           Notifications
-          <Bell size={18} />
+          <Bell size={iconSize} />
         </Button>
       </DialogTrigger>
 
@@ -29,7 +29,7 @@ export default async function Notifications() {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <span className="text-primary-default">{unread}</span>
-            Notifications <Bell size={18} />
+            Notifications <Bell size={iconSize} />
           </DialogTitle>
 
           <DialogDescription>See whats been happening</DialogDescription>

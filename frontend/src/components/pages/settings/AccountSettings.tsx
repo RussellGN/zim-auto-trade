@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { iconSize } from "@/lib/constants";
 import { Lock, LockKeyholeOpen } from "lucide-react";
 
 export default function AccountSettings() {
@@ -14,7 +15,7 @@ export default function AccountSettings() {
 
             <form onSubmit={(e) => e.preventDefault()}>
               <div className="mb-4 flex items-center justify-start gap-4">
-                <LockKeyholeOpen size={18} />
+                <LockKeyholeOpen size={iconSize} />
 
                 <Input
                   className="max-w-[400px] border-0 border-b-2"
@@ -28,7 +29,7 @@ export default function AccountSettings() {
               </div>
 
               <div className="mb-4 flex items-center justify-start gap-4">
-                <Lock size={18} />
+                <Lock size={iconSize} />
 
                 <Input
                   className="max-w-[400px] border-0 border-b-2"

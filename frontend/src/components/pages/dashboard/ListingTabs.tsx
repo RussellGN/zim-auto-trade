@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { iconSize } from "@/lib/constants";
 import { Bookmark } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -28,7 +29,7 @@ export default function ListingTabs() {
       >
         <Link replace href={{ query: { tab: "saved" } }}>
           Bookmarked
-          <Bookmark size={18} />
+          <Bookmark size={iconSize} />
         </Link>
       </Button>
     </div>

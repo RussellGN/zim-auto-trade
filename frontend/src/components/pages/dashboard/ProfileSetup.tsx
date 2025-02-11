@@ -13,7 +13,7 @@ import {
 import { Edit2, Info, MapPin, UserCircle, Users } from "lucide-react";
 import { ListerInterface } from "@/lib/interfaces";
 import { useState } from "react";
-import { listerOptions, modalDialogSizes } from "@/lib/constants";
+import { iconSize, listerOptions, modalDialogSizes } from "@/lib/constants";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import {
@@ -64,7 +64,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
             <div className="flex items-start gap-2">
               <div>
-                <Info size={18} className="text-info-dark" />
+                <Info size={iconSize} className="text-info-dark" />
               </div>
               <p className="-mt-1.5 max-w-[20rem] text-slate-700">
                 Choose a clear and professional photo that represents you or your dealership (1x1
@@ -76,7 +76,7 @@ export default function ProfileSetup({ lister }: proptypes) {
           <FieldSet legend="Details">
             <div className="mb-2 flex items-center justify-between gap-4">
               <Label className="flex items-center gap-2 ps-3" htmlFor="name">
-                <UserCircle size={18} /> Name
+                <UserCircle size={iconSize} /> Name
               </Label>
 
               <Input
@@ -91,7 +91,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
             <div className="mb-2 flex items-center justify-between gap-4">
               <Label className="flex items-center gap-2 ps-3" htmlFor="type">
-                <Users size={18} /> Type
+                <Users size={iconSize} /> Type
               </Label>
 
               <Select name="type" defaultValue={lister.type}>
@@ -111,7 +111,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
             <div className="mb-2 flex items-center justify-between gap-4">
               <Label className="flex items-center gap-2 ps-3" htmlFor="location">
-                <MapPin size={18} /> Location
+                <MapPin size={iconSize} /> Location
               </Label>
 
               <Input
@@ -126,7 +126,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
             <div className="mb-2">
               <Label className="mb-3 flex items-center gap-2 ps-3" htmlFor="description">
-                <Info size={18} /> Description
+                <Info size={iconSize} /> Description
               </Label>
 
               <Textarea
