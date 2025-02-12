@@ -32,11 +32,11 @@ export default function Features() {
           </p>
 
           <div className="flex justify-center gap-3 md:justify-start">
-            <Button className="bg-primary-default text-white" asChild>
+            <Button variant="outline" className="border-black bg-secondary-default" asChild>
               <Link href="/signup">Get Started</Link>
             </Button>
 
-            <Button className="bg-primary-light" asChild>
+            <Button variant="outline" className="border-black bg-secondary-default" asChild>
               <Link href="/about">Read More</Link>
             </Button>
           </div>

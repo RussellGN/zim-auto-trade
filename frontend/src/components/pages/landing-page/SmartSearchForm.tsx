@@ -154,11 +154,7 @@ export default function SmartSearchForm({ noTitle }: { noTitle?: boolean }) {
       </div>
 
       <div className="mt-5 px-2 text-center md:text-end">
-        <Button
-          className="border-white bg-primary-default text-white"
-          type="submit"
-          variant="outline"
-        >
+        <Button className="border-black bg-secondary-default" type="submit" variant="outline">
           Search
           <Search size={iconSize} />
         </Button>

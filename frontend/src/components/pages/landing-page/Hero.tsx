@@ -42,10 +42,20 @@ export default function Hero() {
             </p>
 
             <div className="flex justify-center gap-3 md:justify-end">
-              <Button size="lg" asChild className="bg-primary-light">
+              <Button
+                variant="outline"
+                size="lg"
+                asChild
+                className="border-black bg-primary-default text-white"
+              >
                 <Link href="/offers">Browse</Link>
               </Button>
-              <Button size="lg" asChild className="bg-primary-default text-white">
+              <Button
+                variant="outline"
+                size="lg"
+                asChild
+                className="border-black bg-secondary-default"
+              >
                 <Link href="/dashboard/new">Get offers for your Vehicle!</Link>
               </Button>
             </div>

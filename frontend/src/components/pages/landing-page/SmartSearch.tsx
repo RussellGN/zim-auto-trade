@@ -3,8 +3,8 @@ import SmartSearchForm from "./SmartSearchForm";
 
 export default function SmartSearch() {
   return (
-    <div className="relative mx-3 flex flex-col items-center justify-around rounded-2xl bg-[url(/graphics/smart-search-bg.png)] bg-cover bg-no-repeat py-10 md:mx-0 md:flex-row md:px-10">
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-black to-transparent opacity-50 md:bg-gradient-to-r"></div>
+    <div className="relative mx-3 flex flex-col items-center justify-around rounded-2xl bg-[url(/graphics/smart-search-bg-1.svg)] bg-cover bg-no-repeat py-10 md:mx-0 md:flex-row md:px-10">
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-black to-transparent opacity-50 md:bg-gradient-to-tr"></div>
 
       <div className="relative z-10 w-full md:w-6/12">
         <Image
