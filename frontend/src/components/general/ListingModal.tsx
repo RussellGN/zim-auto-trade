@@ -256,12 +256,12 @@ export default function ListingModal({ listing, trigger }: propTypes) {
 
           <div className="m-5 text-right">
             {!isEditing && (
-              <Button type="button" className="bottom-3 mr-3 border-slate-500" variant="outline">
+              <Button type="button" className="bottom-3 mr-3 border-black" variant="outline">
                 Save As Draft <Bookmark />
               </Button>
             )}
 
-            <Button type="submit" className="bg-primary-default text-white">
+            <Button type="submit" variant="outline" className="border-black bg-secondary-default">
               {isEditing ? "Save Changes" : "Create Listing"} <ArrowRight />
             </Button>
           </div>

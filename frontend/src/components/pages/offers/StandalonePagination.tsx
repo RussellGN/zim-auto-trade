@@ -31,8 +31,8 @@ export default function StandalonePagination({ numberOfPages }: propTypes) {
         {mappablePages.map((pageNumber) => (
           <PaginationItem key={pageNumber}>
             <PaginationLink
-              className={`border border-slate-500 p-1 transition-all ${
-                currentPage === pageNumber ? "bg-primary-default text-white" : "bg-white"
+              className={`border border-black p-1 transition-all ${
+                currentPage === pageNumber ? "bg-secondary-default" : "bg-white"
               }`}
               href={{ query: { page: pageNumber } }}
             >

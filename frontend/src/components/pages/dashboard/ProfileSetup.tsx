@@ -38,7 +38,7 @@ export default function ProfileSetup({ lister }: proptypes) {
   return (
     <Dialog>
       <DialogTrigger onClick={() => setIsEditing(true)} asChild>
-        <Button variant="outline" className="border border-slate-700 bg-white">
+        <Button variant="outline" className="border-black bg-secondary-default">
           Edit Profile
           <Edit2 />
         </Button>
@@ -143,7 +143,7 @@ export default function ProfileSetup({ lister }: proptypes) {
 
           <div className="mt-5 px-5 text-right">
             <DialogClose asChild>
-              <Button type="submit" className="bg-primary-default text-white">
+              <Button type="submit" variant="outline" className="border-black bg-secondary-default">
                 Save
               </Button>
             </DialogClose>
