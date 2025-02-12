@@ -38,8 +38,9 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
         message={`Are you sure want to delist '${`${listing.year} ${listing.make} ${listing.model}`}'? It will no longer be visible on Zim Auto Trade, but will not be deleted and can be re-listed anytime by clicking 'Re-list'.`}
         onProceed={delistListing}
         proceedText="Delist"
+        proceedClassName="bg-danger-default text-white"
         showCancel
-        cancelClassName="bg-primary-default text-white"
+        cancelClassName="border-black bg-secondary-default"
       >
         <Button
           title="delist listing"
@@ -59,7 +60,7 @@ export default function ListerListingActions({ listing, compact }: propTypes) {
         proceedText="Delete"
         proceedClassName="bg-danger-default text-white"
         showCancel
-        cancelClassName="bg-primary-default text-white"
+        cancelClassName="border-black bg-secondary-default"
       >
         <Button
           title="delete listing"

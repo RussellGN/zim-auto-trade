@@ -16,10 +16,10 @@ export default function CategoryControls() {
           size="icon"
           title={category.name}
           variant="outline"
-          className={`rounded-full border-2 border-primary-default ${
+          className={`rounded-full border border-slate-400 ${
             activeCategory.name === category.name
-              ? "bg-primary-default text-white"
-              : "text-primary-default"
+              ? "border-secondary-dark bg-secondary-default"
+              : ""
           }`}
         >
           {category.icon}

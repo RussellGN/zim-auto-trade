@@ -52,7 +52,7 @@ export default function Listing({ listing, onDash }: propTypes) {
 
         <div className="mt-auto flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <Button className="bg-primary-default text-white" asChild>
+            <Button variant="outline" className="border-black bg-secondary-default" asChild>
               <Link
                 href={`/offers/${listing.slug}`}
                 className="flex items-center justify-center gap-2"

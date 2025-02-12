@@ -7,10 +7,10 @@ export default function UserNavigation() {
   return (
     <Link
       href={`/dashboard`}
-      className="group flex items-center gap-3 font-semibold text-primary-default transition-all hover:text-primary-light"
+      className="group flex items-center gap-3 font-semibold text-primary-dark transition-all"
     >
       <span className="hidden sm:inline">{sampleLister.name}</span>
-      <Avatar className="border-4 border-primary-default bg-primary-light transition-all group-hover:border-primary-light">
+      <Avatar className="border-2 border-white bg-primary-default outline outline-2 outline-primary-light transition-all group-hover:border-primary-light">
         <AvatarImage src={sampleLister.image} />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>

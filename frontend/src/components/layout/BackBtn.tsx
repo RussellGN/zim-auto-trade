@@ -13,7 +13,8 @@ export default function BackBtn() {
       onClick={goBack}
       title="go back"
       size="icon"
-      className="rounded-full bg-primary-default text-white"
+      variant="outline"
+      className="rounded-full border-black bg-secondary-default"
     >
       <Undo2 />
     </Button>

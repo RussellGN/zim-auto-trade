@@ -27,7 +27,7 @@ export default function ShareBtn({ shareLink }: { shareLink?: string }) {
       onClick={copyToClipboard}
       variant="outline"
       title="copy to clipboard"
-      className={copied ? "border-primary-default text-primary-default" : "border-slate-600"}
+      className={copied ? "border-secondary-dark bg-secondary-default" : "border-slate-600"}
     >
       {copied ? (
         <>

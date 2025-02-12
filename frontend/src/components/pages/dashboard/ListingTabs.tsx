@@ -15,7 +15,9 @@ export default function ListingTabs() {
       <Button
         variant="outline"
         size="sm"
-        className={currenttab === "saved" ? "border-slate-600" : "bg-slate-600 text-white"}
+        className={
+          currenttab === "saved" ? "border-black" : "border-black bg-primary-default text-white"
+        }
         asChild
       >
         <Link href={{ query: { tab: "your-listings" } }}>Your Listings</Link>
@@ -24,7 +26,9 @@ export default function ListingTabs() {
       <Button
         variant="outline"
         size="sm"
-        className={currenttab === "saved" ? "bg-slate-600 text-white" : "border-slate-600"}
+        className={
+          currenttab === "saved" ? "border-black bg-primary-default text-white" : "border-black"
+        }
         asChild
       >
         <Link replace href={{ query: { tab: "saved" } }}>

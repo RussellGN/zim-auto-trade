@@ -1,7 +1,13 @@
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config";
 import { Potta_One } from "next/font/google";
-import { VehicleListingCategory, ListingFilter, AccountType, modalDialogSize } from "./types";
+import {
+  VehicleListingCategory,
+  ListingFilter,
+  AccountType,
+  modalDialogSize,
+  ListingCategory,
+} from "./types";
 import {
   Bell,
   Bike,
@@ -262,4 +268,28 @@ export const violationOptions = [
   { value: "spam", label: "Spam or Irrelevant" },
   { value: "offensive", label: "Offensive or Inappropriate Content" },
   { value: "other", label: "Other (explain below)" },
+];
+
+export const heroListingCategories: ListingCategory[] = [
+  {
+    queryValue: "car",
+    name: "Family Cars",
+    icon: Car,
+    count: 42500,
+    image: "/vehicles/family-cars.avif",
+  },
+  {
+    queryValue: "truck",
+    name: "Work Vehicles",
+    icon: Truck,
+    count: 2150,
+    image: "/vehicles/work-vehicles.jpg",
+  },
+  {
+    queryValue: "motorbike",
+    name: "Motorbikes",
+    icon: Bike,
+    count: 800,
+    image: "/vehicles/motorbikes.jpg",
+  },
 ];

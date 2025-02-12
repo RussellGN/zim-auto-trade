@@ -12,7 +12,7 @@ export default function DashNavigation() {
       <div className="flex items-center gap-3">
         <Notifications />
 
-        <Button asChild className="border-slate-700 bg-white" variant="outline">
+        <Button asChild className="border-black bg-secondary-default" variant="outline">
           <Link href="/dashboard/settings">
             Settings
             <Settings size={iconSize} />

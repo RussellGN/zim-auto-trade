@@ -24,10 +24,10 @@ export default function LogoutBtn() {
       onProceed={logout}
       onCancel={() => {}}
       proceedText="Logout"
-      cancelClassName="bg-primary-default text-white"
-      proceedClassName="border-primary-default text-primary-default"
+      cancelClassName="border-black bg-secondary-default"
+      proceedClassName="border-black"
     >
-      <Button className="border-slate-700 bg-white" variant="outline">
+      <Button className="border-black bg-secondary-default" variant="outline">
         Logout
         <LogOut size={iconSize} />
       </Button>

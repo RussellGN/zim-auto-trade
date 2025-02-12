@@ -11,34 +11,29 @@ export default {
     extend: {
       colors: {
         primary: {
-          light: "#77d4ac",
-          default: "#0d6949",
-          dark: "#073d24",
-        },
-        success: {
-          light: "#ecfccb",
-          default: "#84cc16",
-          dark: "#4d7c0f",
+          light: "#4887AB",
+          default: "#407899",
+          dark: "#376783",
         },
         secondary: {
-          light: "#ffe4e6",
-          default: "#f43f5e",
-          dark: "#be123c",
+          light: "#F1F1CB",
+          default: "#f0f0c9",
+          dark: "#E2E293",
         },
-        info: {
-          light: "#dbeafe",
-          default: "#3b82f6",
-          dark: "#1d4ed8",
+        success: {
+          light: "#549861",
+          default: "#386641",
+          dark: "#2D5335",
         },
         danger: {
-          light: "#fd9983",
-          default: "#e42727",
-          dark: "#a51414",
+          light: "#C68273",
+          default: "#c17767",
+          dark: "#B35C49",
         },
-        warning: {
-          light: "#fdcc6f",
-          default: "#e65e09",
-          dark: "#a92f04",
+        info: {
+          light: "#F3D16B",
+          default: "#f2cd60",
+          dark: "#EEBF30",
         },
       },
     },

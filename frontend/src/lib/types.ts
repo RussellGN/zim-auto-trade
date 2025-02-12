@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 
@@ -33,4 +34,12 @@ export type Result<T = undefined> = { successfull: boolean; message?: string; da
 export type SocialMediaProfile = {
   platform: "Facebook" | "X" | "Instagram" | "LinkedIn" | "YouTube" | "WhatsApp";
   url: string;
+};
+
+export type ListingCategory = {
+  queryValue: string;
+  name: string;
+  count: number;
+  image: string;
+  icon: LucideIcon;
 };

@@ -38,7 +38,7 @@ export default function BookmarkBtn({ id }: { id: ID }) {
       variant="outline"
       title={isBookmarked ? "un-bookmark listing" : "bookamrk listing"}
       onClick={toggleBookmarkListing}
-      className={isBookmarked ? "border-primary-default text-primary-default" : "border-slate-600"}
+      className={isBookmarked ? "border-secondary-dark bg-secondary-default" : "border-slate-600"}
     >
       {isBookmarked ? (
         <>
