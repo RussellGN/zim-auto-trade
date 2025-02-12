@@ -12,7 +12,7 @@ export default function Layout({
         <Navbar />
       </div>
 
-      <main className="mt-[3.8rem] w-full flex-grow">{children}</main>
+      <main className="mt-[3.8rem] flex-grow">{children}</main>
 
       <div className="w-full">
         <Footer />

@@ -14,7 +14,7 @@ export default function Home() {
         <Features />
       </Container>
 
-      <div className="mt-10 bg-gradient-to-t from-secondary-dark via-secondary-default to-transparent p-10 text-center md:p-20">
+      <div className="bg-gradient-to-t from-secondary-dark via-secondary-default to-transparent p-10 text-center md:mt-10 md:p-20">
         <div className="flex flex-col items-center justify-center gap-5">
           <h2 className="text-xl uppercase">Lets Find the right vehicle for your needs!</h2>
 
