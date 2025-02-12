@@ -33,9 +33,8 @@ export default function MobileNavigation({ pathname }: { pathname: string }) {
 
         <div className="flex flex-col gap-3 p-5">
           {navLinks.map((navLink) => (
-            <DrawerClose asChild>
+            <DrawerClose key={navLink.href} asChild>
               <Link
-                key={navLink.href}
                 className={`w-fit border-b font-semibold capitalize text-primary-default transition-all hover:text-primary-light ${
                   pathname === navLink.href
                     ? "border-primary-default hover:border-primary-light"
