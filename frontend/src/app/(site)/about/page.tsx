@@ -37,14 +37,12 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="mt-10 bg-gradient-to-t from-primary-dark to-primary-default p-10 text-center md:p-20">
+      <div className="mt-10 bg-gradient-to-t from-secondary-dark via-secondary-default to-transparent p-10 text-center md:p-20">
         <div className="flex flex-col items-center justify-center gap-5">
-          <h2 className="text-xl uppercase text-white">
-            Lets Find the right vehicle for your needs!
-          </h2>
+          <h2 className="text-xl uppercase">Lets Find the right vehicle for your needs!</h2>
 
           <div>
-            <Button className="border-primary-dark bg-white" asChild>
+            <Button variant="outline" className="border-black bg-secondary-default" asChild>
               <Link href="/offers">Browse vehicles</Link>
             </Button>
           </div>
