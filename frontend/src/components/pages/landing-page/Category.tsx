@@ -11,14 +11,14 @@ export default function Category({ category }: propTypes) {
   return (
     <div
       style={{ backgroundImage: `url(${category.image})` }}
-      className={`relative aspect-[3/2] w-full rounded-2xl bg-white bg-cover bg-no-repeat shadow-lg`}
+      className={`relative aspect-[3/2] w-full rounded-lg bg-white bg-cover bg-no-repeat shadow md:rounded-2xl md:shadow-lg`}
     >
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-transparent via-transparent to-black opacity-50"></div>
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-l from-transparent to-black opacity-50 md:rounded-2xl md:bg-gradient-to-br md:via-transparent" />
 
-      <div className="relative flex h-full items-end justify-between p-3">
+      <div className="relative flex h-full flex-col-reverse items-start justify-between p-1.5 md:flex-row md:items-end md:p-3">
         <Button
           asChild
-          className="h-fit gap-0.5 rounded-xl bg-[rgba(255,255,255,0.8)] px-2 py-[0.1rem] text-sm font-semibold shadow-lg hover:bg-white"
+          className="h-fit gap-0.5 rounded bg-secondary-default px-1 py-0.5 text-xs font-semibold shadow-lg hover:bg-white md:rounded-xl md:px-2 md:py-[0.1rem] md:text-sm"
         >
           <Link href={{ pathname: "/offers", query: { category: category.queryValue } }}>
             {category.name}
@@ -26,8 +26,9 @@ export default function Category({ category }: propTypes) {
           </Link>
         </Button>
 
-        <p className="flex items-center gap-2 font-semibold text-white">
-          {formatLongNumber(category.count)} <category.icon size={iconSize} />
+        <p className="flex items-center gap-2 text-xs font-semibold text-white md:text-base">
+          {formatLongNumber(category.count)}{" "}
+          <category.icon size={iconSize} className="scale-95 md:scale-100" />
         </p>
       </div>
     </div>
