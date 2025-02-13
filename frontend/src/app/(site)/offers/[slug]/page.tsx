@@ -28,26 +28,26 @@ export default async function page({ params }: propTypes) {
 
   return (
     <Container>
-      <div className="py-10">
+      <div className="p-5 md:px-0 md:py-10">
         <div className="flex items-center justify-center gap-4">
           <BackBtn />
-          <h1 className="text-center text-3xl">
+          <h1 className="text-center text-lg md:text-3xl">
             {listing.year} {listing.make} {listing.model}
           </h1>
-          <span className="">{category?.icon}</span>
+          <span>{category?.icon}</span>
         </div>
 
-        <div className="my-5 flex">
-          <div className="w-1/2">
+        <div className="my-5 md:flex">
+          <div className="md:w-1/2">
             <ImageCollage
               alt={`${listing.year} ${listing.make} ${listing.model}`}
               images={[{ src: listing.coverImage }, ...listing.images.map((img) => ({ src: img }))]}
             />
           </div>
 
-          <div className="grid w-1/2 grid-cols-4 gap-4 p-5">
-            <DetailSection className="col-span-2" title="About Listing">
-              <div className="flex flex-1 flex-col gap-3">
+          <div className="grid grid-cols-4 gap-2 py-5 md:w-1/2 md:gap-4 md:p-5">
+            <DetailSection className="col-span-4 md:col-span-2" title="About Listing">
+              <div className="flex flex-1 flex-col gap-2 md:gap-3">
                 <div className="flex items-center gap-2">
                   <Clock3 size={iconSize} className="text-gray-600" />
                   Date Uploaded:
@@ -87,12 +87,12 @@ export default async function page({ params }: propTypes) {
               </div>
             </DetailSection>
 
-            <div className="col-span-2">
+            <div className="order-last col-span-4 md:order-none md:col-span-2">
               <div className="p-4">
                 <Enquire disabled={isOwner} listing={listing} />
               </div>
 
-              <DetailSection className="mb-3" title="actions">
+              <DetailSection title="more actions">
                 <div className="grid grid-cols-2 gap-3">
                   <ShareBtn />
 
@@ -103,16 +103,16 @@ export default async function page({ params }: propTypes) {
               </DetailSection>
             </div>
 
-            <DetailSection className="col-span-4" title="details">
+            <DetailSection className="col-span-4 md:col-span-4" title="details">
               <p>{listing.description} </p>
             </DetailSection>
 
-            <DetailSection className="col-span-4" title="Features">
-              <div className="flex h-[10rem] flex-wrap gap-2.5 overflow-y-auto">
+            <DetailSection className="col-span-4 md:col-span-4" title="Features">
+              <div className="flex h-[10rem] flex-wrap gap-1 overflow-y-auto md:gap-2.5">
                 {listing.features.map((feature) => (
                   <small
                     key={feature}
-                    className="rounded-md border border-slate-300 bg-[whitesmoke] px-1.5 py-1 text-sm"
+                    className="rounded-md border border-slate-300 bg-[whitesmoke] px-1.5 py-1 text-xs md:text-sm"
                   >
                     {capitalize(feature)}
                   </small>

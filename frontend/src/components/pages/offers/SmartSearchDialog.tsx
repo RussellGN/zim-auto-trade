@@ -20,7 +20,9 @@ export function SmartSearchDialog() {
         </Button>
       </DialogTrigger>
 
-      <DialogContent className={`bg-white sm:max-w-[${modalDialogSizes.sm}]`}>
+      <DialogContent
+        className={`w-[95%] rounded-xl bg-white sm:w-full md:rounded-lg sm:max-w-[${modalDialogSizes.sm}]`}
+      >
         <DialogHeader>
           <DialogTitle>Smart Search</DialogTitle>
           <DialogDescription>Search for the exact vehicle you need!</DialogDescription>

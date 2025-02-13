@@ -8,7 +8,9 @@ export default function NewListing() {
     <ListingModal
       trigger={
         <Button className="bg-primary-default text-white" title="new listing">
-          New Listing
+          <span>
+            New <span className="hidden md:inline">Listing</span>
+          </span>
           <Plus size={iconSize} />
         </Button>
       }

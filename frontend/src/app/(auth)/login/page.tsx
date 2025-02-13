@@ -11,8 +11,8 @@ export default function page() {
     <form>
       <h2 className="mb-8 text-center text-2xl font-semibold">Login</h2>
 
-      <div className="mb-4">
-        <Label className="mb-2 flex items-center gap-2 ps-3" htmlFor="email">
+      <div className="mb-5 md:mb-4">
+        <Label className="flex items-center gap-2 md:mb-2 md:ps-3" htmlFor="email">
           <UserCircle size={iconSize} /> Email
         </Label>
         <Input
@@ -24,8 +24,8 @@ export default function page() {
         />
       </div>
 
-      <div className="mb-4">
-        <Label className="mb-2 flex items-center gap-2 ps-3" htmlFor="email">
+      <div className="mb-5 md:mb-4">
+        <Label className="flex items-center gap-2 md:mb-2 md:ps-3" htmlFor="email">
           <Lock size={iconSize} /> Password
         </Label>
         <Input

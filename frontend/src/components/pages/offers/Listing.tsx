@@ -14,8 +14,8 @@ type propTypes = {
 
 export default function Listing({ listing, onDash }: propTypes) {
   return (
-    <div className="my-5 flex rounded-2xl border border-primary-light bg-white shadow-md">
-      <div className="w-1/2">
+    <div className="my-5 rounded-xl border border-primary-light bg-white shadow-md md:flex md:rounded-2xl">
+      <div className="md:w-1/2">
         <ImageCollage
           compact
           alt={`${listing.year} ${listing.make} ${listing.model}`}
@@ -23,9 +23,9 @@ export default function Listing({ listing, onDash }: propTypes) {
         />
       </div>
 
-      <div className="flex w-1/2 flex-1 flex-col gap-4 p-4">
+      <div className="flex flex-1 flex-col gap-2 p-3 text-sm md:w-1/2 md:gap-4 md:p-4 md:text-base">
         <div className="flex items-center justify-between gap-5">
-          <h2 className="text-xl">{`${listing.year} ${listing.make} ${listing.model}`}</h2>
+          <h2 className="text-lg md:text-xl">{`${listing.year} ${listing.make} ${listing.model}`}</h2>
 
           <div className="flex w-fit items-center gap-1 text-nowrap text-sm text-slate-500">
             <Clock3 size={iconSize} />
@@ -48,11 +48,30 @@ export default function Listing({ listing, onDash }: propTypes) {
           {listing.location}
         </div>
 
-        <div className="text-sm text-slate-600">{listing.viewCount} views</div>
+        <div className="text-xs text-slate-600 md:text-sm">{listing.viewCount} views</div>
 
         <div className="mt-auto flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2">
-            <Button variant="outline" className="border-black bg-secondary-default" asChild>
+          <div>
+            <Button
+              variant="outline"
+              className="hidden border-black bg-secondary-default md:inline-flex"
+              asChild
+            >
+              <Link
+                href={`/offers/${listing.slug}`}
+                className="flex items-center justify-center gap-2"
+              >
+                View
+                <ArrowRight size={iconSize} />
+              </Link>
+            </Button>
+
+            <Button
+              size="sm"
+              variant="outline"
+              className="border-black bg-secondary-default md:hidden"
+              asChild
+            >
               <Link
                 href={`/offers/${listing.slug}`}
                 className="flex items-center justify-center gap-2"

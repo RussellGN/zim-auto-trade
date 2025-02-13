@@ -5,9 +5,9 @@ import { SmartSearchDialog } from "./SmartSearchDialog";
 
 export default function Sidebar() {
   return (
-    <aside className="sticky top-0 h-[85vh] overflow-y-auto border-b-8 px-5 py-10">
-      <div className="mb-10 flex items-center justify-between gap-5">
-        <h2 className="px-5 text-xl font-bold"> Filters</h2>
+    <aside className="top-0 px-5 md:sticky md:h-[85vh] md:overflow-y-auto md:border-b-8 md:py-10">
+      <div className="mb-5 flex items-center justify-between gap-5 md:mb-10">
+        <h2 className="hidden px-5 text-xl font-bold md:block"> Filters</h2>
         <Button
           variant="outline"
           size="sm"

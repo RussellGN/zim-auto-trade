@@ -20,7 +20,7 @@ export default async function Notifications() {
     <Dialog>
       <DialogTrigger asChild>
         <Button className="border-black bg-secondary-default" variant="outline">
-          Notifications
+          <span className="hidden md:inline">Notifications</span>
           <Bell size={iconSize} />
         </Button>
       </DialogTrigger>

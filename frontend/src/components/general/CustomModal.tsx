@@ -48,7 +48,9 @@ export default function CustomModal({
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
 
-      <DialogContent className={`bg-white sm:max-w-[${size || modalDialogSizes.sm}]`}>
+      <DialogContent
+        className={`max-h-[85vh] w-[95%] overflow-y-auto rounded-xl bg-white sm:w-full md:rounded-lg sm:max-w-[${size || modalDialogSizes.sm}]`}
+      >
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 capitalize">
             {title}
@@ -59,10 +61,10 @@ export default function CustomModal({
         </DialogHeader>
 
         <div className="my-5">
-          <p className="mb-3 max-w-prose">{message}</p>
+          <p className="max-w-prose">{message}</p>
         </div>
 
-        <DialogFooter>
+        <DialogFooter className="mt-3 flex-row justify-end gap-0.5">
           {(showCancel || onCancel) && (
             <DialogClose asChild>
               <Button variant="outline" onClick={onCancel} className={cancelClassName}>

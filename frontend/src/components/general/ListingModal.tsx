@@ -53,8 +53,10 @@ export default function ListingModal({ listing, trigger }: propTypes) {
     <Dialog onOpenChange={resetImages}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
 
-      <DialogContent className={`bg-white sm:max-w-fit`}>
-        <DialogHeader>
+      {/* <DialogContent className="h-[90vh] w-screen overflow-y-scroll bg-white px-0"> */}
+
+      <DialogContent className="max-h-[90vh] overflow-y-scroll bg-white px-0 sm:max-w-fit">
+        <DialogHeader className="px-6">
           <DialogTitle className="flex items-center gap-2">
             {isEditing ? (
               <>
@@ -67,16 +69,16 @@ export default function ListingModal({ listing, trigger }: propTypes) {
             )}
           </DialogTitle>
 
-          <DialogDescription>
+          <DialogDescription className="text-left">
             {isEditing ? "Edit listing" : "Create a new vahicle listing"}
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={submitHandler}>
-          <div className="grid w-[80vw] grid-cols-12 justify-between gap-3 py-5">
+        <form onSubmit={submitHandler} className="px-2">
+          <div className="grid grid-cols-12 justify-between gap-3 py-5 md:w-[80vw]">
             <FieldSet
               legend="Images"
-              className="col-span-4"
+              className="col-span-12 md:col-span-4"
               description="Upload a minimum of 6 images of your vehicle. You can upload up to 30 images and preview them before continuing. The first image becomes the cover image."
             >
               <Input
@@ -99,7 +101,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
               />
             </FieldSet>
 
-            <FieldSet legend="General Info" className="col-span-4">
+            <FieldSet legend="General Info" className="col-span-12 md:col-span-4">
               <div className="mb-1 flex items-center justify-between gap-4">
                 <Label className="flex items-center gap-1" htmlFor="make">
                   <Shield size={iconSize - 2} /> Make
@@ -229,7 +231,7 @@ export default function ListingModal({ listing, trigger }: propTypes) {
               </div>
             </FieldSet>
 
-            <FieldSet legend="Further Info" className="col-span-4">
+            <FieldSet legend="Further Info" className="col-span-12 md:col-span-4">
               <div className="mb-1">
                 <Label className="mb-3 flex items-center gap-1" htmlFor="description">
                   <Info size={iconSize - 2} /> Description

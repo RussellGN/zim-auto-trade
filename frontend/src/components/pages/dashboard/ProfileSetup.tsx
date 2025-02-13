@@ -39,13 +39,13 @@ export default function ProfileSetup({ lister }: proptypes) {
     <Dialog>
       <DialogTrigger onClick={() => setIsEditing(true)} asChild>
         <Button variant="outline" className="border-black bg-secondary-default">
-          Edit Profile
+          <span className="hidden md:inline">Edit Profile</span>
           <Edit2 />
         </Button>
       </DialogTrigger>
 
-      <DialogContent className={`bg-white sm:max-w-[${modalDialogSizes.md}]`}>
-        <DialogHeader>
+      <DialogContent className={`bg-white px-0 md:px-6 sm:max-w-[${modalDialogSizes.md}]`}>
+        <DialogHeader className="px-6 text-left md:px-0">
           <DialogTitle>{isEditing ? "Edit Profile" : "Profile Setup"}</DialogTitle>
 
           <DialogDescription>
@@ -54,19 +54,19 @@ export default function ProfileSetup({ lister }: proptypes) {
         </DialogHeader>
 
         <form
-          className="my-5"
+          className="my-5 px-3 md:px-0"
           onSubmit={(e) => {
             e.preventDefault();
           }}
         >
-          <div className="flex items-center justify-between gap-5 px-3">
+          <div className="flex items-start justify-between gap-5 px-3 md:items-center">
             <ChangeablePhoto lister={lister} name="display_photo" imgClassName="w-[10rem]" />
 
-            <div className="flex items-start gap-2">
-              <div>
+            <div className="flex gap-2 md:items-start">
+              <div className="hidden md:block">
                 <Info size={iconSize} className="text-info-dark" />
               </div>
-              <p className="-mt-1.5 max-w-[20rem] text-slate-700">
+              <p className="max-w-[20rem] text-sm text-slate-700 md:-mt-1.5 md:text-base">
                 Choose a clear and professional photo that represents you or your dealership (1x1
                 aspect ratio)
               </p>
