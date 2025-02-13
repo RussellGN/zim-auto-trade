@@ -248,7 +248,7 @@ export const settings: {
 }[] = [
   {
     title: "Account",
-    description: "Manage account status",
+    description: "Manage your account",
     content: <AccountSettings />,
     icon: <UserCircle size={iconSize} />,
   },
