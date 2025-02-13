@@ -19,12 +19,12 @@ export default function Notification({ notification }: propTypes) {
             {notification.read && <div className="size-3 rounded-full bg-primary-light"></div>}
             <div className="flex items-center gap-2 text-sm text-slate-600">
               <Clock3 size={iconSize - 3} />
-              {getTimeElapsedSince(notification.timestamp)}
+              <div className="-mt-1">{getTimeElapsedSince(notification.timestamp)}</div>
             </div>
           </div>
         </div>
 
-        <ExpandableText className="p-0.5">{notification.body}</ExpandableText>
+        <ExpandableText className="p-0.5 text-sm">{notification.body}</ExpandableText>
       </div>
     </div>
   );

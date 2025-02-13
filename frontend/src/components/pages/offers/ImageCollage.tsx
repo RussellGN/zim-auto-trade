@@ -11,7 +11,7 @@ type propTypes = {
   images: CustomImageProps[];
   alt: string;
   compact?: boolean;
-  imgsClassname?: string;
+  imgsClassName?: string;
   imgsContainerMaxWidth?: string;
 };
 
@@ -19,7 +19,7 @@ export default function ImageCollage({
   images,
   alt,
   compact,
-  imgsClassname,
+  imgsClassName: imgsClassname,
   imgsContainerMaxWidth = "100%",
 }: propTypes) {
   const [imageOnView, setImageOnView] = useState({ img: images[0], pos: 0 });
@@ -36,7 +36,7 @@ export default function ImageCollage({
           alt={imageOnView.img.alt || alt}
           width={800}
           height={450}
-          className={`aspect-video w-full ${compact ? "rounded-t-xl md:rounded-s-2xl md:rounded-t-none" : "rounded-lg md:rounded-2xl"} bg-gray-700 object-cover`}
+          className={`aspect-video w-full ${compact ? "rounded-t-xl md:rounded-l-2xl md:rounded-t-none" : "rounded-lg md:rounded-2xl"} bg-gray-700 object-cover`}
         />
         <div className="absolute left-0 top-0 m-0.5 flex items-center gap-2 rounded rounded-ee-lg rounded-ss-lg bg-black/50 px-2 py-1 text-sm text-white backdrop-blur md:rounded-ee-xl md:rounded-ss-2xl">
           <Images size={iconSize} />

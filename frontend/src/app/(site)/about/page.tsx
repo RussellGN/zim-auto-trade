@@ -1,15 +1,16 @@
+import Container from "@/components/layout/Container";
 import { Button } from "@/components/ui/button";
 import { Users, Search } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div>
-      <div className="container mx-auto mt-5 px-4 py-8">
+    <Container>
+      <div className="mx-auto mt-5 px-5 py-8">
         <h1 className="mb-8 text-center text-4xl font-bold text-slate-600">About Zim Auto Trade</h1>
 
         <div className="mx-auto max-w-3xl">
-          <p className="mb-10 text-center text-xl">
+          <p className="mb-10 px-3 text-center text-xl">
             Zim Auto Trade is the leading marketplace connecting buyers and sellers of vehicles
             nation-wide. We provide a platform for browsing new and used cars, trucks, and more,
             with detailed listings and price comparisons.
@@ -37,7 +38,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="mt-10 bg-gradient-to-t from-secondary-dark via-secondary-default to-transparent p-10 text-center md:p-20">
+      <div className="bg-gradient-to-t from-secondary-dark via-secondary-default to-transparent p-10 text-center md:p-20">
         <div className="flex flex-col items-center justify-center gap-5">
           <h2 className="text-xl uppercase">Lets Find the right vehicle for your needs!</h2>
 
@@ -48,6 +49,6 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
