@@ -28,7 +28,7 @@ export default function LogoutBtn() {
       proceedClassName="border-black"
     >
       <Button className="border-black bg-secondary-default" variant="outline">
-        Logout
+        <span className="hidden md:inline">Logout</span>
         <LogOut size={iconSize} />
       </Button>
     </CustomModal>

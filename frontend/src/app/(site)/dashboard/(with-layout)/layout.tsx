@@ -9,13 +9,13 @@ export default async function layout({ children }: PropsWithChildren) {
 
   return (
     <Container>
-      <div className="grid grid-cols-12 items-start gap-5 py-5">
+      <div className="grid grid-cols-12 items-start gap-5 md:py-5">
         <div className="col-span-12 md:col-span-3">
           <DashSidebar lister={lister} />
         </div>
 
-        <div className="col-span-12 p-5 md:col-span-9">
-          <DashNavigation />
+        <div className="col-span-12 px-5 md:col-span-9 md:p-5">
+          <DashNavigation lister={lister} />
           {children}
         </div>
       </div>
