@@ -7,12 +7,12 @@ import Sidebar from "@/components/pages/offers/Sidebar";
 export default function page() {
   return (
     <Container>
-      <div className="grid grid-cols-12 items-start gap-5 py-5">
-        <div className="col-span-12 md:col-span-3">
+      <div className="grid-cols-12 items-start gap-5 md:grid md:py-5">
+        <div className="col-span-3 hidden md:block">
           <Sidebar />
         </div>
 
-        <div className="col-span-12 p-5 md:col-span-9">
+        <div className="col-span-9 p-5">
           <SearchControls />
           <CategoryControls />
           <Listings />

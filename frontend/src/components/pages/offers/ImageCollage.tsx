@@ -36,9 +36,9 @@ export default function ImageCollage({
           alt={imageOnView.img.alt || alt}
           width={800}
           height={450}
-          className={`aspect-video w-full ${compact ? "rounded-s-2xl" : "rounded-2xl"} bg-gray-700 object-cover`}
+          className={`aspect-video w-full ${compact ? "rounded-t-xl md:rounded-s-2xl md:rounded-t-none" : "rounded-2xl"} bg-gray-700 object-cover`}
         />
-        <div className="absolute left-0 top-0 m-0.5 flex items-center gap-2 rounded rounded-ee-xl rounded-ss-2xl bg-black/50 px-2 py-1 text-sm text-white backdrop-blur">
+        <div className="absolute left-0 top-0 m-0.5 flex items-center gap-2 rounded rounded-ee-lg rounded-ss-lg bg-black/50 px-2 py-1 text-sm text-white backdrop-blur md:rounded-ee-xl md:rounded-ss-2xl">
           <Images size={iconSize} />
           {`${imageOnView.pos + 1}/${images.length}`}
         </div>
