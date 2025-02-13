@@ -13,7 +13,10 @@ type propTypes = {
 export default function FieldSet({ children, legend, className, description }: propTypes) {
   return (
     <fieldset
-      className={cn("flex flex-1 flex-col gap-4 rounded-lg border border-slate-400 p-5", className)}
+      className={cn(
+        "flex flex-1 flex-col gap-4 rounded-lg border border-slate-400 p-4 md:p-5",
+        className
+      )}
     >
       <legend className="mx-4 px-2">{legend}</legend>
 

@@ -1,18 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { DialogClose } from "@/components/ui/dialog";
 import { Edit2, Info, MapPin, UserCircle, Users } from "lucide-react";
 import { ListerInterface } from "@/lib/interfaces";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { iconSize, listerOptions, modalDialogSizes } from "@/lib/constants";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -26,6 +18,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import ChangeablePhoto from "./ChangeablePhoto";
 import FieldSet from "@/components/general/FieldSet";
+import ContentModal from "@/components/general/ContentModal";
 
 type proptypes = {
   isEditing?: boolean;
@@ -35,121 +28,114 @@ type proptypes = {
 export default function ProfileSetup({ lister }: proptypes) {
   const [isEditing, setIsEditing] = useState(false);
 
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  }
+
   return (
-    <Dialog>
-      <DialogTrigger onClick={() => setIsEditing(true)} asChild>
-        <Button variant="outline" className="border-black bg-secondary-default">
+    <ContentModal
+      trigger={
+        <Button
+          onClick={() => setIsEditing(true)}
+          variant="outline"
+          className="border-black bg-secondary-default"
+        >
           <span className="hidden md:inline">Edit Profile</span>
           <Edit2 />
         </Button>
-      </DialogTrigger>
-
-      <DialogContent className={`bg-white px-0 md:px-6 sm:max-w-[${modalDialogSizes.md}]`}>
-        <DialogHeader className="px-6 text-left md:px-0">
-          <DialogTitle>{isEditing ? "Edit Profile" : "Profile Setup"}</DialogTitle>
-
-          <DialogDescription>
-            {isEditing ? "Make changes to your profile" : "Lets setup your profile"}
-          </DialogDescription>
-        </DialogHeader>
-
-        <form
-          className="my-5 px-3 md:px-0"
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
-        >
-          <div className="flex items-start justify-between gap-5 px-3 md:items-center">
-            <ChangeablePhoto lister={lister} name="display_photo" imgClassName="w-[10rem]" />
-
-            <div className="flex gap-2 md:items-start">
-              <div className="hidden md:block">
-                <Info size={iconSize} className="text-info-dark" />
-              </div>
-              <p className="max-w-[20rem] text-sm text-slate-700 md:-mt-1.5 md:text-base">
-                Choose a clear and professional photo that represents you or your dealership (1x1
-                aspect ratio)
-              </p>
-            </div>
+      }
+      title={isEditing ? "Edit Profile" : "Profile Setup"}
+      description={isEditing ? "Make changes to your profile" : "Lets setup your profile"}
+      size={modalDialogSizes.md}
+    >
+      <form onSubmit={onSubmit}>
+        <div className="mb-8 grid grid-cols-5 items-center gap-4 px-3">
+          <div className="col-span-2">
+            <ChangeablePhoto lister={lister} name="display_photo" className="m-0" />
           </div>
 
-          <FieldSet legend="Details">
-            <div className="mb-2 flex items-center justify-between gap-4">
-              <Label className="flex items-center gap-2 ps-3" htmlFor="name">
-                <UserCircle size={iconSize} /> Name
-              </Label>
+          <p className="col-span-3 text-sm md:text-base">
+            Choose a clear and professional photo that represents you or your dealership (1x1 aspect
+            ratio)
+          </p>
+        </div>
 
-              <Input
-                className="max-w-[65%] bg-[whitesmoke]"
-                id="name"
-                name="name"
-                defaultValue={lister.name}
-                maxLength={30}
-                required
-              />
-            </div>
+        <FieldSet legend="Details">
+          <div className="mb-1 flex items-center justify-between gap-3 md:gap-4">
+            <Label className="flex items-center gap-1.5" htmlFor="name">
+              <UserCircle size={iconSize} /> Name
+            </Label>
 
-            <div className="mb-2 flex items-center justify-between gap-4">
-              <Label className="flex items-center gap-2 ps-3" htmlFor="type">
-                <Users size={iconSize} /> Type
-              </Label>
-
-              <Select name="type" defaultValue={lister.type}>
-                <SelectTrigger className="max-w-[65%] bg-[whitesmoke] transition-all">
-                  <SelectValue placeholder="Type" />
-                </SelectTrigger>
-
-                <SelectContent className="mt-3 rounded-2xl bg-white">
-                  {listerOptions.map((option) => (
-                    <SelectItem key={option} value={option} className="capitalize">
-                      {option}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="mb-2 flex items-center justify-between gap-4">
-              <Label className="flex items-center gap-2 ps-3" htmlFor="location">
-                <MapPin size={iconSize} /> Location
-              </Label>
-
-              <Input
-                className="w-full max-w-[65%] bg-[whitesmoke]"
-                id="location"
-                name="location"
-                defaultValue={lister.location}
-                maxLength={30}
-                required
-              />
-            </div>
-
-            <div className="mb-2">
-              <Label className="mb-3 flex items-center gap-2 ps-3" htmlFor="description">
-                <Info size={iconSize} /> Description
-              </Label>
-
-              <Textarea
-                className="w-full bg-[whitesmoke]"
-                rows={3}
-                id="description"
-                name="description"
-                defaultValue={lister.description}
-                maxLength={500}
-                required
-              />
-            </div>
-          </FieldSet>
-
-          <div className="mt-5 px-5 text-right">
-            <DialogClose asChild>
-              <Button type="submit" variant="outline" className="border-black bg-secondary-default">
-                Save
-              </Button>
-            </DialogClose>
+            <Input
+              className="max-w-[65%] bg-[whitesmoke]"
+              id="name"
+              name="name"
+              defaultValue={lister.name}
+              maxLength={30}
+              required
+            />
           </div>
-        </form>
-      </DialogContent>
-    </Dialog>
+
+          <div className="mb-1 flex items-center justify-between gap-3 md:gap-4">
+            <Label className="flex items-center gap-1.5" htmlFor="type">
+              <Users size={iconSize} /> Type
+            </Label>
+
+            <Select name="type" defaultValue={lister.type}>
+              <SelectTrigger className="max-w-[65%] bg-[whitesmoke] transition-all">
+                <SelectValue placeholder="Type" />
+              </SelectTrigger>
+
+              <SelectContent className="mt-2 rounded-xl bg-white">
+                {listerOptions.map((option) => (
+                  <SelectItem key={option} value={option} className="capitalize">
+                    {option}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="mb-1 flex items-center justify-between gap-3 md:gap-4">
+            <Label className="flex items-center gap-1.5" htmlFor="location">
+              <MapPin size={iconSize} /> Location
+            </Label>
+
+            <Input
+              className="w-full max-w-[65%] bg-[whitesmoke]"
+              id="location"
+              name="location"
+              defaultValue={lister.location}
+              maxLength={30}
+              required
+            />
+          </div>
+
+          <div>
+            <Label className="mb-3 flex items-center gap-1.5" htmlFor="description">
+              <Info size={iconSize} /> Description
+            </Label>
+
+            <Textarea
+              className="w-full rounded bg-[whitesmoke] p-1.5"
+              rows={4}
+              id="description"
+              name="description"
+              defaultValue={lister.description}
+              maxLength={500}
+              required
+            />
+          </div>
+        </FieldSet>
+
+        <div className="mt-5 px-5 text-right">
+          <DialogClose asChild>
+            <Button type="submit" variant="outline" className="border-black bg-secondary-default">
+              Save
+            </Button>
+          </DialogClose>
+        </div>
+      </form>
+    </ContentModal>
   );
 }

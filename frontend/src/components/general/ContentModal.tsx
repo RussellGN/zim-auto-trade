@@ -13,9 +13,10 @@ type propTypes = {
   trigger: ReactNode;
   children: ReactNode;
   size?: modalDialogSize;
-  title: string;
+  title: ReactNode;
   description?: string;
   icon?: ReactNode;
+  onOpenChange?: (b: boolean) => void;
 };
 
 export default function ContentModal({
@@ -25,24 +26,25 @@ export default function ContentModal({
   title,
   description,
   icon,
+  onOpenChange,
 }: propTypes) {
   return (
-    <Dialog>
+    <Dialog onOpenChange={onOpenChange}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
 
       <DialogContent
-        className={`max-h-[85vh] w-[95%] overflow-y-auto rounded-xl bg-white sm:w-fit md:rounded-lg sm:max-w-${size ? `[${size}]` : "fit"}`}
+        className={`max-h-[97vh] w-[95%] overflow-y-auto rounded-lg bg-white px-0 ${size ? `sm:max-w-[${size}]` : "sm:max-w-fit"}`}
       >
-        <DialogHeader>
+        <DialogHeader className="px-5 text-left">
           <DialogTitle className="flex items-center gap-2 capitalize">
             {title}
             {icon && icon}
           </DialogTitle>
 
-          <DialogDescription className="text-left">{description}</DialogDescription>
+          <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
 
-        <div className="my-5">{children}</div>
+        <div className="my-5 px-2 md:px-5">{children}</div>
       </DialogContent>
     </Dialog>
   );

@@ -1,46 +1,37 @@
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { Bell } from "lucide-react";
 import { iconSize, modalDialogSizes } from "@/lib/constants";
-import { DialogDescription } from "@radix-ui/react-dialog";
 import { getNotificationsAction } from "@/actions";
 import Notification from "./Notification";
+import ContentModal from "@/components/general/ContentModal";
 
 export default async function Notifications() {
   const notifications = await getNotificationsAction();
   const unread = notifications.filter((n) => n.read).length;
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
+    <ContentModal
+      trigger={
         <Button className="border-black bg-secondary-default" variant="outline">
           <span className="hidden md:inline">Notifications</span>
           <Bell size={iconSize} />
         </Button>
-      </DialogTrigger>
-
-      <DialogContent className={`bg-white sm:max-w-[${modalDialogSizes.md}]`}>
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <span className="text-primary-default">{unread}</span>
-            Notifications <Bell size={iconSize} />
-          </DialogTitle>
-
-          <DialogDescription>See whats been happening</DialogDescription>
-        </DialogHeader>
-
-        <div className="my-5 h-[30rem] overflow-y-auto border-2">
-          {notifications.map((notification) => (
-            <Notification notification={notification} key={notification.id} />
-          ))}
-        </div>
-      </DialogContent>
-    </Dialog>
+      }
+      title={
+        <>
+          <span className="text-primary-default">{unread}</span>
+          Notifications
+        </>
+      }
+      description="See whats been happening"
+      icon={<Bell size={iconSize} />}
+      size={modalDialogSizes.md}
+    >
+      <div>
+        {notifications.map((notification) => (
+          <Notification notification={notification} key={notification.id} />
+        ))}
+      </div>
+    </ContentModal>
   );
 }
