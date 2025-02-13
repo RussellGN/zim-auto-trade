@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { iconSize } from "@/lib/constants";
-import { ArrowDownWideNarrow, Filter } from "lucide-react";
+import { Filter } from "lucide-react";
 import {
   Dialog,
   DialogContent,
