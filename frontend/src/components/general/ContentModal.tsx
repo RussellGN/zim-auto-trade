@@ -33,7 +33,7 @@ export default function ContentModal({
       <DialogTrigger asChild>{trigger}</DialogTrigger>
 
       <DialogContent
-        className={`max-h-[97vh] w-[95%] overflow-y-auto rounded-lg bg-white px-0 ${size ? `sm:max-w-[${size}]` : "sm:max-w-fit"}`}
+        className={`max-h-[80vh] w-[93%] overflow-y-auto rounded-lg bg-white px-0 ${size ? `sm:max-w-[${size}]` : "sm:max-w-fit"}`}
       >
         <DialogHeader className="px-5 text-left">
           <DialogTitle className="flex items-center gap-2 capitalize">
@@ -44,7 +44,7 @@ export default function ContentModal({
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
 
-        <div className="my-5 px-2 md:px-5">{children}</div>
+        <div className="my-5 px-5">{children}</div>
       </DialogContent>
     </Dialog>
   );

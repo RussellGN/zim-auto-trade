@@ -64,7 +64,7 @@ export default function CustomModal({
           <p className="max-w-prose">{message}</p>
         </div>
 
-        <DialogFooter className="mt-3 flex-row justify-end gap-0.5">
+        <DialogFooter className="mt-3 flex-row justify-end gap-2">
           {(showCancel || onCancel) && (
             <DialogClose asChild>
               <Button variant="outline" onClick={onCancel} className={cancelClassName}>
