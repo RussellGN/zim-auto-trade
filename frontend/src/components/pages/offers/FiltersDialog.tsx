@@ -13,7 +13,7 @@ import Sidebar from "./Sidebar";
 
 export default function FiltersDialog() {
   return (
-    <Dialog defaultOpen>
+    <Dialog>
       <DialogTrigger asChild>
         <Button size="icon" type="button">
           <Filter size={iconSize} />

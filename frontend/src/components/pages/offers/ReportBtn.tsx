@@ -32,7 +32,7 @@ export default function ReportBtn() {
         onSubmit={(e) => {
           e.preventDefault();
         }}
-        className="p-5"
+        className="md:p-5"
       >
         <div className="mb-8">
           <Label className="mb-5 flex items-center gap-2 px-3" htmlFor="violation">

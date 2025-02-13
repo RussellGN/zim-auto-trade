@@ -30,14 +30,16 @@ export default function ContentModal({
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
 
-      <DialogContent className={`bg-white sm:max-w-${size ? `[${size}]` : "fit"}`}>
+      <DialogContent
+        className={`max-h-[85vh] w-[95%] overflow-y-auto rounded-xl bg-white sm:w-fit md:rounded-lg sm:max-w-${size ? `[${size}]` : "fit"}`}
+      >
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 capitalize">
             {title}
             {icon && icon}
           </DialogTitle>
 
-          <DialogDescription>{description}</DialogDescription>
+          <DialogDescription className="text-left">{description}</DialogDescription>
         </DialogHeader>
 
         <div className="my-5">{children}</div>
