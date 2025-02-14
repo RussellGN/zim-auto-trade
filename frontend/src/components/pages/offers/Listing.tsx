@@ -25,7 +25,9 @@ export default function Listing({ listing, onDash }: propTypes) {
 
       <div className="flex flex-1 flex-col gap-2 p-3 text-sm md:w-1/2 md:gap-4 md:p-4 md:text-base">
         <div className="flex items-center justify-between gap-5">
-          <h2 className="text-lg md:text-xl">{`${listing.year} ${listing.make} ${listing.model}`}</h2>
+          <h2 className="overflow-hidden text-ellipsis text-nowrap text-lg md:text-xl">
+            {`${listing.year} ${listing.make} ${listing.model}`}
+          </h2>
 
           <div className="flex w-fit items-center gap-1 text-nowrap text-sm text-slate-500">
             <Clock3 size={iconSize} />
@@ -44,8 +46,10 @@ export default function Listing({ listing, onDash }: propTypes) {
         </div>
 
         <div className="flex items-center gap-2">
-          <MapPin size={iconSize} />
-          {listing.location}
+          <span className="w-fit">
+            <MapPin size={iconSize} />
+          </span>
+          <span className="overflow-hidden text-ellipsis text-nowrap">{listing.location}</span>
         </div>
 
         <div className="text-xs text-slate-600 md:text-sm">{listing.viewCount} views</div>
@@ -85,13 +89,17 @@ export default function Listing({ listing, onDash }: propTypes) {
           {onDash ? (
             <ListerListingActions listing={listing} compact />
           ) : (
-            <div className="flex items-center gap-2">
+            <div className="flex max-w-[60%] items-center gap-2">
               <Link
                 href={`/${listing.lister.slug}`}
-                className="flex items-center justify-center gap-2 text-primary-default"
+                className="flex items-center justify-center gap-2 overflow-hidden text-primary-default"
               >
-                <CircleUser size={iconSize} />
-                {listing.lister.name}
+                <span className="w-fit">
+                  <CircleUser size={iconSize} />
+                </span>
+                <span className="overflow-hidden text-ellipsis text-nowrap">
+                  {listing.lister.name}
+                </span>
               </Link>
             </div>
           )}
