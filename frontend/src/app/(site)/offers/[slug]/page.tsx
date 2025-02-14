@@ -67,21 +67,26 @@ export default async function page({ params }: propTypes) {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <MapPin size={iconSize} className="text-gray-600" />
+                  <span className="w-fit">
+                    <MapPin size={iconSize} className="text-gray-600" />
+                  </span>
                   Location:
-                  <span className="font-semibold">{listing.location} km</span>
+                  <span className="font-semibold">{listing.location} </span>
                 </div>
 
                 <div className="text-sm text-slate-600">{listing.viewCount} views</div>
 
                 <div className="flex items-center gap-2">
-                  <UserCircle size={iconSize} className="text-gray-600" />
-                  Listed By:
+                  <span className="w-fit">
+                    <UserCircle size={iconSize} className="text-gray-600" />
+                  </span>
+                  <span className="text-nowrap">Listed By:</span>
                   <Link
                     href={`/${listing.lister.slug}`}
-                    className="font-semibold text-primary-default underline"
+                    className="overflow-hidden text-ellipsis text-nowrap font-semibold text-primary-default underline"
+                    title={listing.lister.name}
                   >
-                    {listing.lister.name} km
+                    {listing.lister.name}
                   </Link>
                 </div>
               </div>

@@ -28,15 +28,21 @@ export default function DashSidebar({ lister }: { lister: ListerInterface }) {
           </div>
 
           <div className="flex items-center gap-2">
-            <MapPin size={iconSize} />
+            <span className="w-fit">
+              <MapPin size={iconSize} />
+            </span>
             {lister.location}
           </div>
 
-          <p className="hidden max-w-prose md:block">{lister.description}</p>
+          <p className="hidden max-h-[10rem] max-w-prose overflow-y-auto md:block">
+            {lister.description}
+          </p>
         </div>
       </div>
 
-      <p className="my-5 max-w-prose md:hidden">{lister.description}</p>
+      <p className="my-5 max-h-[10rem] max-w-prose overflow-y-auto md:hidden">
+        {lister.description}
+      </p>
 
       <div className="hidden md:block">
         <ProfileSetup lister={lister} />

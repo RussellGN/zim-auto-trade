@@ -52,7 +52,9 @@ export default function Enquire({ disabled, listing }: propTypes) {
                   </div>
 
                   <div className="w-fit rounded border bg-[whitesmoke] p-0.5 shadow-sm md:p-2">
-                    <p className="max-w-prose text-sm md:text-base">{listing.lister.description}</p>
+                    <p className="max-h-[10rem] max-w-prose overflow-y-auto text-sm md:text-base">
+                      {listing.lister.description}
+                    </p>
                   </div>
                 </div>
               </div>
