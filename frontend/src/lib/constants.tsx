@@ -283,7 +283,7 @@ export const heroListingCategories: ListingCategory[] = [
     name: "Work Vehicles",
     icon: Truck,
     count: 2150,
-    image: "/vehicles/work-vehicles.jpg",
+    image: "/vehicles/work-vehicles-1.jpg",
   },
   {
     queryValue: "motorbike",
